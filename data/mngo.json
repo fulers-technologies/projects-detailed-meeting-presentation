@@ -5,32 +5,250 @@
     "description": "Next-generation ticketing and venue operations platform for theme parks, museums, attractions, and entertainment venues with AI-powered configuration and unified operations",
     "brandColor": "#FF7A3D",
     "status": "In Progress",
-    "progress": 40,
+    "progress": 7,
     "priority": "high",
     "timeline": {
-        "start": "2024-12",
-        "expectedDelivery": "2025-03",
+        "start": "2025-12",
+        "expectedDelivery": "2026-03",
         "phases": [
             {
-                "name": "Phase 1: Core Commercial & Operational Platform",
-                "status": "in-progress",
-                "completion": 40,
-                "duration": "3 months",
+                "name": "Phase 1.1: Platform Foundation & Architecture",
+                "status": "completed",
+                "completion": 100,
+                "duration": "Week 1",
                 "deliverables": [
-                    "POS System with offline support",
-                    "Ticket, Product & Package Engine",
-                    "Event & Calendar Management",
-                    "Access Control & Gate Validation",
-                    "Discount & Promotion Engine",
-                    "Membership & Loyalty System",
-                    "Wallet & Payments",
-                    "B2C Online Sales Portal",
-                    "B2B Reseller Portal",
-                    "Reporting & Analytics with AI Assistant",
-                    "Configuration & Approval Workflow",
-                    "Users, Roles & Permissions",
-                    "REST APIs & Integrations",
-                    "AI-Driven Configuration Assistant"
+                    "Multi-tenant system architecture",
+                    "Multi-venue support per client",
+                    "Multi-currency & multi-language (EN/AR)",
+                    "Environment-based deployment (cloud & on-prem ready)",
+                    "Core audit logging framework",
+                    "API-first, microservices backbone"
+                ]
+            },
+            {
+                "name": "Phase 1.2: Product, Ticket & Pricing Engine",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 2",
+                "deliverables": [
+                    "Ticket types (single, multi-day, season, family)",
+                    "Packages, bundles, add-ons & upgrades",
+                    "Entitlements & validity rules engine",
+                    "Product matrix support",
+                    "Media & ticket identity (QR, RFID-ready)",
+                    "Fee configuration (service, booking, payment fees)"
+                ]
+            },
+            {
+                "name": "Phase 1.3: Event, Calendar & Capacity Management",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 3",
+                "deliverables": [
+                    "Venue, zone & attraction configuration",
+                    "Event & performance creation",
+                    "Timeslot & capacity rules",
+                    "Seat map & reserved seating configuration",
+                    "Maintenance & blackout periods",
+                    "AI-assisted event setup (basic)"
+                ]
+            },
+            {
+                "name": "Phase 1.4: POS (Point of Sale) Operations",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Weeks 4-5",
+                "deliverables": [
+                    "Single-screen cashier UI",
+                    "Visual product catalog & cart",
+                    "Event, date & timeslot selection",
+                    "Seat selection at POS",
+                    "Refunds, voids, reissues & upgrades",
+                    "Coupon & discount application",
+                    "Membership sales at POS",
+                    "Multi-currency & split payments",
+                    "Shift management & cashier reconciliation",
+                    "Offline POS mode with sync"
+                ]
+            },
+            {
+                "name": "Phase 1.5: Access Control & Gate Validation",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 6",
+                "deliverables": [
+                    "QR / barcode scanning",
+                    "RFID / NFC readiness",
+                    "Online & offline validation",
+                    "Anti-passback enforcement",
+                    "Timeslot & seat validation",
+                    "Membership validation",
+                    "Gate & device configuration",
+                    "Real-time access logs",
+                    "Hardware & third-party REST APIs"
+                ]
+            },
+            {
+                "name": "Phase 1.6: Discounts, Promotions & Approval Controls",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 7",
+                "deliverables": [
+                    "Promo codes & coupons",
+                    "Fixed & percentage discounts",
+                    "Membership & channel-based discounts",
+                    "Complimentary tickets",
+                    "Usage limits & validity windows",
+                    "Stackable / non-stackable rules",
+                    "Manual discounts with supervisor approval",
+                    "Full approval workflows & audit trails"
+                ]
+            },
+            {
+                "name": "Phase 1.7: Membership, Loyalty & Basic CRM",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 8",
+                "deliverables": [
+                    "Membership creation & renewal",
+                    "Tiered memberships",
+                    "Family structures & shared wallets",
+                    "Automatic membership discounts",
+                    "Loyalty points (earn & redeem)",
+                    "Basic customer profiles",
+                    "Visit & purchase history tracking"
+                ]
+            },
+            {
+                "name": "Phase 1.8: Wallet & Payments",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 9",
+                "deliverables": [
+                    "Guest, membership & B2B wallets",
+                    "Wallet top-ups & refunds",
+                    "Family wallet transfers with limits",
+                    "Multi-currency support",
+                    "Cash, card & split payments",
+                    "Payment gateway integration"
+                ]
+            },
+            {
+                "name": "Phase 1.9: Online (B2C) Ticket Sales",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 10",
+                "deliverables": [
+                    "Event browsing & availability calendar",
+                    "Timeslot & seat selection",
+                    "Promotions & coupon usage",
+                    "Online payments",
+                    "Digital ticket delivery (QR / wallet)",
+                    "Customer profiles & self-service",
+                    "Booking modification & refund requests",
+                    "Mobile-friendly web experience"
+                ]
+            },
+            {
+                "name": "Phase 1.10: B2B Reseller & Partner Portal",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 11",
+                "deliverables": [
+                    "B2B account & contract management",
+                    "Assigned products & net pricing",
+                    "Credit wallet loading",
+                    "Group bookings & vouchers",
+                    "Incentives & commissions",
+                    "Auto-registration from website",
+                    "B2B sales, settlement & reporting"
+                ]
+            },
+            {
+                "name": "Phase 1.11: Reporting, Analytics & BI",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 12",
+                "deliverables": [
+                    "Sales & revenue reports",
+                    "Attendance & capacity reports",
+                    "POS performance analytics",
+                    "Membership & loyalty reports",
+                    "Promotion effectiveness",
+                    "B2B performance reports",
+                    "Scheduled & exportable reports",
+                    "AI-powered natural language reporting"
+                ]
+            },
+            {
+                "name": "Phase 1.12: Users, Roles & Governance",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 13",
+                "deliverables": [
+                    "Role-based access control (Cashier, Supervisor, Manager)",
+                    "Permission-based actions",
+                    "Override & approval rights",
+                    "Action-level audit logging",
+                    "Secure operational governance"
+                ]
+            },
+            {
+                "name": "Phase 1.13: APIs, Integrations & OTA Readiness",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 14",
+                "deliverables": [
+                    "REST APIs for all core modules",
+                    "POS & access control APIs",
+                    "OTA inventory, pricing & booking APIs",
+                    "Webhooks for transactions & events",
+                    "Unified inventory across channels"
+                ]
+            },
+            {
+                "name": "Phase 1.14: AI Configuration Assistant",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 15",
+                "deliverables": [
+                    "AI-assisted setup for tickets & packages",
+                    "AI-assisted event & timeslot creation",
+                    "AI-assisted pricing & promotions",
+                    "Natural language admin input",
+                    "Draft & preview mode",
+                    "Mandatory approval before activation",
+                    "Full audit of AI-generated changes"
+                ]
+            },
+            {
+                "name": "Testing & Deployment",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 16",
+                "deliverables": [
+                    "End-to-end system testing",
+                    "Performance & load testing",
+                    "Security & penetration testing",
+                    "User acceptance testing (UAT)",
+                    "Production environment setup",
+                    "Data migration & validation",
+                    "Deployment & go-live preparation"
+                ]
+            },
+            {
+                "name": "Go-Live & Support",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 17+",
+                "deliverables": [
+                    "Production deployment",
+                    "User training & onboarding",
+                    "System monitoring setup",
+                    "Go-live support plan",
+                    "Documentation handover",
+                    "Post-launch support & maintenance",
+                    "Performance optimization"
                 ]
             }
         ]
@@ -122,17 +340,52 @@
         {
             "title": "Event & Performance Management",
             "description": "POS interface for event selection, calendar management, and ticket type selection",
-            "url": "/screenshots/mngo-event-selection.jpg"
+            "url": "/screenshots/mngo/mngo-event-selection.jpg"
         },
         {
             "title": "Payment Processing",
             "description": "Multi-payment method support with cash, card, wallet, voucher, and split payment options",
-            "url": "/screenshots/mngo-payment.jpg"
+            "url": "/screenshots/mngo/mngo-payment.jpg"
         },
         {
             "title": "Ticket Selection & Shopping Cart",
             "description": "Visual ticket selection with real-time cart management and member suggestions",
-            "url": "/screenshots/mngo-ticket-selection.jpg"
+            "url": "/screenshots/mngo/mngo-ticket-selection.jpg"
+        },
+        {
+            "title": "Mobile App - Home & Events",
+            "description": "Mobile app home screen with event discovery, featured attractions, and personalized recommendations",
+            "url": "/images/mngo-app/IMG_1048.png"
+        },
+        {
+            "title": "Mobile App - Event Details",
+            "description": "Detailed event information with timeslots, pricing, seat selection, and booking options",
+            "url": "/images/mngo-app/IMG_1049.png"
+        },
+        {
+            "title": "Mobile App - Ticket Selection",
+            "description": "Interactive ticket selection with package options, add-ons, and real-time availability",
+            "url": "/images/mngo-app/IMG_1050.png"
+        },
+        {
+            "title": "Mobile App - Checkout & Payment",
+            "description": "Seamless checkout experience with multiple payment methods and wallet integration",
+            "url": "/images/mngo-app/IMG_1051.png"
+        },
+        {
+            "title": "Mobile App - Digital Tickets",
+            "description": "Digital ticket wallet with QR codes, ticket details, and easy access for gate validation",
+            "url": "/images/mngo-app/IMG_1052.png"
+        },
+        {
+            "title": "Mobile App - Profile & Membership",
+            "description": "User profile with membership details, loyalty points, booking history, and wallet balance",
+            "url": "/images/mngo-app/IMG_1053.png"
+        },
+        {
+            "title": "Mobile App - Venue Map & Navigation",
+            "description": "Interactive venue map with attraction locations, facilities, and real-time navigation",
+            "url": "/images/mngo-app/IMG_1054.png"
         }
     ],
     "diagram": {

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen p-6">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Inspection Management System</h1>
+                    <p class="text-gray-600 mt-1">Dashboard Overview</p>
+                </div>
+                <div class="flex gap-3">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">New Inspection</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">Export Report</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Total Inspections</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">1,247</p>
+                        <p class="text-green-600 text-sm mt-1">↑ 12% from last month</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Pending Review</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">34</p>
+                        <p class="text-orange-600 text-sm mt-1">Requires attention</p>
+                    </div>
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Completed</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">1,189</p>
+                        <p class="text-green-600 text-sm mt-1">95.3% completion rate</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Active Inspectors</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">24</p>
+                        <p class="text-blue-600 text-sm mt-1">8 in field now</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Inspections Table -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Inspections</h2>
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b border-gray-200">
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">ID</th>
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Site Location</th>
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Inspector</th>
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Status</th>
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Date</th>
+                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Incidents</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">#INS-1247</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Building A - Floor 3</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">John Smith</td>
+                        <td class="py-3 px-4"><span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Completed</span></td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Jan 7, 2026</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">2</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">#INS-1246</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Warehouse B - Section 2</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Sarah Johnson</td>
+                        <td class="py-3 px-4"><span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">Pending Review</span></td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Jan 7, 2026</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">5</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">#INS-1245</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Site C - Parking Lot</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Mike Davis</td>
+                        <td class="py-3 px-4"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">In Progress</span></td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Jan 6, 2026</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">1</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">#INS-1244</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Building D - Roof</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Emily Chen</td>
+                        <td class="py-3 px-4"><span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Completed</span></td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Jan 6, 2026</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">#INS-1243</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Factory E - Production Line</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Robert Wilson</td>
+                        <td class="py-3 px-4"><span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Completed</span></td>
+                        <td class="py-3 px-4 text-sm text-gray-700">Jan 5, 2026</td>
+                        <td class="py-3 px-4 text-sm text-gray-700">3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

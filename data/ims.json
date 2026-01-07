@@ -2,26 +2,173 @@
   "id": "ims",
   "name": "IMS",
   "fullName": "Inspection Management System",
-  "description": "Modular monolithic inspection management system with headless architecture for field inspectors, supervisors, and management",
+  "description": "Modular monolithic inspection management system with headless architecture for field inspectors, supervisors, and management with AI-powered insights and real-time collaboration",
   "brandColor": "#1D4DFF",
   "icon": "Search",
-  "status": "In Progress",
-  "progress": 73,
+  "status": "Near Completion",
+  "progress": 85,
   "priority": "high",
   "timeline": {
     "start": "2025-01",
-    "expectedDelivery": "2026-02",
+    "expectedDelivery": "2026-03",
     "phases": [
       {
-        "name": "Planning & Requirements",
+        "name": "Phase 1.1: Platform Foundation & Core Architecture",
         "status": "completed",
         "completion": 100,
         "deliverables": [
-          "Requirements documentation",
-          "System architecture design (Modular Monolithic)",
-          "Technical specifications (Laravel + ReactJS + Flutter)",
-          "User stories and acceptance criteria",
-          "Project roadmap and timeline"
+          "Multi-tenant system architecture",
+          "Organization, site & asset hierarchy",
+          "User management (inspectors, supervisors, admins)",
+          "Role-based access control (RBAC)",
+          "Audit logs for all critical actions",
+          "Environment-based deployment (cloud & on-prem ready)",
+          "API-first backend architecture"
+        ]
+      },
+      {
+        "name": "Phase 1.2: Inspection Templates & Standards Management",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Inspection checklist builder",
+          "Configurable question types (text, numeric, boolean, media)",
+          "Conditional logic & mandatory fields",
+          "Scoring, weighting & pass/fail rules",
+          "Versioned inspection templates",
+          "Regulatory & standard mapping (ISO, local authority, internal SOPs)"
+        ]
+      },
+      {
+        "name": "Phase 1.3: Asset, Location & Entity Management",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Asset registry (equipment, facilities, infrastructure)",
+          "Location hierarchy (site → building → floor → zone)",
+          "Asset metadata & lifecycle tracking",
+          "Asset-to-inspection mapping",
+          "QR / NFC tagging for assets (ready)",
+          "Asset status & risk classification"
+        ]
+      },
+      {
+        "name": "Phase 1.4: Inspection Execution (Mobile & Web)",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Inspector mobile-friendly interface",
+          "Online & offline inspection mode",
+          "Checklist execution with validations",
+          "Photo, video & document capture",
+          "Geo-tagging & timestamping",
+          "Digital signatures (inspector & supervisor)",
+          "Draft, submit & sync flows"
+        ]
+      },
+      {
+        "name": "Phase 1.5: Scheduling, Assignment & Workforce Management",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Inspection scheduling (one-time & recurring)",
+          "Inspector assignment & workload visibility",
+          "Shift-based planning",
+          "SLA & deadline tracking",
+          "Automated reminders & notifications",
+          "Escalation for overdue inspections"
+        ]
+      },
+      {
+        "name": "Phase 1.6: Findings, Violations & Non-Compliance Management",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Issue & violation creation during inspection",
+          "Severity levels & risk scoring",
+          "Root cause & observation notes",
+          "Evidence attachment",
+          "Linked corrective action requirements",
+          "Status tracking (open, in-progress, closed)"
+        ]
+      },
+      {
+        "name": "Phase 1.7: Corrective Actions & Workflow",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Corrective & preventive action (CAPA) management",
+          "Task assignment & ownership",
+          "Due dates & escalation rules",
+          "Approval & verification workflows",
+          "Re-inspection & closure validation",
+          "Full action audit trail"
+        ]
+      },
+      {
+        "name": "Phase 1.8: Reporting, Analytics & Dashboards",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Inspection completion reports",
+          "Compliance & non-compliance trends",
+          "Asset risk & performance dashboards",
+          "Inspector productivity reports",
+          "SLA & overdue analytics",
+          "Exportable & scheduled reports",
+          "Executive-level overview dashboards"
+        ]
+      },
+      {
+        "name": "Phase 1.9: Document & Evidence Management",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Centralized document repository",
+          "Inspection reports (PDF / digital)",
+          "Evidence linking (photos, videos, files)",
+          "Version control",
+          "Secure access & permissions",
+          "Compliance-ready record retention"
+        ]
+      },
+      {
+        "name": "Phase 1.10: Notifications, Alerts & Communication",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Email & in-app notifications",
+          "Inspection assignment alerts",
+          "Overdue & escalation alerts",
+          "Corrective action reminders",
+          "Management summary notifications",
+          "Configurable notification rules"
+        ]
+      },
+      {
+        "name": "Phase 1.11: Integrations & APIs",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "REST APIs for all core modules",
+          "Integration with asset management systems",
+          "Integration with ERP / CMMS",
+          "Integration with government & compliance portals",
+          "Webhooks for inspection & action events",
+          "External reporting integrations"
+        ]
+      },
+      {
+        "name": "Phase 1.12: Governance, Security & Compliance",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Fine-grained permission controls",
+          "Action-level audit trails",
+          "Data segregation per tenant",
+          "Compliance-ready logging",
+          "Secure access & authentication",
+          "System configuration approvals"
         ]
       },
       {
@@ -33,7 +180,7 @@
           "ReactJS Frontend Dashboard (70% complete)",
           "Flutter Mobile App (85% complete)",
           "Sync API integration (pending)",
-          "Incident capture & checklist system"
+          "Final integration testing"
         ]
       },
       {
@@ -58,6 +205,21 @@
           "System monitoring setup",
           "Go-live support plan",
           "Documentation handover"
+        ]
+      },
+      {
+        "name": "Phase 2: GIS Integration & Advanced Features",
+        "status": "upcoming",
+        "completion": 0,
+        "deliverables": [
+          "GIS mapping & location intelligence",
+          "Spatial data visualization",
+          "Asset location tracking on maps",
+          "Inspection route optimization",
+          "Geographic risk analysis",
+          "Integration with GIS platforms",
+          "Mobile map-based inspection assignment",
+          "Additional business requirements as defined"
         ]
       }
     ]
@@ -121,17 +283,37 @@
     {
       "title": "Dashboard Overview",
       "description": "Real-time inspection metrics and status",
-      "url": "/screenshots/ims-dashboard.jpg"
+      "url": "/screenshots/ims/ims-dashboard.jpg"
     },
     {
       "title": "Mobile Inspection",
       "description": "Field inspection interface",
-      "url": "/screenshots/ims-mobile.jpg"
+      "url": "/screenshots/ims/ims-mobile.jpg"
     },
     {
       "title": "Analytics View",
       "description": "AI-powered insights and trends",
-      "url": "/screenshots/ims-analytics.jpg"
+      "url": "/screenshots/ims/ims-analytics.jpg"
+    },
+    {
+      "title": "Mobile App - Login Screen",
+      "description": "Secure authentication with email/phone login and biometric support",
+      "url": "/images/ims-app/Login Screen.jpg"
+    },
+    {
+      "title": "Mobile App - OTP Verification",
+      "description": "Two-factor authentication with OTP verification for enhanced security",
+      "url": "/images/ims-app/OTP Screen.jpg"
+    },
+    {
+      "title": "Mobile App - Homepage (Active Inspections)",
+      "description": "Dashboard showing active inspections, pending tasks, and quick actions for field inspectors",
+      "url": "/images/ims-app/Homepage - Active.jpg"
+    },
+    {
+      "title": "Mobile App - Homepage (Inactive)",
+      "description": "Home screen with completed inspections, historical data, and inspection history",
+      "url": "/images/ims-app/Homepage - Inactive.jpg"
     }
   ],
   "diagram": {
@@ -177,39 +359,59 @@
     "resourceLevel": "Heavy",
     "costs": {
       "personnel": {
-        "weekly": 3530,
-        "monthly": 14120,
-        "total": 14120,
+        "weekly": 14120,
+        "monthly": 56480,
+        "total": 112960,
         "currency": "AED",
-        "period": "2 weeks",
+        "period": "2 months",
         "usdEquivalent": {
-          "weekly": 962,
-          "monthly": 3850,
-          "total": 3850
+          "weekly": 3850,
+          "monthly": 15400,
+          "total": 30800
         },
-        "note": "Remaining 2 weeks to complete the project",
+        "note": "2 months development: 2 weeks pending tasks + 2 weeks active development + 4 weeks Phase 2 with GIS",
         "breakdown": [
           {
             "role": "Backend Developers (2)",
-            "cost": 6423,
-            "note": "Each: $1,750/month × 2 developers × 0.5 month = AED 6,423"
+            "cost": 25690,
+            "note": "Each: $1,750/month × 2 developers × 2 months = AED 25,690"
           },
           {
             "role": "Flutter Developer",
-            "cost": 4037,
-            "note": "$2,200/month × 0.5 month = AED 4,037"
+            "cost": 16148,
+            "note": "$2,200/month × 2 months = AED 16,148"
           },
           {
             "role": "Frontend Developer",
-            "cost": 3670,
-            "note": "$2,000/month × 0.5 month = AED 3,670"
+            "cost": 14680,
+            "note": "$2,000/month × 2 months = AED 14,680"
+          },
+          {
+            "role": "GIS Specialist",
+            "cost": 13762,
+            "note": "$2,500/month × 1.5 months (starting after 2 weeks) = AED 13,762"
+          },
+          {
+            "role": "Project Manager",
+            "cost": 7340,
+            "note": "$1,000/month × 2 months = AED 7,340"
+          },
+          {
+            "role": "QA Engineer",
+            "cost": 7340,
+            "note": "$1,000/month × 2 months = AED 7,340"
           }
         ]
       },
       "infrastructure": {
-        "total": 1750,
+        "monthly": 1750,
+        "total": 3500,
         "currency": "AED",
-        "period": "2 weeks",
+        "period": "2 months",
+        "usdEquivalent": {
+          "monthly": 477,
+          "total": 954
+        },
         "breakdown": [
           {
             "item": "AWS Cloud Services",
@@ -230,9 +432,14 @@
         ]
       },
       "software": {
-        "total": 600,
+        "monthly": 600,
+        "total": 1200,
         "currency": "AED",
-        "period": "2 weeks",
+        "period": "2 months",
+        "usdEquivalent": {
+          "monthly": 163,
+          "total": 326
+        },
         "breakdown": [
           {
             "item": "Development Tools",
@@ -248,13 +455,13 @@
           }
         ]
       },
-      "totalMonthly": 14120,
-      "totalProject": 22750,
+      "totalMonthly": 58830,
+      "totalProject": 117660,
       "currency": "AED",
       "usdEquivalent": {
-        "weekly": 962,
-        "monthly": 3850,
-        "total": 6200
+        "weekly": 16034,
+        "monthly": 16034,
+        "total": 32080
       }
     },
     "dependencies": [

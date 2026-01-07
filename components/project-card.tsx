@@ -167,7 +167,11 @@ export function ProjectCard({
                 <span className="font-medium">Progress</span>
                 <span className="text-muted-foreground">{progress}%</span>
               </div>
-              <Progress value={progress} className="h-2" />
+              <Progress
+                value={progress}
+                brandColor={brandColor}
+                className="h-2"
+              />
             </div>
 
             <div className="flex items-center justify-between pt-2">

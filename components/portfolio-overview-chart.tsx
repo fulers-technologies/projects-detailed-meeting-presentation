@@ -20,6 +20,7 @@ interface Project {
   name: string;
   progress: number;
   status: string;
+  brandColor?: string;
 }
 
 interface PortfolioOverviewChartProps {
@@ -29,10 +30,10 @@ interface PortfolioOverviewChartProps {
 export function PortfolioOverviewChart({
   projects,
 }: PortfolioOverviewChartProps) {
-  const chartData = projects.map((project, index) => ({
+  const chartData = projects.map((project) => ({
     project: project.name,
     progress: project.progress,
-    fill: `hsl(${217 + index * 30}, 100%, ${50 + index * 10}%)`,
+    fill: project.brandColor || "#1D4DFF",
   }));
 
   const totalProgress = projects.reduce((acc, p) => acc + p.progress, 0);

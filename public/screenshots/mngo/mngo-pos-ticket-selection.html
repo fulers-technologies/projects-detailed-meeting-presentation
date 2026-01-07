@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNGO POS - Ticket Selection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><defs><filter id="blur"><feGaussianBlur stdDeviation="40"/></filter></defs><rect fill="%23d4a574" width="1920" height="1080"/><circle cx="200" cy="150" r="80" fill="%23f5d5a8" opacity="0.6" filter="url(%23blur)"/><circle cx="1700" cy="200" r="100" fill="%23f5d5a8" opacity="0.5" filter="url(%23blur)"/><circle cx="400" cy="900" r="90" fill="%23f5d5a8" opacity="0.7" filter="url(%23blur)"/><circle cx="1500" cy="850" r="110" fill="%23f5d5a8" opacity="0.6" filter="url(%23blur)"/><circle cx="900" cy="100" r="70" fill="%23f5d5a8" opacity="0.5" filter="url(%23blur)"/><circle cx="1200" cy="950" r="95" fill="%23f5d5a8" opacity="0.6" filter="url(%23blur)"/></svg>') center/cover;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-8">
+    <!-- Main POS Window -->
+    <div class="w-full max-w-6xl bg-slate-800/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-slate-700/50">
+        <!-- Header -->
+        <div class="bg-slate-900/80 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                </div>
+                <span class="text-white font-bold text-lg">MNGO POS</span>
+                <span class="text-slate-400 text-sm">Admin</span>
+                <span class="text-slate-400 text-sm">Shift ID: 134</span>
+                <span class="text-green-400 text-sm">Online</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400 text-sm">
+                <button class="hover:text-white">🔍 Search</button>
+                <button class="hover:text-white">🔍</button>
+                <button class="hover:text-white">👤</button>
+                <button class="hover:text-white">▲</button>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="flex h-[700px]">
+            <!-- Left Sidebar - Shopping Cart -->
+            <div class="w-80 bg-slate-900/60 p-4 border-r border-slate-700/50">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-white font-bold">Shopping Cart</h2>
+                    <button class="text-slate-400 hover:text-white">✕</button>
+                </div>
+
+                <div class="text-slate-400 text-sm mb-4">Shopping Cart <span class="ml-2">1+</span></div>
+
+                <!-- Cart Items -->
+                <div class="space-y-2 mb-4">
+                    <div class="flex items-center gap-2 p-2 bg-slate-800/60 rounded">
+                        <input type="checkbox" checked class="w-4 h-4">
+                        <div class="flex-1">
+                            <div class="text-white text-sm">Adult Ticket</div>
+                            <div class="text-slate-400 text-xs">Valid Today, Adventure Park</div>
+                        </div>
+                        <div class="text-white font-bold text-sm">AED 100</div>
+                    </div>
+
+                    <div class="flex items-center gap-2 p-2 bg-slate-800/60 rounded">
+                        <input type="checkbox" checked class="w-4 h-4">
+                        <div class="flex-1">
+                            <div class="text-white text-sm">Child Ticket</div>
+                            <div class="text-slate-400 text-xs">Valid Today, Adventure Park</div>
+                        </div>
+                        <div class="text-white font-bold text-sm">AED 80</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/60 rounded p-3 mb-4">
+                    <div class="flex justify-between text-white font-bold">
+                        <span>Total</span>
+                        <span>AED 180</span>
+                    </div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="bg-blue-600/20 rounded p-3 mb-4 border border-blue-600/30">
+                    <div class="text-blue-400 text-xs mb-2">★ Suggestion for Family Pass</div>
+                    <div class="text-white text-sm mb-1">Ticket Lookup</div>
+                    <div class="text-slate-400 text-xs mb-2">Valid Today, Adventure Park</div>
+                    <div class="text-white font-bold">AED 180</div>
+                </div>
+
+                <div class="bg-slate-800/60 rounded p-2 mb-4">
+                    <div class="text-slate-400 text-xs mb-1">Members offers</div>
+                    <div class="text-white text-sm">AED 180</div>
+                </div>
+
+                <div class="bg-slate-800/60 rounded p-3">
+                    <div class="text-slate-400 text-xs mb-2">Suggestion for Family Pass</div>
+                    <div class="text-white text-sm mb-1">30.5% vs. buying individually</div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-white font-bold">TOTAL</span>
+                        <span class="text-green-400 font-bold">PROCEED AED 180</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content - Ticket Grid -->
+            <div class="flex-1 p-6 overflow-y-auto">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-white font-bold text-xl">Ticket Selection</h2>
+                    <button class="text-slate-400 hover:text-white">✕</button>
+                </div>
+
+                <!-- Ticket Grid -->
+                <div class="grid grid-cols-4 gap-4">
+                    <!-- Adult Ticket -->
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%234299e1%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>👥</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Adult Ticket</div>
+                            <div class="text-blue-200 text-2xl font-bold">AED 100</div>
+                        </div>
+                    </div>
+
+                    <!-- Child Ticket -->
+                    <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%2348bb78%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>👶</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Child Ticket</div>
+                            <div class="text-green-200 text-2xl font-bold">AED 80</div>
+                        </div>
+                    </div>
+
+                    <!-- VIP Ticket -->
+                    <div class="bg-gradient-to-br from-yellow-600 to-orange-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center flex items-center justify-center text-6xl">⭐</div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">VIP Ticket</div>
+                            <div class="text-yellow-200 text-2xl font-bold">AED 250</div>
+                        </div>
+                    </div>
+
+                    <!-- Family Pass -->
+                    <div class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform relative">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">❤️</div>
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%2306b6d4%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>👨‍👩‍👧‍👦</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Family Pass</div>
+                            <div class="text-cyan-200 text-2xl font-bold">AED 350</div>
+                        </div>
+                    </div>
+
+                    <!-- Birthday Package -->
+                    <div class="bg-gradient-to-br from-pink-600 to-red-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center flex items-center justify-center text-6xl">🎁</div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Birthday Package</div>
+                            <div class="text-pink-200 text-2xl font-bold">AED 750</div>
+                        </div>
+                    </div>
+
+                    <!-- Family Pass 2 -->
+                    <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%239333ea%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>🎉</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Family Pass</div>
+                            <div class="text-purple-200 text-2xl font-bold">AED 350</div>
+                        </div>
+                    </div>
+
+                    <!-- Group Pass -->
+                    <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%235b21b6%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>👥</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Group Pass</div>
+                            <div class="text-indigo-200 text-2xl font-bold">AED 700</div>
+                        </div>
+                    </div>
+
+                    <!-- Annual Pass -->
+                    <div class="bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center flex items-center justify-center text-6xl">🎫</div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Annual Pass</div>
+                            <div class="text-slate-300 text-2xl font-bold">AED 1000</div>
+                        </div>
+                    </div>
+
+                    <!-- Group Track -->
+                    <div class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%230d9488%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>🎯</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Group Track</div>
+                            <div class="text-teal-200 text-2xl font-bold">AED 550</div>
+                        </div>
+                    </div>
+
+                    <!-- Fast Track -->
+                    <div class="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center flex items-center justify-center">
+                            <div class="text-6xl">⚡</div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Fast Track</div>
+                            <div class="text-yellow-200 text-2xl font-bold">AED 150</div>
+                        </div>
+                    </div>
+
+                    <!-- Group Track 2 -->
+                    <div class="bg-gradient-to-br from-blue-700 to-indigo-700 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%231e40af%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>🎪</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Group Track</div>
+                            <div class="text-blue-200 text-2xl font-bold">AED 550</div>
+                        </div>
+                    </div>
+
+                    <!-- Resort Package -->
+                    <div class="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform relative">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">NEW</div>
+                        <div class="h-32 bg-cover bg-center" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%23059669%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22>🏖️</text></svg>')"></div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Resort Package</div>
+                            <div class="text-emerald-200 text-2xl font-bold">AED 1200</div>
+                        </div>
+                    </div>
+
+                    <!-- Gift Voucher -->
+                    <div class="bg-gradient-to-br from-red-600 to-pink-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                        <div class="h-32 bg-cover bg-center flex items-center justify-center text-6xl">🎁</div>
+                        <div class="p-3 text-center">
+                            <div class="text-white font-bold mb-1">Gift Voucher</div>
+                            <div class="text-red-200 text-2xl font-bold flex items-center justify-center gap-1">
+                                <span>⋮⋮</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-slate-900/80 px-6 py-3 flex items-center justify-between border-t border-slate-700/50 text-sm">
+            <div class="flex gap-4 text-slate-400">
+                <button class="hover:text-white">📋 Ticket Lookup</button>
+                <button class="hover:text-white">🔄 Upgrade / Change</button>
+                <button class="hover:text-white">↩ Refund</button>
+                <button class="hover:text-white">🚫 Void Sale</button>
+                <button class="hover:text-white">⭐ Upsell</button>
+                <button class="hover:text-white">📦 Packages</button>
+                <button class="hover:text-white">👥 Membership</button>
+                <button class="hover:text-white">⋮⋮ More Actions</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

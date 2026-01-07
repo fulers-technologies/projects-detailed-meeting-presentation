@@ -61,6 +61,11 @@ export default function Home() {
           subtitle="Advanced Technology Solutions"
           badge="Board Presentation"
         >
+          <div className="mb-6">
+            <p className="text-lg text-muted-foreground italic">
+              &ldquo;{company.description}&rdquo;
+            </p>
+          </div>
           <div className="flex flex-wrap gap-2">
             {company.focus.map((area) => (
               <Badge

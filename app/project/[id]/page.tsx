@@ -4,6 +4,8 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import { Header } from "@/components/header";
 import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { AnimatedProgressWithLabel } from "@/components/animated-progress-with-label";
 import type { Metadata } from "next";
 import {
   Card,
@@ -175,36 +177,13 @@ export default async function ProjectPage({
                 </p>
 
                 {/* Progress Bar */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-foreground">
-                      Overall Progress
-                    </span>
-                    <span
-                      className="text-3xl font-extrabold"
-                      style={{ color: brandColor }}
-                    >
-                      {project.progress}%
-                    </span>
-                  </div>
-                  <div className="h-3 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-500 relative"
-                      style={{
-                        width: `${project.progress}%`,
-                        backgroundColor: brandColor,
-                        boxShadow: `0 0 20px ${brandColor}80, 0 0 40px ${brandColor}40`,
-                      }}
-                    >
-                      <div
-                        className="absolute inset-0 animate-pulse"
-                        style={{
-                          background: `linear-gradient(90deg, transparent, ${brandColor}40, transparent)`,
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <AnimatedProgressWithLabel
+                  value={project.progress}
+                  brandColor={brandColor}
+                  size="lg"
+                  label="Overall Progress"
+                  showPercentage={true}
+                />
               </div>
 
               {/* Right Column - Big Emoji with Glow */}
@@ -346,28 +325,49 @@ export default async function ProjectPage({
                   <CardContent>
                     <div className="grid grid-cols-1 gap-6">
                       {project.screenshots.map(
-                        (screenshot: any, index: number) => (
-                          <div key={index} className="space-y-3">
-                            <div className="aspect-video bg-muted rounded-lg border-2 overflow-hidden relative">
-                              <Image
-                                src={screenshot.url}
-                                alt={screenshot.title}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                                priority={index === 0}
-                              />
+                        (screenshot: any, index: number) => {
+                          const isMobileScreenshot = screenshot.title
+                            .toLowerCase()
+                            .includes("mobile app");
+
+                          return (
+                            <div key={index} className="space-y-3">
+                              <div
+                                className={`bg-muted rounded-lg border-2 overflow-hidden relative ${
+                                  isMobileScreenshot
+                                    ? "flex items-center justify-center p-8 min-h-[600px]"
+                                    : "aspect-video"
+                                }`}
+                              >
+                                <Image
+                                  src={screenshot.url}
+                                  alt={screenshot.title}
+                                  {...(isMobileScreenshot
+                                    ? {
+                                        width: 400,
+                                        height: 800,
+                                        className:
+                                          "object-contain max-h-[700px] w-auto",
+                                      }
+                                    : {
+                                        fill: true,
+                                        className: "object-cover",
+                                      })}
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                  priority={index === 0}
+                                />
+                              </div>
+                              <div>
+                                <h4 className="font-semibold">
+                                  {screenshot.title}
+                                </h4>
+                                <p className="text-sm text-muted-foreground">
+                                  {screenshot.description}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="font-semibold">
-                                {screenshot.title}
-                              </h4>
-                              <p className="text-sm text-muted-foreground">
-                                {screenshot.description}
-                              </p>
-                            </div>
-                          </div>
-                        ),
+                          );
+                        },
                       )}
                     </div>
                   </CardContent>
@@ -451,22 +451,12 @@ export default async function ProjectPage({
                               {phase.completion}%
                             </Badge>
                           </div>
-                          <div className="h-2 bg-muted rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-primary rounded-full transition-all relative"
-                              style={{
-                                width: `${phase.completion}%`,
-                                boxShadow: `0 0 15px rgba(var(--primary), 0.5), 0 0 30px rgba(var(--primary), 0.3)`,
-                              }}
-                            >
-                              <div
-                                className="absolute inset-0 animate-pulse"
-                                style={{
-                                  background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)`,
-                                }}
-                              />
-                            </div>
-                          </div>
+                          <Progress
+                            value={phase.completion}
+                            brandColor={brandColor}
+                            size="sm"
+                            animate={true}
+                          />
                         </div>
                       ),
                     )}

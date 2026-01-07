@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Fuelers Technologies - Board Presentation",
   description:
     "Executive dashboard for Fuelers Technologies LLC project portfolio",
+  icons: {
+    icon: "/assets/logo-sign-background-blue-512px.svg",
+  },
   robots: {
     index: false,
     follow: false,

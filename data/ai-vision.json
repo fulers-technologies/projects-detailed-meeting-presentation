@@ -5,14 +5,14 @@
     "description": "Production-grade AI-powered video analysis platform with real-time multi-model processing, semantic querying, and containerized microservices architecture",
     "brandColor": "#EF4444",
     "status": "In Progress",
-    "progress": 50,
+    "progress": 35,
     "priority": "high",
     "timeline": {
-        "start": "2025-01",
-        "expectedDelivery": "2025-03",
+        "start": "2026-01",
+        "expectedDelivery": "2026-03",
         "phases": [
             {
-                "name": "Phase 1: POC & AI Microservices Development",
+                "name": "Phase 1: POC & Foundation",
                 "status": "completed",
                 "completion": 100,
                 "duration": "Completed",
@@ -21,64 +21,172 @@
                     "Multi-model detection logic (YOLO, BLIP, OCR)",
                     "Result aggregation methodology",
                     "Proof of concept validation",
-                    "AI microservices architecture established",
-                    "Initial model integration completed"
+                    "AI microservices architecture defined"
                 ]
             },
             {
-                "name": "Phase 2: Production-Grade Architecture & Containerization",
+                "name": "Phase 2: Stream & Ingestion Services",
                 "status": "in-progress",
-                "completion": 0,
-                "duration": "Weeks 1-3",
+                "completion": 30,
+                "duration": "Week 1",
                 "deliverables": [
-                    "Transition POC to production-ready architecture",
-                    "Containerized microservices on AWS ECS",
-                    "Stream & Ingestion Service deployment",
-                    "Kafka message queue infrastructure",
-                    "Pre-processing service implementation",
-                    "Production-grade code rewrite"
+                    "StreamManager & CameraWorker implementation",
+                    "Multi-camera RTSP/file ingestion",
+                    "Frame encoding (JPEG/base64)",
+                    "Kafka producer for 'ingestion' topic",
+                    "IngestionService normalization layer",
+                    "Frame resizing & message standardization"
                 ]
             },
             {
-                "name": "Phase 3: Multi-Model Integration & Processing",
+                "name": "Phase 3: Kafka Infrastructure & Topics",
                 "status": "upcoming",
                 "completion": 0,
-                "duration": "Weeks 4-5",
+                "duration": "Week 1-2",
                 "deliverables": [
-                    "YOLO Detection service (production-grade)",
-                    "BLIP Captioning service (production-grade)",
-                    "EasyOCR service (production-grade)",
-                    "CLIP embedding service integration",
-                    "Model weights and inference optimization",
-                    "Multi-model orchestration pipeline"
+                    "Multi-broker Kafka cluster setup",
+                    "Topic creation: ingestion, analyze, aggregate, segmenet",
+                    "Partitioning strategy (16-32 partitions per topic)",
+                    "Consumer group configuration",
+                    "Kafka monitoring & lag tracking"
                 ]
             },
             {
-                "name": "Phase 4: Segmentation, Vector DB & Graph Database",
+                "name": "Phase 4: Analyzer Microservices (Detection, OCR, Caption)",
                 "status": "upcoming",
                 "completion": 0,
-                "duration": "Weeks 6-7",
+                "duration": "Week 2-3",
                 "deliverables": [
-                    "Frame Merger Service (video segment reconstruction)",
+                    "BaseAnalyzerService framework",
+                    "DetectionsService (YOLO) with scene graph builder",
+                    "OCRService (EasyOCR) with confidence filtering",
+                    "CaptionerService (BLIP) for image captions",
+                    "Standardized result envelope to 'aggregate' topic",
+                    "GPU-enabled containerization for YOLO & BLIP"
+                ]
+            },
+            {
+                "name": "Phase 5: Aggregation Service",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 3",
+                "deliverables": [
+                    "AggregateService per-frame state management",
+                    "Multi-service result merging (detection, caption, OCR)",
+                    "Frame completion detection (all REQUIRED_SERVICES)",
+                    "Aggregated payload to 'segmenet' topic",
+                    "In-memory frame state cleanup"
+                ]
+            },
+            {
+                "name": "Phase 6: Segment Microservice (SegmenetAgent)",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 4",
+                "deliverables": [
+                    "Temporal frame grouping (4-second segments per camera)",
+                    "Video segment reconstruction (video.mp4)",
+                    "Segment metadata (segment.json) & summary (summary.txt)",
+                    "LLM-based segment summarization",
+                    "Segment storage (S3/object storage or shared PV)",
+                    "Integration with Indexr microservice"
+                ]
+            },
+            {
+                "name": "Phase 7: Indexer Microservice (RealTimeRAG)",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 4-5",
+                "deliverables": [
+                    "RealTimeRAG service with SentenceTransformer embeddings",
                     "Qdrant vector database cluster setup",
-                    "Neo4j graph database integration",
-                    "Semantic search capability",
-                    "Entity & relationship extraction",
-                    "Metadata flow into vector index"
+                    "Segment summary indexing (add_data API)",
+                    "Vector search with user_id & camera_id filtering",
+                    "Optional FAISS in-memory indices",
+                    "HTTP/gRPC API wrapper for Indexr"
                 ]
             },
             {
-                "name": "Phase 5: RAG Query System & Final Handover",
+                "name": "Phase 8: RAG Query System & LLM Integration",
                 "status": "upcoming",
                 "completion": 0,
-                "duration": "Week 8",
+                "duration": "Week 5-6",
                 "deliverables": [
-                    "LLM Query Service with RAG",
-                    "Natural language video querying",
-                    "Qwen 2.5 VL video analysis integration",
-                    "End-to-end retrieval pipeline testing",
-                    "Final technical documentation",
-                    "Production deployment and handover"
+                    "LLMClient (Qwen/Groq) with conversation memory",
+                    "RAG-style query pipeline (question → vector search → LLM)",
+                    "Natural language answer generation",
+                    "Context retrieval from Qdrant",
+                    "Chatbot service (HTTP/WebSocket API)",
+                    "User-facing query endpoint"
+                ]
+            },
+            {
+                "name": "Phase 9: Kubernetes Deployment & Scaling",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 6-7",
+                "deliverables": [
+                    "K8s Deployments for all microservices",
+                    "GPU-enabled pods for detections & captioning",
+                    "Horizontal Pod Autoscaler (HPA) configuration",
+                    "StatefulSet for Qdrant cluster",
+                    "PersistentVolumeClaims for segment storage",
+                    "k9s operational monitoring setup"
+                ]
+            },
+            {
+                "name": "Phase 10: Storage Architecture & Optimization",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 7",
+                "deliverables": [
+                    "Object storage (S3/MinIO) for segments",
+                    "Reference-based Kafka messages (URIs vs base64)",
+                    "Segment layout: /segments/<camera>/<uuid>/",
+                    "SSD-backed storage for Qdrant",
+                    "Frame storage optimization for 1000 FPS target"
+                ]
+            },
+            {
+                "name": "Phase 11: Observability & Monitoring",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 7-8",
+                "deliverables": [
+                    "Prometheus metrics for all services",
+                    "Grafana dashboards (Kafka lag, GPU/CPU, latency)",
+                    "k9s for pod health & resource monitoring",
+                    "Kafka consumer lag tracking",
+                    "Qdrant query latency metrics",
+                    "LLM response time monitoring"
+                ]
+            },
+            {
+                "name": "Testing & Deployment",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 8-9",
+                "deliverables": [
+                    "End-to-end pipeline testing (ingestion → query)",
+                    "Load testing for 1000 FPS target",
+                    "Multi-camera stress testing",
+                    "Kafka throughput benchmarking",
+                    "Vector search performance validation",
+                    "Production deployment on AWS ECS/K8s"
+                ]
+            },
+            {
+                "name": "Go-Live & Support",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 10+",
+                "deliverables": [
+                    "Production deployment",
+                    "System monitoring & alerting",
+                    "User training & documentation",
+                    "Go-live support plan",
+                    "Performance optimization",
+                    "Post-launch support & maintenance"
                 ]
             }
         ]
@@ -392,9 +500,9 @@
         ]
     },
     "currentStatus": {
-        "summary": "Project at 50% completion. POC successfully validated with working video ingestion, multi-model AI processing, and result aggregation. Remaining 50% focuses on production-grade rewrite: containerization on AWS ECS, scalable microservices architecture, Kafka messaging, vector/graph databases, and RAG-based querying. Geeksman team of 12 specialists working with 2 Fuelers React developers and 2 Data Scientists.",
+        "summary": "Project at 35% completion. POC successfully validated with working video ingestion, multi-model AI processing, and result aggregation. Currently implementing Stream & Ingestion Services (Phase 2). Remaining work focuses on production-grade microservices: Kafka infrastructure, analyzer services (YOLO/BLIP/OCR), aggregation, segmentation, Qdrant vector DB, RAG query system, and Kubernetes deployment. Geeksman team of 12 specialists working with 2 Fuelers React developers and 2 Data Scientists.",
         "achievements": [
-            "✅ POC completed and validated (50% milestone)",
+            "✅ POC completed and validated (Phase 1: 100%)",
             "✅ Video ingestion from real IP cameras (RTSP/Files) working",
             "✅ Multi-model detection logic established (YOLO, BLIP, OCR)",
             "✅ Result aggregation methodology proven",
@@ -402,7 +510,8 @@
             "✅ Contract signed with Geeksman Softwares",
             "✅ 12-person specialized team assembled",
             "✅ Initial advance payment received ($10,000 USD)",
-            "✅ POC knowledge transfer completed"
+            "✅ POC knowledge transfer completed",
+            "🔄 Stream & Ingestion Services in progress (Phase 2: 30%)"
         ],
         "risks": [
             {
@@ -435,16 +544,17 @@
     },
     "nextSteps": {
         "planned": [
-            "Begin production-grade architecture rewrite (Weeks 1-3)",
-            "Deploy containerized microservices on AWS ECS",
-            "Implement Kafka message queue infrastructure",
-            "Build production-grade YOLO, BLIP, OCR services (Weeks 4-5)",
-            "Integrate CLIP embedding service",
-            "Implement Frame Merger and video segmentation (Weeks 6-7)",
-            "Setup Qdrant vector database and Neo4j graph database",
-            "Build LLM Query Service with RAG (Week 8)",
-            "Integrate Qwen 2.5 VL for video analysis",
-            "End-to-end testing and production deployment",
+            "Complete Stream & Ingestion Services (Phase 2: Week 1)",
+            "Setup Kafka infrastructure with multi-broker cluster (Phase 3: Week 1-2)",
+            "Implement analyzer microservices: YOLO, BLIP, OCR (Phase 4: Week 2-3)",
+            "Build AggregateService for per-frame result merging (Phase 5: Week 3)",
+            "Develop SegmenetAgent for temporal video segmentation (Phase 6: Week 4)",
+            "Deploy Qdrant vector database and RealTimeRAG indexer (Phase 7: Week 4-5)",
+            "Integrate LLMClient and RAG query pipeline (Phase 8: Week 5-6)",
+            "Kubernetes deployment with HPA and GPU scheduling (Phase 9: Week 6-7)",
+            "Optimize storage architecture for 1000 FPS target (Phase 10: Week 7)",
+            "Setup observability with Prometheus, Grafana, k9s (Phase 11: Week 7-8)",
+            "End-to-end testing and production deployment (Week 8-9)",
             "Weekly sign-offs and progress reviews with Fuelers"
         ],
         "boardAsks": [
