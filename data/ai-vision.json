@@ -1,68 +1,85 @@
 {
     "id": "ai-vision",
-    "name": "AI Vision Project",
-    "fullName": "Cloud-Based AI Vision Analytics Platform",
-    "description": "First-to-market cloud AI vision system with real-time multi-model processing, rule-based orchestration, and natural language querying",
+    "name": "VideoRAG Core",
+    "fullName": "VideoRAG Core Implementation - AI Vision Analytics Platform",
+    "description": "Production-grade RAG-based video analysis platform with real-time multi-model processing, semantic querying, and containerized microservices architecture",
     "brandColor": "#EF4444",
     "status": "In Progress",
-    "progress": 50,
+    "progress": 15,
     "priority": "high",
     "timeline": {
         "start": "2025-01",
         "expectedDelivery": "2025-03",
         "phases": [
             {
-                "name": "POC & Architecture Validation",
-                "status": "completed",
-                "completion": 100,
-                "deliverables": [
-                    "Microservices architecture design (Python + Golang)",
-                    "POC for microservices integration",
-                    "Frame processing pipeline validation",
-                    "Multi-model orchestration proof of concept",
-                    "Cloud infrastructure setup (AWS S3, Kafka, PostgreSQL)"
-                ]
-            },
-            {
-                "name": "Core Development - Phase 1",
+                "name": "Phase 1: Onboarding & POC Knowledge Transfer",
                 "status": "in-progress",
-                "completion": 60,
+                "completion": 80,
+                "duration": "Week 1",
                 "deliverables": [
-                    "Rule-based engine for model orchestration",
-                    "5-7 AI models integration (YOLO v8, BLIP, OCR, CLIP)",
-                    "Frame processing optimization (30 FPS target)",
-                    "Data retention and storage strategy",
-                    "Tenant management system"
+                    "Complete team onboarding (12-person Geeksman team)",
+                    "Comprehensive deep-dive into existing POC codebase",
+                    "Architectural findings documentation review",
+                    "Knowledge transfer from Fuelers technical team",
+                    "Development environment setup"
                 ]
             },
             {
-                "name": "Core Development - Phase 2",
-                "status": "in-progress",
-                "completion": 40,
-                "deliverables": [
-                    "Vector database integration (Milvus)",
-                    "Graph database implementation (Neo4j)",
-                    "Business logic and alerts system",
-                    "LLM query interface (GPT-4)",
-                    "Real-time analytics dashboard"
-                ]
-            },
-            {
-                "name": "Production Deployment",
+                "name": "Phase 2: Stream & Ingestion Layer",
                 "status": "upcoming",
                 "completion": 0,
+                "duration": "Weeks 2-3",
                 "deliverables": [
-                    "Production-grade backend deployment",
-                    "Complete system documentation",
-                    "Pricing model implementation",
-                    "Multi-tenant and on-prem configurations",
-                    "Performance testing and optimization"
+                    "Stream Service deployment (RTSP/File frame capture)",
+                    "Ingestion Service deployment on Amazon ECS",
+                    "Kafka topics establishment (ingestion and analyze)",
+                    "Normalized frame routing implementation",
+                    "Initial infrastructure on AWS ECS"
+                ]
+            },
+            {
+                "name": "Phase 3: Analyzer Integration",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Weeks 4-5",
+                "deliverables": [
+                    "YOLO Detections service integration",
+                    "BLIP Captioner service integration",
+                    "EasyOCR service integration",
+                    "Model weights and inference endpoints setup",
+                    "Multi-model orchestration pipeline"
+                ]
+            },
+            {
+                "name": "Phase 4: Segmenting & Vector Indexing",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Weeks 6-7",
+                "deliverables": [
+                    "Segment Service implementation (time-based grouping)",
+                    "Video + metadata + summary aggregation",
+                    "Qdrant vector database cluster setup",
+                    "Metadata flow into vector index",
+                    "Semantic search capability"
+                ]
+            },
+            {
+                "name": "Phase 5: Chatbot Query & Final Handover",
+                "status": "upcoming",
+                "completion": 0,
+                "duration": "Week 8",
+                "deliverables": [
+                    "Chatbot API completion",
+                    "Indexr Service for RAG-based Q&A",
+                    "End-to-end retrieval pipeline testing",
+                    "Final technical documentation",
+                    "Production deployment and handover"
                 ]
             }
         ]
     },
     "overview": {
-        "problem": "Industries need real-time AI vision analytics at scale but existing solutions lack multi-model orchestration, intelligent frame processing, and natural language querying capabilities in a cloud-native architecture",
+        "problem": "Industries need production-grade RAG-based video analysis at scale with real-time processing, semantic querying, and containerized deployment. Existing POC needs to transition to scalable, production-ready architecture",
         "targetUsers": [
             "Manufacturing QA Teams",
             "Security & Surveillance Operations",
@@ -70,266 +87,350 @@
             "Smart City Infrastructure",
             "Logistics & Warehouse Management"
         ],
-        "valueProposition": "First cloud-native AI vision platform with intelligent multi-model orchestration, processing 30 FPS streams through 5-7 specialized models, with natural language querying and real-time analytics",
-        "strategicImportance": "Establishes Fuelers as pioneer in cloud AI vision with unique rule-based model orchestration, positioning for rapid market capture in untapped segment with scalable microservices architecture"
+        "valueProposition": "Production-grade VideoRAG platform with containerized microservices, real-time video analysis through YOLO/BLIP/OCR models, semantic querying via Qdrant vector database, and RAG-based natural language Q&A",
+        "strategicImportance": "Transitions POC to production-ready system with containerization, establishes scalable architecture on AWS ECS, enables semantic video search and RAG-based querying for competitive market positioning"
     },
     "technicalStack": {
+        "orchestration": "Amazon ECS (Containerization)",
         "backend": "Golang microservices",
-        "aiProcessing": "Python (YOLO v8, BLIP, OCR, CLIP)",
+        "aiProcessing": "Python (YOLO Detections, BLIP Captions, EasyOCR)",
         "messageQueue": "Apache Kafka",
-        "databases": "PostgreSQL, Milvus (Vector DB), Neo4j (Graph DB)",
-        "storage": "AWS S3",
-        "llm": "GPT-4 for natural language queries",
-        "architecture": "Cloud-native microservices (no edge compute)"
+        "vectorDatabase": "Qdrant",
+        "storage": "AWS S3 / Object Storage",
+        "llm": "OpenAI/Anthropic APIs (provided by Fuelers)",
+        "architecture": "Containerized microservices on AWS ECS"
     },
     "features": [
         {
-            "name": "Multi-Model Processing",
-            "description": "5-7 specialized AI models (expandable to 15) with intelligent orchestration",
+            "name": "Video Stream Ingestion",
+            "description": "Real-time frame capture from RTSP streams and video files",
+            "icon": "Video"
+        },
+        {
+            "name": "Multi-Model Analysis",
+            "description": "YOLO detections, BLIP captions, and EasyOCR text extraction",
             "icon": "Cpu"
         },
         {
-            "name": "Rule-Based Engine",
-            "description": "Smart model selection per frame based on business rules",
-            "icon": "Settings"
-        },
-        {
-            "name": "Real-time Analytics",
-            "description": "Process 30 FPS video streams with sub-second latency",
-            "icon": "Zap"
-        },
-        {
-            "name": "Natural Language Queries",
-            "description": "Ask questions about video data using GPT-4 integration",
-            "icon": "MessageSquare"
+            "name": "Semantic Segmentation",
+            "description": "Time-based video segments with metadata and summaries",
+            "icon": "Layers"
         },
         {
             "name": "Vector Search",
-            "description": "Semantic search across video content using embeddings",
+            "description": "Qdrant-powered semantic search across video content",
             "icon": "Search"
         },
         {
-            "name": "Graph Relations",
-            "description": "Discover relationships between detected objects and events",
-            "icon": "Network"
+            "name": "RAG-Based Q&A",
+            "description": "Natural language queries using retrieval-augmented generation",
+            "icon": "MessageSquare"
         },
         {
-            "name": "Multi-Tenant Support",
-            "description": "Cloud and on-premise deployment options",
-            "icon": "Users"
+            "name": "Containerized Deployment",
+            "description": "Scalable microservices on Amazon ECS",
+            "icon": "Box"
         },
         {
-            "name": "Smart Alerts",
-            "description": "Business logic-driven notifications and triggers",
-            "icon": "Bell"
-        }
-    ],
-    "screenshots": [
-        {
-            "title": "Real-time Dashboard",
-            "description": "Live video processing with multi-model results",
-            "url": "/screenshots/ai-vision-dashboard.jpg"
+            "name": "Real-time Messaging",
+            "description": "Kafka-based communication between services",
+            "icon": "Zap"
         },
         {
-            "title": "Natural Language Query",
-            "description": "Ask questions about video content in plain English",
-            "url": "/screenshots/ai-vision-query.jpg"
-        },
-        {
-            "title": "Analytics & Insights",
-            "description": "Performance metrics and detection analytics",
-            "url": "/screenshots/ai-vision-analytics.jpg"
+            "name": "Object Storage",
+            "description": "S3-based temporal video segment storage",
+            "icon": "Database"
         }
     ],
     "diagram": {
-        "title": "AI Vision Microservices Architecture",
-        "description": "Complete cloud-native pipeline from camera feed to LLM-powered insights",
+        "title": "VideoRAG Microservices Architecture",
+        "description": "Containerized pipeline from video ingestion to RAG-based semantic querying",
         "path": "/data/diagrams/ai-vision.mermaid"
     },
     "resources": {
         "team": [
             {
-                "role": "Project Manager / Team Lead",
+                "role": "Project Manager",
                 "count": 1,
                 "allocation": "full-time",
-                "note": "Tirlok - Experienced technical lead"
+                "provider": "Geeksman Softwares",
+                "note": "Trilok Kaushik - Project oversight and coordination"
             },
             {
-                "role": "Golang Developers",
+                "role": "Senior Software Developer",
+                "count": 1,
+                "allocation": "full-time",
+                "provider": "Geeksman Softwares",
+                "note": "Architecture and technical leadership"
+            },
+            {
+                "role": "Mid-Level Golang Developers",
                 "count": 4,
                 "allocation": "full-time",
+                "provider": "Geeksman Softwares",
                 "note": "Backend microservices development"
             },
             {
                 "role": "Python Developers",
                 "count": 2,
                 "allocation": "full-time",
+                "provider": "Geeksman Softwares",
                 "note": "AI model integration and processing"
             },
             {
-                "role": "Data Engineer",
-                "count": 1,
+                "role": "Interns",
+                "count": 2,
                 "allocation": "full-time",
-                "note": "Data pipeline and storage optimization"
+                "provider": "Geeksman Softwares",
+                "note": "Development support"
             },
             {
-                "role": "Data Scientist",
+                "role": "QA Engineer",
                 "count": 1,
                 "allocation": "full-time",
-                "note": "Ahmed Mohammed - Model optimization and rule engine"
+                "provider": "Geeksman Softwares",
+                "note": "Testing and quality assurance"
             },
             {
                 "role": "DevOps Engineer",
                 "count": 1,
                 "allocation": "full-time",
-                "note": "Cloud infrastructure and deployment"
+                "provider": "Geeksman Softwares",
+                "note": "AWS ECS, Kafka, infrastructure deployment"
+            },
+            {
+                "role": "React Developer",
+                "count": 1,
+                "allocation": "full-time",
+                "provider": "Fuelers",
+                "note": "Frontend integration (provided by Fuelers)"
+            },
+            {
+                "role": "AI/ML/Data Scientist",
+                "count": 1,
+                "allocation": "full-time",
+                "provider": "Fuelers",
+                "note": "Model support and optimization (provided by Fuelers)"
             }
         ],
         "resourceLevel": "Heavy",
         "costs": {
             "personnel": {
-                "monthly": 35000,
-                "total": 70000,
+                "weekly": 3350,
+                "total": 30000,
+                "currency": "USD",
+                "aedTotal": 110100,
                 "breakdown": [
                     {
-                        "role": "Project Manager / Team Lead",
-                        "rate": 8000
+                        "role": "Senior Software Developer",
+                        "weeklyRate": 1000,
+                        "totalWeeks": 8
                     },
                     {
-                        "role": "Golang Developers (4)",
-                        "rate": 16000
+                        "role": "Mid-Level Golang Developers (4)",
+                        "weeklyRate": 1300,
+                        "totalWeeks": 8
                     },
                     {
                         "role": "Python Developers (2)",
-                        "rate": 7000
+                        "weeklyRate": 600,
+                        "totalWeeks": 8
                     },
                     {
-                        "role": "Data Engineer",
-                        "rate": 4500
+                        "role": "Interns (2)",
+                        "weeklyRate": 350,
+                        "totalWeeks": 8
                     },
                     {
-                        "role": "Data Scientist",
-                        "rate": 5000
+                        "role": "QA Engineer",
+                        "weeklyRate": 200,
+                        "totalWeeks": 8
+                    },
+                    {
+                        "role": "Project Manager",
+                        "weeklyRate": 100,
+                        "totalWeeks": 8
                     },
                     {
                         "role": "DevOps Engineer",
-                        "rate": 4500
+                        "weeklyRate": 250,
+                        "totalWeeks": 8
                     }
                 ]
             },
             "infrastructure": {
-                "monthly": 3500,
-                "total": 7000,
+                "monthly": 2000,
+                "total": 4000,
+                "currency": "USD",
+                "aedTotal": 14680,
+                "note": "Borne directly by Fuelers",
                 "breakdown": [
                     {
-                        "item": "AWS Cloud Services (S3, EC2, ECS)",
-                        "cost": 2000
+                        "item": "AWS ECS (Container Orchestration)",
+                        "cost": 800
                     },
                     {
-                        "item": "Database Hosting (PostgreSQL, Milvus, Neo4j)",
-                        "cost": 800
+                        "item": "AWS S3 (Object Storage)",
+                        "cost": 400
                     },
                     {
                         "item": "Kafka Message Queue",
                         "cost": 400
                     },
                     {
-                        "item": "Monitoring & Logging",
+                        "item": "Qdrant Vector Database",
                         "cost": 300
+                    },
+                    {
+                        "item": "Monitoring & Logging",
+                        "cost": 100
                     }
                 ]
             },
             "software": {
-                "monthly": 1500,
-                "total": 3000,
+                "monthly": 1000,
+                "total": 2000,
+                "currency": "USD",
+                "aedTotal": 7340,
+                "note": "AI models and APIs provided by Fuelers",
                 "breakdown": [
                     {
-                        "item": "GPT-4 API Credits",
-                        "cost": 800
+                        "item": "OpenAI/Anthropic API Credits",
+                        "cost": 600
+                    },
+                    {
+                        "item": "AI Model Inference Endpoints",
+                        "cost": 300
                     },
                     {
                         "item": "Development Tools & Licenses",
-                        "cost": 400
-                    },
-                    {
-                        "item": "AI Model APIs",
-                        "cost": 300
+                        "cost": 100
                     }
                 ]
             },
-            "totalMonthly": 40000,
-            "totalProject": 80000,
+            "totalMonthly": 55000,
+            "totalProject": 110100,
             "currency": "AED",
-            "note": "2-month project timeline with incremental delivery"
+            "paymentTerms": {
+                "advancePayment": {
+                    "amount": 10000,
+                    "currency": "USD",
+                    "aed": 36700,
+                    "due": "Upon signing"
+                },
+                "weeklyInstallments": {
+                    "amount": 2500,
+                    "currency": "USD",
+                    "aed": 9175,
+                    "frequency": "Weekly over 8 weeks"
+                }
+            },
+            "note": "8-week project timeline (target) with realistic 12-15 week delivery cycle for technical complexity"
         },
         "dependencies": [
-            "AWS cloud infrastructure provisioning",
-            "GPT-4 API access and quota",
-            "AI model licensing and integration",
-            "Multi-tenant architecture finalization"
+            "Complete POC documentation and source code access (Week 1)",
+            "AI model weights and inference endpoints from Fuelers",
+            "OpenAI/Anthropic API keys and 100% uptime support",
+            "AWS infrastructure provisioning (ECS, S3, Kafka, Qdrant)",
+            "24-hour resolution window for technical queries",
+            "Weekly written sign-off on deliverables"
         ],
         "constraints": [
-            "2-month delivery timeline",
-            "30 FPS real-time processing requirement",
-            "Rule-based engine complexity for 5-7 models",
-            "Data retention and storage cost optimization"
+            "8-week target timeline (realistic: 12-15 weeks)",
+            "Dependent on full cooperation for POC knowledge transfer",
+            "Requires continuous AI/ML support from Fuelers",
+            "Multi-tenancy and RBAC excluded from Phase 1 (Phase 2 scope)",
+            "Building Map, Rule Engine, Notifications excluded from Phase 1"
         ]
     },
     "currentStatus": {
-        "summary": "POC completed with 50% overall progress. Microservices architecture validated with Python + Golang stack. Core challenges: rule-based engine for multi-model orchestration, data retention strategy, pricing model finalization, and production backend deployment.",
+        "summary": "Phase 1 in progress: Team onboarding and POC knowledge transfer underway. Geeksman Softwares team of 12 specialists working with Fuelers to transition POC to production-grade containerized architecture on AWS ECS. Target: 8 weeks delivery with realistic 12-15 week timeline for technical complexity.",
         "achievements": [
-            "Completed POC connecting all microservices",
-            "Validated frame processing pipeline at 30 FPS",
-            "Integrated core AI models (YOLO v8, BLIP, OCR, CLIP)",
-            "Established cloud infrastructure (AWS S3, Kafka, PostgreSQL)",
-            "Designed microservices architecture (Python + Golang)",
-            "Implemented initial vector and graph database integration",
-            "Created LLM query interface prototype with GPT-4"
+            "Successful POC validation completed by Fuelers",
+            "Proven video ingestion from real IP cameras (RTSP/Files)",
+            "Established multi-model detection logic (YOLO, BLIP, OCR)",
+            "Result aggregation methodology defined",
+            "Contract signed with Geeksman Softwares",
+            "12-person specialized team assembled",
+            "Initial advance payment received ($10,000 USD)"
         ],
         "risks": [
             {
-                "risk": "Rule-based engine complexity for orchestrating 5-7 models per frame",
+                "risk": "8-week timeline aggressive for technical complexity - realistic delivery 12-15 weeks",
                 "severity": "high",
-                "mitigation": "Dedicated data scientist (Ahmed Mohammed) focusing on intelligent model selection algorithm and performance optimization"
+                "mitigation": "Geeksman will accelerate development with full team effort, dependent on client's full cooperation on POC knowledge transfer and continuous AI/ML support. Weekly sign-offs and 24-hour resolution windows enforced."
             },
             {
-                "risk": "Data retention and storage costs at 30 FPS processing scale",
-                "severity": "medium",
-                "mitigation": "Data engineer implementing tiered storage strategy and retention policies"
-            },
-            {
-                "risk": "Pricing model complexity for multi-tenant and on-prem deployments",
-                "severity": "medium",
-                "mitigation": "Business analysis for usage-based pricing with tenant management system"
-            },
-            {
-                "risk": "2-month timeline for production-grade backend",
+                "risk": "POC knowledge transfer delays could impact timeline",
                 "severity": "high",
-                "mitigation": "Full team of 10 members with incremental delivery approach and experienced team lead (Tirlok)"
+                "mitigation": "Week 1 dedicated entirely to comprehensive knowledge transfer. Full cooperation required from Fuelers technical team with complete POC documentation and source code access."
+            },
+            {
+                "risk": "AI model and API dependencies on Fuelers",
+                "severity": "medium",
+                "mitigation": "Fuelers responsible for 100% uptime and technical support for all AI models and LLM APIs. Clear dependency documentation and SLA expectations."
+            },
+            {
+                "risk": "Infrastructure costs and cloud resource availability",
+                "severity": "medium",
+                "mitigation": "All AWS costs (ECS, S3, Kafka, Qdrant) borne directly by Fuelers. Infrastructure provisioning must be completed before respective phases."
+            },
+            {
+                "risk": "Scope creep with Phase 2 features (Multi-tenancy, RBAC, Rule Engine)",
+                "severity": "medium",
+                "mitigation": "Clear exclusion of Phase 2 features from current contract. Phase 2 requires separate mutual written agreement post Phase 1 completion."
             }
         ],
-        "blockers": [
-            "Pricing model finalization required for tenant management implementation",
-            "Data retention policy decisions needed for storage architecture",
-            "Production backend deployment pending full team allocation"
-        ]
+        "blockers": []
     },
     "nextSteps": {
         "planned": [
-            "Finalize rule-based engine for model orchestration (3 weeks)",
-            "Complete data retention and storage strategy (2 weeks)",
-            "Implement pricing model and tenant management (2 weeks)",
-            "Deploy production-grade backend with full team (4 weeks)",
-            "Deliver complete dashboard and documentation (ongoing)",
-            "Launch with 5-7 models (expandable to 15 models post-launch)"
+            "Complete Week 1: POC knowledge transfer and team onboarding",
+            "Weeks 2-3: Deploy Stream and Ingestion services on AWS ECS",
+            "Weeks 4-5: Integrate YOLO, BLIP, and EasyOCR analyzer services",
+            "Weeks 6-7: Implement Segment Service and Qdrant vector indexing",
+            "Week 8: Complete Chatbot API, Indexr Service, and final handover",
+            "Weekly sign-offs and progress reviews with Fuelers",
+            "Maintain 24-hour resolution window for all technical queries"
         ],
         "boardAsks": [
-            "Approval for $80K budget ($40K/month for 2 months) with phase breakdown",
-            "Decision on pricing model: usage-based vs. subscription vs. hybrid",
-            "Strategic direction: cloud-first vs. on-premise deployment priority",
-            "Resource allocation approval for 10-member team (4 Golang, 2 Python, 1 Data Engineer, 1 Data Scientist, 1 DevOps, 1 PM)",
-            "Go-to-market strategy for first-to-market positioning",
-            "IP protection and patent strategy for rule-based orchestration engine"
+            "Approval for AED 110,100 total project cost ($30,000 USD)",
+            "Advance payment of AED 36,700 ($10,000 USD) upon signing",
+            "Weekly installments of AED 9,175 ($2,500 USD) over 8 weeks",
+            "Commitment to 24-hour resolution window for technical queries",
+            "Weekly written sign-offs on deliverables and progress",
+            "Full POC documentation and source code access for Week 1",
+            "100% uptime guarantee for AI models and LLM APIs",
+            "AWS infrastructure budget approval (separate from development costs)",
+            "Decision on Phase 2 scope (Multi-tenancy, RBAC, Rule Engine, Building Map, Notifications)",
+            "Acceptance of realistic 12-15 week timeline vs. 8-week target",
+            "Non-solicitation agreement for Geeksman team (12 months post-project)"
         ]
+    },
+    "phase2Scope": {
+        "note": "Excluded from Phase 1 - Requires separate contract upon mutual written agreement",
+        "features": [
+            "Multi-tenancy support",
+            "Role-Based Access Control (RBAC)",
+            "Building Map integration",
+            "Rule Engine for business logic",
+            "Notification Systems",
+            "Advanced alerting and triggers"
+        ]
+    },
+    "contractTerms": {
+        "provider": "Geeksman Softwares OPC Private Limited",
+        "client": "Fuelers",
+        "projectManager": "Trilok Kaushik (Director)",
+        "duration": "8 weeks (target) / 12-15 weeks (realistic)",
+        "totalValue": "$30,000 USD (≈ AED 110,100)",
+        "governance": {
+            "resolutionWindow": "24 hours for all technical queries",
+            "weeklySignOff": "Required at end of each work week",
+            "aiSupport": "100% uptime and technical support from Fuelers"
+        },
+        "intellectualProperty": "Full code rights transfer to Fuelers upon final payment",
+        "nonSolicitation": "12 months post-project completion",
+        "termination": "7 days written notice, compensation for work performed"
     }
 }
