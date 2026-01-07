@@ -164,9 +164,10 @@ export default async function ProjectPage({
 
                 {/* Project Title */}
                 <h1
-                  className="text-5xl md:text-7xl font-extrabold mb-6"
+                  className="text-5xl md:text-7xl font-extrabold mb-6 flex items-center gap-4"
                   style={{ color: brandColor }}
                 >
+                  <span className="lg:hidden text-6xl">{projectEmoji}</span>
                   {project.name}
                 </h1>
                 <p className="text-xl md:text-2xl text-muted-foreground mb-4">
@@ -540,7 +541,7 @@ export default async function ProjectPage({
                     <div className="space-y-6">
                       {/* Summary */}
                       <div
-                        className={`grid ${project.resources.costs.personnel.weekly && project.resources.costs.totalMonthly ? "grid-cols-3" : "grid-cols-2"} gap-4 p-4 bg-muted/50 rounded-lg`}
+                        className={`grid ${project.resources.costs.personnel.weekly && project.resources.costs.totalMonthly ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2"} gap-4 p-4 bg-muted/50 rounded-lg`}
                       >
                         {project.resources.costs.personnel.weekly && (
                           <div>
@@ -672,16 +673,18 @@ export default async function ProjectPage({
                             (item: any, idx: number) => (
                               <div
                                 key={idx}
-                                className="flex justify-between items-center text-sm"
+                                className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-sm"
                               >
                                 <span className="text-muted-foreground">
                                   {item.role}
                                 </span>
-                                <span className="font-medium">
+                                <span className="font-medium text-sm">
                                   {item.weeklyRate ? (
                                     <>
-                                      AED {item.weeklyRate.toLocaleString()}
-                                      /week × {item.totalWeeks} weeks
+                                      <span className="block">
+                                        AED {item.weeklyRate.toLocaleString()}
+                                        /week × {item.totalWeeks} weeks
+                                      </span>
                                       {item.usdWeeklyRate && (
                                         <span className="text-xs text-muted-foreground block mt-1">
                                           ($
@@ -692,7 +695,10 @@ export default async function ProjectPage({
                                     </>
                                   ) : item.monthlyRate ? (
                                     <>
-                                      AED {item.monthlyRate.toLocaleString()}/mo
+                                      <span className="block">
+                                        AED {item.monthlyRate.toLocaleString()}
+                                        /mo
+                                      </span>
                                       {item.usdMonthlyRate && (
                                         <span className="text-xs text-muted-foreground block mt-1">
                                           ($
@@ -703,7 +709,9 @@ export default async function ProjectPage({
                                     </>
                                   ) : item.rate ? (
                                     <>
-                                      AED {item.rate.toLocaleString()}/mo
+                                      <span className="block">
+                                        AED {item.rate.toLocaleString()}/mo
+                                      </span>
                                       {item.usdRate && (
                                         <span className="text-xs text-muted-foreground block mt-1">
                                           (${item.usdRate.toLocaleString()}/mo
@@ -713,7 +721,9 @@ export default async function ProjectPage({
                                     </>
                                   ) : item.cost ? (
                                     <>
-                                      AED {item.cost.toLocaleString()}
+                                      <span className="block">
+                                        AED {item.cost.toLocaleString()}
+                                      </span>
                                       {item.note && (
                                         <span className="text-xs text-muted-foreground block mt-1">
                                           {item.note}
@@ -794,14 +804,16 @@ export default async function ProjectPage({
                               (item: any, idx: number) => (
                                 <div
                                   key={idx}
-                                  className="flex justify-between items-center text-sm"
+                                  className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-sm"
                                 >
                                   <span className="text-muted-foreground">
                                     {item.role}
                                   </span>
-                                  <span className="font-medium">
-                                    AED {item.monthlyRate.toLocaleString()}/mo ×{" "}
-                                    {item.totalMonths} months
+                                  <span className="font-medium text-sm">
+                                    <span className="block">
+                                      AED {item.monthlyRate.toLocaleString()}/mo
+                                      × {item.totalMonths} months
+                                    </span>
                                     {item.usdMonthlyRate && (
                                       <span className="text-xs text-muted-foreground block mt-1">
                                         ($
@@ -844,12 +856,12 @@ export default async function ProjectPage({
                               (item: any, idx: number) => (
                                 <div
                                   key={idx}
-                                  className="flex justify-between items-center text-sm"
+                                  className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-sm"
                                 >
                                   <span className="text-muted-foreground">
                                     {item.item}
                                   </span>
-                                  <span className="font-medium">
+                                  <span className="font-medium text-sm">
                                     AED {item.cost.toLocaleString()}/mo
                                   </span>
                                 </div>
@@ -895,12 +907,12 @@ export default async function ProjectPage({
                               (item: any, idx: number) => (
                                 <div
                                   key={idx}
-                                  className="flex justify-between items-center text-sm"
+                                  className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-sm"
                                 >
                                   <span className="text-muted-foreground">
                                     {item.item}
                                   </span>
-                                  <span className="font-medium">
+                                  <span className="font-medium text-sm">
                                     AED {item.cost.toLocaleString()}/mo
                                   </span>
                                 </div>
