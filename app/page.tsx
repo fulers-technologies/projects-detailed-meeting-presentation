@@ -51,10 +51,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <main className="relative">
+      <main className="relative flex-1">
         {/* Hero Section with Gradient */}
         <GradientHero
           title="Fulers Technologies LLC"
