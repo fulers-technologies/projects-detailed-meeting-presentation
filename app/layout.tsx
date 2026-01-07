@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "Fuelers Technologies - Board Presentation",
   description:
     "Executive dashboard for Fuelers Technologies LLC project portfolio",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({

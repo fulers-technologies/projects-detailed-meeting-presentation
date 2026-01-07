@@ -4,6 +4,7 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import { Header } from "@/components/header";
 import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
 import {
   Card,
   CardContent,
@@ -49,6 +50,34 @@ export async function generateStaticParams() {
   return Object.keys(projectsMap).map((id) => ({
     id,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const project = projectsMap[id];
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: `${project.name} - ${project.fullName} | Fuelers Technologies`,
+    description: project.description,
+    robots: {
+      index: false,
+      follow: false,
+      googleBot: {
+        index: false,
+        follow: false,
+      },
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -513,9 +542,7 @@ export default async function ProjectPage({
                             className="text-2xl font-bold"
                             style={{ color: brandColor }}
                           >
-                            {project.resources.costs.currency === "USD"
-                              ? "$"
-                              : "AED"}{" "}
+                            AED{" "}
                             {(
                               project.resources.costs.personnel.weekly ||
                               project.resources.costs.totalMonthly
@@ -524,6 +551,14 @@ export default async function ProjectPage({
                               ? "/week"
                               : ""}
                           </p>
+                          {project.resources.costs.personnel.usdEquivalent
+                            ?.weekly && (
+                            <p className="text-xs text-muted-foreground mt-1">
+                              ≈ $
+                              {project.resources.costs.personnel.usdEquivalent.weekly.toLocaleString()}
+                              /week USD
+                            </p>
+                          )}
                         </div>
                         <div>
                           <p className="text-sm text-muted-foreground">
@@ -533,23 +568,17 @@ export default async function ProjectPage({
                             className="text-2xl font-bold"
                             style={{ color: brandColor }}
                           >
-                            {project.resources.costs.currency === "USD" ? (
-                              <>
-                                $
-                                {project.resources.costs.totalProject.toLocaleString()}{" "}
-                                USD
-                                <span className="text-sm font-normal text-muted-foreground block">
-                                  ≈ AED{" "}
-                                  {project.resources.costs.aedTotal?.toLocaleString()}
-                                </span>
-                              </>
-                            ) : (
-                              <>
-                                AED{" "}
-                                {project.resources.costs.totalProject.toLocaleString()}
-                              </>
-                            )}
+                            AED{" "}
+                            {project.resources.costs.totalProject.toLocaleString()}
                           </p>
+                          {project.resources.costs.personnel.usdEquivalent
+                            ?.total && (
+                            <p className="text-xs text-muted-foreground mt-1">
+                              ≈ $
+                              {project.resources.costs.personnel.usdEquivalent.total.toLocaleString()}{" "}
+                              USD
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -569,8 +598,15 @@ export default async function ProjectPage({
                                 <span className="font-medium">
                                   {item.weeklyRate ? (
                                     <>
-                                      ${item.weeklyRate.toLocaleString()}/week ×{" "}
-                                      {item.totalWeeks} weeks
+                                      AED {item.weeklyRate.toLocaleString()}
+                                      /week × {item.totalWeeks} weeks
+                                      {item.usdWeeklyRate && (
+                                        <span className="text-xs text-muted-foreground block mt-1">
+                                          ($
+                                          {item.usdWeeklyRate.toLocaleString()}
+                                          /week USD)
+                                        </span>
+                                      )}
                                     </>
                                   ) : (
                                     <>AED {item.rate.toLocaleString()}/mo</>
@@ -584,9 +620,17 @@ export default async function ProjectPage({
                             <span>
                               {project.resources.costs.personnel.weekly ? (
                                 <>
-                                  $
+                                  AED{" "}
                                   {project.resources.costs.personnel.weekly.toLocaleString()}
                                   /week
+                                  {project.resources.costs.personnel
+                                    .usdEquivalent?.weekly && (
+                                    <span className="text-xs font-normal text-muted-foreground block">
+                                      ($
+                                      {project.resources.costs.personnel.usdEquivalent.weekly.toLocaleString()}
+                                      /week USD)
+                                    </span>
+                                  )}
                                 </>
                               ) : (
                                 <>

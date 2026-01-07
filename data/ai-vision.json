@@ -216,95 +216,105 @@
         "resourceLevel": "Heavy",
         "costs": {
             "personnel": {
-                "weekly": 3350,
-                "total": 30000,
-                "currency": "USD",
-                "aedTotal": 110100,
+                "weekly": 12295,
+                "total": 110100,
+                "currency": "AED",
+                "usdEquivalent": {
+                    "weekly": 3350,
+                    "total": 30000
+                },
                 "breakdown": [
                     {
                         "role": "Senior Software Developer",
-                        "weeklyRate": 1000,
-                        "totalWeeks": 8
+                        "weeklyRate": 3670,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 1000
                     },
                     {
                         "role": "Mid-Level Golang Developers (4)",
-                        "weeklyRate": 1300,
-                        "totalWeeks": 8
+                        "weeklyRate": 4771,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 1300
                     },
                     {
                         "role": "Python Developers (2)",
-                        "weeklyRate": 600,
-                        "totalWeeks": 8
+                        "weeklyRate": 2202,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 600
                     },
                     {
                         "role": "Interns (2)",
-                        "weeklyRate": 350,
-                        "totalWeeks": 8
+                        "weeklyRate": 1285,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 350
                     },
                     {
                         "role": "QA Engineer",
-                        "weeklyRate": 200,
-                        "totalWeeks": 8
+                        "weeklyRate": 734,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 200
                     },
                     {
                         "role": "Project Manager",
-                        "weeklyRate": 100,
-                        "totalWeeks": 8
+                        "weeklyRate": 367,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 100
                     },
                     {
                         "role": "DevOps Engineer",
-                        "weeklyRate": 250,
-                        "totalWeeks": 8
+                        "weeklyRate": 918,
+                        "totalWeeks": 8,
+                        "usdWeeklyRate": 250
                     }
                 ]
             },
             "infrastructure": {
-                "monthly": 2000,
-                "total": 4000,
-                "currency": "USD",
-                "aedTotal": 14680,
+                "monthly": 7340,
+                "total": 14680,
+                "currency": "AED",
+                "usdMonthly": 2000,
                 "note": "Borne directly by Fuelers",
                 "breakdown": [
                     {
                         "item": "AWS ECS (Container Orchestration)",
-                        "cost": 800
+                        "cost": 2936
                     },
                     {
                         "item": "AWS S3 (Object Storage)",
-                        "cost": 400
+                        "cost": 1468
                     },
                     {
                         "item": "Kafka Message Queue",
-                        "cost": 400
+                        "cost": 1468
                     },
                     {
                         "item": "Qdrant Vector Database",
-                        "cost": 300
+                        "cost": 1101
                     },
                     {
                         "item": "Monitoring & Logging",
-                        "cost": 100
+                        "cost": 367
                     }
                 ]
             },
             "software": {
-                "monthly": 1000,
-                "total": 2000,
-                "currency": "USD",
-                "aedTotal": 7340,
+                "monthly": 3670,
+                "total": 7340,
+                "currency": "AED",
+                "usdMonthly": 1000,
                 "note": "AI models and APIs provided by Fuelers",
                 "breakdown": [
                     {
                         "item": "OpenAI/Anthropic API Credits",
-                        "cost": 600
+                        "cost": 2202
                     },
                     {
                         "item": "AI Model Inference Endpoints",
-                        "cost": 300
+                        "cost": 1101
                     },
                     {
                         "item": "Development Tools & Licenses",
-                        "cost": 100
+                        "cost": 367
                     }
                 ]
             },
@@ -313,15 +323,15 @@
             "currency": "AED",
             "paymentTerms": {
                 "advancePayment": {
-                    "amount": 10000,
-                    "currency": "USD",
-                    "aed": 36700,
+                    "amount": 36700,
+                    "currency": "AED",
+                    "usd": 10000,
                     "due": "Upon signing"
                 },
                 "weeklyInstallments": {
-                    "amount": 2500,
-                    "currency": "USD",
-                    "aed": 9175,
+                    "amount": 9175,
+                    "currency": "AED",
+                    "usd": 2500,
                     "frequency": "Weekly over 8 weeks"
                 }
             },
