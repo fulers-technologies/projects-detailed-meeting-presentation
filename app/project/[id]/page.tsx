@@ -505,14 +505,24 @@ export default async function ProjectPage({
                       <div className="grid grid-cols-2 gap-4 p-4 bg-muted/50 rounded-lg">
                         <div>
                           <p className="text-sm text-muted-foreground">
-                            Monthly Cost
+                            {project.resources.costs.personnel.weekly
+                              ? "Weekly Cost"
+                              : "Monthly Cost"}
                           </p>
                           <p
                             className="text-2xl font-bold"
                             style={{ color: brandColor }}
                           >
-                            AED{" "}
-                            {project.resources.costs.totalMonthly.toLocaleString()}
+                            {project.resources.costs.currency === "USD"
+                              ? "$"
+                              : "AED"}{" "}
+                            {(
+                              project.resources.costs.personnel.weekly ||
+                              project.resources.costs.totalMonthly
+                            ).toLocaleString()}
+                            {project.resources.costs.personnel.weekly
+                              ? "/week"
+                              : ""}
                           </p>
                         </div>
                         <div>
@@ -523,8 +533,22 @@ export default async function ProjectPage({
                             className="text-2xl font-bold"
                             style={{ color: brandColor }}
                           >
-                            AED{" "}
-                            {project.resources.costs.totalProject.toLocaleString()}
+                            {project.resources.costs.currency === "USD" ? (
+                              <>
+                                $
+                                {project.resources.costs.totalProject.toLocaleString()}{" "}
+                                USD
+                                <span className="text-sm font-normal text-muted-foreground block">
+                                  ≈ AED{" "}
+                                  {project.resources.costs.aedTotal?.toLocaleString()}
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                AED{" "}
+                                {project.resources.costs.totalProject.toLocaleString()}
+                              </>
+                            )}
                           </p>
                         </div>
                       </div>
@@ -543,7 +567,14 @@ export default async function ProjectPage({
                                   {item.role}
                                 </span>
                                 <span className="font-medium">
-                                  AED {item.rate.toLocaleString()}/mo
+                                  {item.weeklyRate ? (
+                                    <>
+                                      ${item.weeklyRate.toLocaleString()}/week ×{" "}
+                                      {item.totalWeeks} weeks
+                                    </>
+                                  ) : (
+                                    <>AED {item.rate.toLocaleString()}/mo</>
+                                  )}
                                 </span>
                               </div>
                             ),
@@ -551,9 +582,19 @@ export default async function ProjectPage({
                           <div className="flex justify-between items-center pt-2 border-t font-semibold">
                             <span>Subtotal</span>
                             <span>
-                              AED{" "}
-                              {project.resources.costs.personnel.monthly.toLocaleString()}
-                              /mo
+                              {project.resources.costs.personnel.weekly ? (
+                                <>
+                                  $
+                                  {project.resources.costs.personnel.weekly.toLocaleString()}
+                                  /week
+                                </>
+                              ) : (
+                                <>
+                                  AED{" "}
+                                  {project.resources.costs.personnel.monthly.toLocaleString()}
+                                  /mo
+                                </>
+                              )}
                             </span>
                           </div>
                         </div>
@@ -573,7 +614,11 @@ export default async function ProjectPage({
                                   {item.item}
                                 </span>
                                 <span className="font-medium">
-                                  AED {item.cost.toLocaleString()}/mo
+                                  {project.resources.costs.infrastructure
+                                    .currency === "USD"
+                                    ? "$"
+                                    : "AED"}{" "}
+                                  {item.cost.toLocaleString()}/mo
                                 </span>
                               </div>
                             ),
@@ -581,7 +626,10 @@ export default async function ProjectPage({
                           <div className="flex justify-between items-center pt-2 border-t font-semibold">
                             <span>Subtotal</span>
                             <span>
-                              AED{" "}
+                              {project.resources.costs.infrastructure
+                                .currency === "USD"
+                                ? "$"
+                                : "AED"}{" "}
                               {project.resources.costs.infrastructure.monthly.toLocaleString()}
                               /mo
                             </span>
@@ -603,7 +651,11 @@ export default async function ProjectPage({
                                   {item.item}
                                 </span>
                                 <span className="font-medium">
-                                  AED {item.cost.toLocaleString()}/mo
+                                  {project.resources.costs.software.currency ===
+                                  "USD"
+                                    ? "$"
+                                    : "AED"}{" "}
+                                  {item.cost.toLocaleString()}/mo
                                 </span>
                               </div>
                             ),
@@ -611,7 +663,10 @@ export default async function ProjectPage({
                           <div className="flex justify-between items-center pt-2 border-t font-semibold">
                             <span>Subtotal</span>
                             <span>
-                              AED{" "}
+                              {project.resources.costs.software.currency ===
+                              "USD"
+                                ? "$"
+                                : "AED"}{" "}
                               {project.resources.costs.software.monthly.toLocaleString()}
                               /mo
                             </span>
