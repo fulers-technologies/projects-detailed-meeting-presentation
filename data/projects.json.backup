@@ -1,0 +1,713 @@
+{
+    "company": {
+        "name": "Fuelers Technologies LLC",
+        "tagline": "Advanced Technology Solutions",
+        "focus": [
+            "AI",
+            "Computer Vision",
+            "SaaS Platforms",
+            "Enterprise Systems"
+        ]
+    },
+    "projects": [
+        {
+            "id": "ims",
+            "name": "IMS",
+            "fullName": "Inspection Management System",
+            "description": "Modular monolithic inspection management system with headless architecture for field inspectors, supervisors, and management",
+            "brandColor": "#1D4DFF",
+            "status": "In Progress",
+            "progress": 73,
+            "priority": "high",
+            "timeline": {
+                "start": "2024-11",
+                "expectedDelivery": "2026-02",
+                "phases": [
+                    {
+                        "name": "Planning & Requirements",
+                        "status": "completed",
+                        "completion": 100,
+                        "deliverables": [
+                            "Requirements documentation",
+                            "System architecture design (Modular Monolithic)",
+                            "Technical specifications (Laravel + ReactJS + Flutter)",
+                            "User stories and acceptance criteria",
+                            "Project roadmap and timeline"
+                        ]
+                    },
+                    {
+                        "name": "Core Development",
+                        "status": "in-progress",
+                        "completion": 75,
+                        "deliverables": [
+                            "Laravel Backend API (70-75% complete)",
+                            "ReactJS Frontend Dashboard (70% complete)",
+                            "Flutter Mobile App (85% complete)",
+                            "Sync API integration (pending)",
+                            "Incident capture & checklist system"
+                        ]
+                    },
+                    {
+                        "name": "Testing & Deployment",
+                        "status": "in-progress",
+                        "completion": 20,
+                        "deliverables": [
+                            "Backend completion (30% remaining)",
+                            "Frontend completion (30% remaining)",
+                            "Mobile app sync integration (10% remaining)",
+                            "Deployment setup (2-3 days)",
+                            "User acceptance testing"
+                        ]
+                    },
+                    {
+                        "name": "Go-Live & Support",
+                        "status": "upcoming",
+                        "completion": 0,
+                        "deliverables": [
+                            "Production deployment",
+                            "User training materials",
+                            "System monitoring setup",
+                            "Go-live support plan",
+                            "Documentation handover"
+                        ]
+                    }
+                ]
+            },
+            "overview": {
+                "problem": "Manual inspection processes lack structured workflows, real-time collaboration between inspectors and supervisors, and comprehensive reporting for management",
+                "targetUsers": [
+                    "Field Inspectors",
+                    "Supervisors",
+                    "Project Managers",
+                    "Administrators",
+                    "Business Owners"
+                ],
+                "valueProposition": "Complete inspection workflow from field capture to management reporting with role-based approval system and offline mobile support",
+                "strategicImportance": "Establishes Fuelers in enterprise inspection management with scalable modular architecture and multi-platform support"
+            },
+            "technicalStack": {
+                "backend": "PHP Laravel (Modular Monolithic)",
+                "frontend": "ReactJS (Headless)",
+                "mobile": "Flutter",
+                "architecture": "Modular Monolithic with Headless Frontend"
+            },
+            "features": [
+                {
+                    "name": "Visit Assignment",
+                    "description": "Inspector receives and manages assigned visits",
+                    "icon": "ClipboardList"
+                },
+                {
+                    "name": "Incident Capture",
+                    "description": "Capture incidents with photos and details on-site",
+                    "icon": "Camera"
+                },
+                {
+                    "name": "Dynamic Checklists",
+                    "description": "Answer inspection checklists with validation",
+                    "icon": "CheckSquare"
+                },
+                {
+                    "name": "Supervisor Review",
+                    "description": "Multi-level approval workflow system",
+                    "icon": "UserCheck"
+                },
+                {
+                    "name": "Project Manager Dashboard",
+                    "description": "Comprehensive project oversight and approval",
+                    "icon": "LayoutDashboard"
+                },
+                {
+                    "name": "Admin & Owner Reports",
+                    "description": "Executive reporting and analytics",
+                    "icon": "FileText"
+                },
+                {
+                    "name": "Offline Sync",
+                    "description": "Work offline and sync when connected",
+                    "icon": "RefreshCw"
+                }
+            ],
+            "screenshots": [
+                {
+                    "title": "Dashboard Overview",
+                    "description": "Real-time inspection metrics and status",
+                    "url": "/placeholder-dashboard.jpg"
+                },
+                {
+                    "title": "Mobile Inspection",
+                    "description": "Field inspection interface",
+                    "url": "/placeholder-mobile.jpg"
+                },
+                {
+                    "title": "Analytics View",
+                    "description": "AI-powered insights and trends",
+                    "url": "/placeholder-analytics.jpg"
+                }
+            ],
+            "diagram": {
+                "title": "IMS System Architecture",
+                "description": "End-to-end inspection workflow and data flow",
+                "path": "/data/diagrams/ims.mermaid"
+            },
+            "resources": {
+                "team": [
+                    {
+                        "role": "Project Manager",
+                        "allocation": "full-time",
+                        "count": 1
+                    },
+                    {
+                        "role": "Backend Engineers (Laravel)",
+                        "count": 2,
+                        "allocation": "full-time",
+                        "note": "Mid-level experience needed for remaining 30%"
+                    },
+                    {
+                        "role": "Frontend Engineer (ReactJS)",
+                        "count": 1,
+                        "allocation": "full-time",
+                        "note": "Completing remaining 30%"
+                    },
+                    {
+                        "role": "Mobile Developer (Flutter)",
+                        "allocation": "full-time",
+                        "count": 1,
+                        "note": "Finalizing sync API integration (10% remaining)"
+                    },
+                    {
+                        "role": "QA Engineer",
+                        "allocation": "part-time"
+                    },
+                    {
+                        "role": "DevOps",
+                        "allocation": "part-time",
+                        "note": "Deployment setup (2-3 days)"
+                    }
+                ],
+                "resourceLevel": "Heavy",
+                "costs": {
+                    "personnel": {
+                        "monthly": 85000,
+                        "total": 765000,
+                        "breakdown": [
+                            {
+                                "role": "Project Manager",
+                                "rate": 12000
+                            },
+                            {
+                                "role": "Backend Engineers (2)",
+                                "rate": 28000
+                            },
+                            {
+                                "role": "Frontend Engineers (2)",
+                                "rate": 26000
+                            },
+                            {
+                                "role": "Mobile Developer",
+                                "rate": 13000
+                            },
+                            {
+                                "role": "QA Engineer",
+                                "rate": 6000
+                            }
+                        ]
+                    },
+                    "infrastructure": {
+                        "monthly": 3500,
+                        "total": 31500,
+                        "breakdown": [
+                            {
+                                "item": "AWS Cloud Services",
+                                "cost": 2000
+                            },
+                            {
+                                "item": "Database Hosting",
+                                "cost": 800
+                            },
+                            {
+                                "item": "CDN & Storage",
+                                "cost": 400
+                            },
+                            {
+                                "item": "Monitoring Tools",
+                                "cost": 300
+                            }
+                        ]
+                    },
+                    "software": {
+                        "monthly": 1200,
+                        "total": 10800,
+                        "breakdown": [
+                            {
+                                "item": "Development Tools",
+                                "cost": 500
+                            },
+                            {
+                                "item": "Third-party APIs",
+                                "cost": 400
+                            },
+                            {
+                                "item": "Testing Services",
+                                "cost": 300
+                            }
+                        ]
+                    },
+                    "totalMonthly": 89700,
+                    "totalProject": 807300,
+                    "currency": "USD"
+                },
+                "dependencies": [
+                    "Cloud infrastructure approval",
+                    "Third-party API integrations"
+                ],
+                "constraints": [
+                    "Mobile platform compatibility requirements",
+                    "Compliance certification timeline"
+                ]
+            },
+            "currentStatus": {
+                "summary": "Backend Laravel API 70-75% complete. ReactJS frontend 70% complete. Flutter mobile app 85% complete with sync API integration pending. Deployment infrastructure ready for 2-3 day setup.",
+                "achievements": [
+                    "Completed visit assignment workflow",
+                    "Implemented incident capture with photo upload",
+                    "Built dynamic checklist system with validation",
+                    "Developed supervisor review and approval workflow",
+                    "Created project manager dashboard",
+                    "Implemented admin and owner reporting system",
+                    "Flutter mobile app core features completed (85%)",
+                    "Modular monolithic backend architecture established"
+                ],
+                "risks": [
+                    {
+                        "risk": "Sync API integration for mobile app needs completion",
+                        "severity": "medium",
+                        "mitigation": "Dedicated mobile developer focusing on final 10% sync integration"
+                    },
+                    {
+                        "risk": "Backend completion requires 2 mid-level Laravel developers",
+                        "severity": "medium",
+                        "mitigation": "Resource allocation for remaining 30% backend work"
+                    },
+                    {
+                        "risk": "Frontend ReactJS needs completion of remaining 30%",
+                        "severity": "low",
+                        "mitigation": "Single ReactJS developer allocated to complete remaining work"
+                    }
+                ],
+                "blockers": [
+                    "Deployment pending - estimated 2-3 days setup time"
+                ]
+            },
+            "nextSteps": {
+                "planned": [
+                    "Complete mobile app MVP (4 weeks)",
+                    "Conduct user acceptance testing with pilot customers (3 weeks)",
+                    "Finalize reporting and analytics dashboard (2 weeks)",
+                    "Prepare production deployment infrastructure"
+                ],
+                "boardAsks": [
+                    "Approval for pilot program with 3 enterprise customers",
+                    "Marketing budget allocation for launch campaign",
+                    "Decision on pricing tier structure"
+                ]
+            }
+        },
+        {
+            "id": "mngo",
+            "name": "MNGO",
+            "fullName": "MNGO Ticketing & Booking Solution",
+            "description": "Modern event ticketing and booking platform with real-time inventory management",
+            "brandColor": "#FF7A3D",
+            "status": "Planning",
+            "progress": 25,
+            "priority": "medium",
+            "timeline": {
+                "start": "2025-12",
+                "expectedDelivery": "2026-09",
+                "phases": [
+                    {
+                        "name": "Market Research & Planning",
+                        "status": "in-progress",
+                        "completion": 80,
+                        "deliverables": [
+                            "Market analysis report",
+                            "Competitive landscape study",
+                            "User persona definitions",
+                            "Feature prioritization matrix",
+                            "Business model canvas"
+                        ]
+                    },
+                    {
+                        "name": "Architecture Design",
+                        "status": "in-progress",
+                        "completion": 40,
+                        "deliverables": [
+                            "System architecture diagram",
+                            "Database schema design",
+                            "API specifications",
+                            "Payment gateway integration plan",
+                            "Security architecture"
+                        ]
+                    },
+                    {
+                        "name": "Development",
+                        "status": "upcoming",
+                        "completion": 0,
+                        "deliverables": [
+                            "Event management platform",
+                            "Ticket purchase flow",
+                            "QR code generation system",
+                            "Payment processing integration",
+                            "Mobile-responsive UI"
+                        ]
+                    },
+                    {
+                        "name": "Beta Launch",
+                        "status": "upcoming",
+                        "completion": 0,
+                        "deliverables": [
+                            "Beta testing program",
+                            "Partner venue onboarding",
+                            "Marketing materials",
+                            "Customer support setup",
+                            "Performance monitoring"
+                        ]
+                    }
+                ]
+            },
+            "overview": {
+                "problem": "Existing ticketing platforms charge high fees, lack modern UX, and provide limited customization for event organizers",
+                "targetUsers": [
+                    "Event Organizers",
+                    "Venue Managers",
+                    "Attendees",
+                    "Box Office Staff"
+                ],
+                "valueProposition": "Low-fee, white-label ticketing solution with advanced analytics, seamless payment processing, and mobile-first attendee experience",
+                "strategicImportance": "Enters high-growth events industry with scalable B2B2C model and potential for rapid market expansion"
+            },
+            "features": [
+                {
+                    "name": "QR Code Ticketing",
+                    "description": "Secure digital tickets with instant validation",
+                    "icon": "QrCode"
+                },
+                {
+                    "name": "Real-time Inventory",
+                    "description": "Live seat availability and dynamic pricing",
+                    "icon": "Package"
+                },
+                {
+                    "name": "White-label Solution",
+                    "description": "Fully customizable branding for organizers",
+                    "icon": "Palette"
+                },
+                {
+                    "name": "Payment Processing",
+                    "description": "Multiple payment gateways with low fees",
+                    "icon": "CreditCard"
+                },
+                {
+                    "name": "Event Analytics",
+                    "description": "Detailed sales and attendee insights",
+                    "icon": "TrendingUp"
+                },
+                {
+                    "name": "Mobile Check-in",
+                    "description": "Fast entry with mobile scanning",
+                    "icon": "Scan"
+                }
+            ],
+            "screenshots": [
+                {
+                    "title": "Event Discovery",
+                    "description": "Browse and search events",
+                    "url": "/placeholder-events.jpg"
+                },
+                {
+                    "title": "Ticket Purchase",
+                    "description": "Seamless checkout experience",
+                    "url": "/placeholder-checkout.jpg"
+                },
+                {
+                    "title": "Organizer Dashboard",
+                    "description": "Event management and analytics",
+                    "url": "/placeholder-organizer.jpg"
+                }
+            ],
+            "diagram": {
+                "title": "MNGO Platform Architecture",
+                "description": "Ticketing system flow and payment processing",
+                "path": "/data/diagrams/mngo.mermaid"
+            },
+            "resources": {
+                "team": [
+                    {
+                        "role": "Product Manager",
+                        "allocation": "part-time"
+                    },
+                    {
+                        "role": "Backend Engineer",
+                        "allocation": "full-time"
+                    },
+                    {
+                        "role": "Frontend Engineer",
+                        "allocation": "full-time"
+                    },
+                    {
+                        "role": "UI/UX Designer",
+                        "allocation": "part-time"
+                    }
+                ],
+                "resourceLevel": "Medium",
+                "dependencies": [
+                    "Payment gateway partnerships",
+                    "Legal compliance review for ticketing regulations"
+                ],
+                "constraints": [
+                    "Competitive market requires fast time-to-market",
+                    "Payment processing compliance requirements"
+                ]
+            },
+            "currentStatus": {
+                "summary": "Requirements gathering complete. Technical architecture designed. Vendor evaluations in progress for payment and email services.",
+                "achievements": [
+                    "Completed competitive analysis of 8 major platforms",
+                    "Defined MVP feature set and user stories",
+                    "Selected technology stack (Next.js, Node.js, PostgreSQL)",
+                    "Secured preliminary partnership discussions with 2 venues"
+                ],
+                "risks": [
+                    {
+                        "risk": "Payment processor integration complexity",
+                        "severity": "medium",
+                        "mitigation": "Early technical proof-of-concept with Stripe and PayPal"
+                    },
+                    {
+                        "risk": "Market saturation with established competitors",
+                        "severity": "high",
+                        "mitigation": "Focus on underserved niche markets and superior UX"
+                    }
+                ],
+                "blockers": [
+                    "Awaiting legal review of terms of service and refund policies"
+                ]
+            },
+            "nextSteps": {
+                "planned": [
+                    "Finalize payment gateway integration strategy (2 weeks)",
+                    "Begin MVP development sprint (8 weeks)",
+                    "Recruit beta testing venues and event organizers",
+                    "Develop go-to-market strategy"
+                ],
+                "boardAsks": [
+                    "Approval for partnership agreements with payment processors",
+                    "Budget allocation for initial marketing and customer acquisition",
+                    "Strategic direction: B2B focus vs. direct-to-consumer approach"
+                ]
+            }
+        },
+        {
+            "id": "ai-vision",
+            "name": "AI Vision Project",
+            "fullName": "AI-Powered Computer Vision Platform",
+            "description": "Advanced computer vision solution for automated visual inspection and analysis",
+            "brandColor": "#EF4444",
+            "status": "Near Completion",
+            "progress": 20,
+            "priority": "high",
+            "timeline": {
+                "start": "2025-03",
+                "expectedDelivery": "2026-02",
+                "phases": [
+                    {
+                        "name": "Research & Model Development",
+                        "status": "completed",
+                        "completion": 100,
+                        "deliverables": [
+                            "Model architecture selection",
+                            "Training dataset curation",
+                            "Baseline model performance",
+                            "Research paper documentation",
+                            "Proof of concept demo"
+                        ]
+                    },
+                    {
+                        "name": "Platform Development",
+                        "status": "completed",
+                        "completion": 100,
+                        "deliverables": [
+                            "Video processing pipeline",
+                            "RESTful API endpoints",
+                            "Model serving infrastructure",
+                            "Real-time streaming support",
+                            "Admin dashboard"
+                        ]
+                    },
+                    {
+                        "name": "Model Training & Optimization",
+                        "status": "in-progress",
+                        "completion": 90,
+                        "deliverables": [
+                            "Production-ready models",
+                            "Performance benchmarks",
+                            "Model optimization report",
+                            "Edge deployment packages",
+                            "Accuracy validation tests"
+                        ]
+                    },
+                    {
+                        "name": "Production Deployment",
+                        "status": "in-progress",
+                        "completion": 60,
+                        "deliverables": [
+                            "Production infrastructure",
+                            "Monitoring and alerting",
+                            "API documentation",
+                            "Client SDKs",
+                            "Deployment runbooks"
+                        ]
+                    }
+                ]
+            },
+            "overview": {
+                "problem": "Industries require automated visual inspection at scale but lack accessible, accurate AI solutions that integrate with existing workflows",
+                "targetUsers": [
+                    "Manufacturing QA Teams",
+                    "Logistics Companies",
+                    "Retail Operations",
+                    "Security & Surveillance"
+                ],
+                "valueProposition": "Deploy custom-trained computer vision models with 95%+ accuracy, real-time processing, and seamless API integration",
+                "strategicImportance": "Establishes Fuelers as an AI technology leader with high-margin, scalable product offering and IP development"
+            },
+            "features": [
+                {
+                    "name": "Object Detection",
+                    "description": "Real-time identification and classification of objects",
+                    "icon": "Eye"
+                },
+                {
+                    "name": "Defect Recognition",
+                    "description": "Automated quality control and anomaly detection",
+                    "icon": "Search"
+                },
+                {
+                    "name": "Custom Model Training",
+                    "description": "Train models on your specific use cases",
+                    "icon": "Cpu"
+                },
+                {
+                    "name": "Real-time Processing",
+                    "description": "Process video streams at 30+ FPS",
+                    "icon": "Zap"
+                },
+                {
+                    "name": "API Integration",
+                    "description": "RESTful API for seamless integration",
+                    "icon": "Code"
+                },
+                {
+                    "name": "Edge Deployment",
+                    "description": "Run models on edge devices for low latency",
+                    "icon": "Server"
+                }
+            ],
+            "screenshots": [
+                {
+                    "title": "Detection Dashboard",
+                    "description": "Real-time object detection visualization",
+                    "url": "/placeholder-detection.jpg"
+                },
+                {
+                    "title": "Model Training",
+                    "description": "Custom model training interface",
+                    "url": "/placeholder-training.jpg"
+                },
+                {
+                    "title": "Analytics & Insights",
+                    "description": "Performance metrics and accuracy reports",
+                    "url": "/placeholder-ai-analytics.jpg"
+                }
+            ],
+            "diagram": {
+                "title": "AI Vision Pipeline",
+                "description": "Complete video processing and analysis workflow",
+                "path": "/data/diagrams/ai-vision.mermaid"
+            },
+            "resources": {
+                "team": [
+                    {
+                        "role": "AI/ML Engineers",
+                        "count": 2,
+                        "allocation": "full-time"
+                    },
+                    {
+                        "role": "Backend Engineer",
+                        "allocation": "full-time"
+                    },
+                    {
+                        "role": "Computer Vision Specialist",
+                        "allocation": "full-time"
+                    },
+                    {
+                        "role": "DevOps Engineer",
+                        "allocation": "part-time"
+                    },
+                    {
+                        "role": "Data Annotation Team",
+                        "count": 3,
+                        "allocation": "contract"
+                    }
+                ],
+                "resourceLevel": "Heavy",
+                "dependencies": [
+                    "GPU infrastructure for model training",
+                    "Labeled training datasets"
+                ],
+                "constraints": [
+                    "Model accuracy requirements (>95%)",
+                    "Real-time processing latency (<200ms)"
+                ]
+            },
+            "currentStatus": {
+                "summary": "Core models achieving 96% accuracy on test datasets. API platform deployed to staging. Conducting final optimization and edge case testing.",
+                "achievements": [
+                    "Trained 4 production-ready models for defect detection",
+                    "Achieved 96.3% accuracy on validation datasets",
+                    "Built scalable inference API with auto-scaling",
+                    "Completed integration with 2 pilot customers",
+                    "Filed provisional patent for novel detection algorithm"
+                ],
+                "risks": [
+                    {
+                        "risk": "Edge case performance in varied lighting conditions",
+                        "severity": "medium",
+                        "mitigation": "Expanding training dataset with diverse environmental conditions"
+                    },
+                    {
+                        "risk": "Infrastructure costs for GPU processing",
+                        "severity": "low",
+                        "mitigation": "Implementing model optimization and efficient batching"
+                    }
+                ],
+                "blockers": []
+            },
+            "nextSteps": {
+                "planned": [
+                    "Complete final model optimization (2 weeks)",
+                    "Conduct production load testing (1 week)",
+                    "Launch with initial 2 enterprise customers (3 weeks)",
+                    "Begin development of custom model training portal"
+                ],
+                "boardAsks": [
+                    "Approval for production infrastructure budget ($15K/month)",
+                    "Decision on pricing model (usage-based vs. subscription)",
+                    "Strategic partnership opportunities with hardware vendors",
+                    "IP protection strategy and patent filing budget"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,335 @@
+{
+    "id": "ai-vision",
+    "name": "AI Vision Project",
+    "fullName": "Cloud-Based AI Vision Analytics Platform",
+    "description": "First-to-market cloud AI vision system with real-time multi-model processing, rule-based orchestration, and natural language querying",
+    "brandColor": "#EF4444",
+    "status": "In Progress",
+    "progress": 50,
+    "priority": "high",
+    "timeline": {
+        "start": "2025-01",
+        "expectedDelivery": "2025-03",
+        "phases": [
+            {
+                "name": "POC & Architecture Validation",
+                "status": "completed",
+                "completion": 100,
+                "deliverables": [
+                    "Microservices architecture design (Python + Golang)",
+                    "POC for microservices integration",
+                    "Frame processing pipeline validation",
+                    "Multi-model orchestration proof of concept",
+                    "Cloud infrastructure setup (AWS S3, Kafka, PostgreSQL)"
+                ]
+            },
+            {
+                "name": "Core Development - Phase 1",
+                "status": "in-progress",
+                "completion": 60,
+                "deliverables": [
+                    "Rule-based engine for model orchestration",
+                    "5-7 AI models integration (YOLO v8, BLIP, OCR, CLIP)",
+                    "Frame processing optimization (30 FPS target)",
+                    "Data retention and storage strategy",
+                    "Tenant management system"
+                ]
+            },
+            {
+                "name": "Core Development - Phase 2",
+                "status": "in-progress",
+                "completion": 40,
+                "deliverables": [
+                    "Vector database integration (Milvus)",
+                    "Graph database implementation (Neo4j)",
+                    "Business logic and alerts system",
+                    "LLM query interface (GPT-4)",
+                    "Real-time analytics dashboard"
+                ]
+            },
+            {
+                "name": "Production Deployment",
+                "status": "upcoming",
+                "completion": 0,
+                "deliverables": [
+                    "Production-grade backend deployment",
+                    "Complete system documentation",
+                    "Pricing model implementation",
+                    "Multi-tenant and on-prem configurations",
+                    "Performance testing and optimization"
+                ]
+            }
+        ]
+    },
+    "overview": {
+        "problem": "Industries need real-time AI vision analytics at scale but existing solutions lack multi-model orchestration, intelligent frame processing, and natural language querying capabilities in a cloud-native architecture",
+        "targetUsers": [
+            "Manufacturing QA Teams",
+            "Security & Surveillance Operations",
+            "Retail Analytics Teams",
+            "Smart City Infrastructure",
+            "Logistics & Warehouse Management"
+        ],
+        "valueProposition": "First cloud-native AI vision platform with intelligent multi-model orchestration, processing 30 FPS streams through 5-7 specialized models, with natural language querying and real-time analytics",
+        "strategicImportance": "Establishes Fuelers as pioneer in cloud AI vision with unique rule-based model orchestration, positioning for rapid market capture in untapped segment with scalable microservices architecture"
+    },
+    "technicalStack": {
+        "backend": "Golang microservices",
+        "aiProcessing": "Python (YOLO v8, BLIP, OCR, CLIP)",
+        "messageQueue": "Apache Kafka",
+        "databases": "PostgreSQL, Milvus (Vector DB), Neo4j (Graph DB)",
+        "storage": "AWS S3",
+        "llm": "GPT-4 for natural language queries",
+        "architecture": "Cloud-native microservices (no edge compute)"
+    },
+    "features": [
+        {
+            "name": "Multi-Model Processing",
+            "description": "5-7 specialized AI models (expandable to 15) with intelligent orchestration",
+            "icon": "Cpu"
+        },
+        {
+            "name": "Rule-Based Engine",
+            "description": "Smart model selection per frame based on business rules",
+            "icon": "Settings"
+        },
+        {
+            "name": "Real-time Analytics",
+            "description": "Process 30 FPS video streams with sub-second latency",
+            "icon": "Zap"
+        },
+        {
+            "name": "Natural Language Queries",
+            "description": "Ask questions about video data using GPT-4 integration",
+            "icon": "MessageSquare"
+        },
+        {
+            "name": "Vector Search",
+            "description": "Semantic search across video content using embeddings",
+            "icon": "Search"
+        },
+        {
+            "name": "Graph Relations",
+            "description": "Discover relationships between detected objects and events",
+            "icon": "Network"
+        },
+        {
+            "name": "Multi-Tenant Support",
+            "description": "Cloud and on-premise deployment options",
+            "icon": "Users"
+        },
+        {
+            "name": "Smart Alerts",
+            "description": "Business logic-driven notifications and triggers",
+            "icon": "Bell"
+        }
+    ],
+    "screenshots": [
+        {
+            "title": "Real-time Dashboard",
+            "description": "Live video processing with multi-model results",
+            "url": "/screenshots/ai-vision-dashboard.jpg"
+        },
+        {
+            "title": "Natural Language Query",
+            "description": "Ask questions about video content in plain English",
+            "url": "/screenshots/ai-vision-query.jpg"
+        },
+        {
+            "title": "Analytics & Insights",
+            "description": "Performance metrics and detection analytics",
+            "url": "/screenshots/ai-vision-analytics.jpg"
+        }
+    ],
+    "diagram": {
+        "title": "AI Vision Microservices Architecture",
+        "description": "Complete cloud-native pipeline from camera feed to LLM-powered insights",
+        "path": "/data/diagrams/ai-vision.mermaid"
+    },
+    "resources": {
+        "team": [
+            {
+                "role": "Project Manager / Team Lead",
+                "count": 1,
+                "allocation": "full-time",
+                "note": "Tirlok - Experienced technical lead"
+            },
+            {
+                "role": "Golang Developers",
+                "count": 4,
+                "allocation": "full-time",
+                "note": "Backend microservices development"
+            },
+            {
+                "role": "Python Developers",
+                "count": 2,
+                "allocation": "full-time",
+                "note": "AI model integration and processing"
+            },
+            {
+                "role": "Data Engineer",
+                "count": 1,
+                "allocation": "full-time",
+                "note": "Data pipeline and storage optimization"
+            },
+            {
+                "role": "Data Scientist",
+                "count": 1,
+                "allocation": "full-time",
+                "note": "Ahmed Mohammed - Model optimization and rule engine"
+            },
+            {
+                "role": "DevOps Engineer",
+                "count": 1,
+                "allocation": "full-time",
+                "note": "Cloud infrastructure and deployment"
+            }
+        ],
+        "resourceLevel": "Heavy",
+        "costs": {
+            "personnel": {
+                "monthly": 35000,
+                "total": 70000,
+                "breakdown": [
+                    {
+                        "role": "Project Manager / Team Lead",
+                        "rate": 8000
+                    },
+                    {
+                        "role": "Golang Developers (4)",
+                        "rate": 16000
+                    },
+                    {
+                        "role": "Python Developers (2)",
+                        "rate": 7000
+                    },
+                    {
+                        "role": "Data Engineer",
+                        "rate": 4500
+                    },
+                    {
+                        "role": "Data Scientist",
+                        "rate": 5000
+                    },
+                    {
+                        "role": "DevOps Engineer",
+                        "rate": 4500
+                    }
+                ]
+            },
+            "infrastructure": {
+                "monthly": 3500,
+                "total": 7000,
+                "breakdown": [
+                    {
+                        "item": "AWS Cloud Services (S3, EC2, ECS)",
+                        "cost": 2000
+                    },
+                    {
+                        "item": "Database Hosting (PostgreSQL, Milvus, Neo4j)",
+                        "cost": 800
+                    },
+                    {
+                        "item": "Kafka Message Queue",
+                        "cost": 400
+                    },
+                    {
+                        "item": "Monitoring & Logging",
+                        "cost": 300
+                    }
+                ]
+            },
+            "software": {
+                "monthly": 1500,
+                "total": 3000,
+                "breakdown": [
+                    {
+                        "item": "GPT-4 API Credits",
+                        "cost": 800
+                    },
+                    {
+                        "item": "Development Tools & Licenses",
+                        "cost": 400
+                    },
+                    {
+                        "item": "AI Model APIs",
+                        "cost": 300
+                    }
+                ]
+            },
+            "totalMonthly": 40000,
+            "totalProject": 80000,
+            "currency": "AED",
+            "note": "2-month project timeline with incremental delivery"
+        },
+        "dependencies": [
+            "AWS cloud infrastructure provisioning",
+            "GPT-4 API access and quota",
+            "AI model licensing and integration",
+            "Multi-tenant architecture finalization"
+        ],
+        "constraints": [
+            "2-month delivery timeline",
+            "30 FPS real-time processing requirement",
+            "Rule-based engine complexity for 5-7 models",
+            "Data retention and storage cost optimization"
+        ]
+    },
+    "currentStatus": {
+        "summary": "POC completed with 50% overall progress. Microservices architecture validated with Python + Golang stack. Core challenges: rule-based engine for multi-model orchestration, data retention strategy, pricing model finalization, and production backend deployment.",
+        "achievements": [
+            "Completed POC connecting all microservices",
+            "Validated frame processing pipeline at 30 FPS",
+            "Integrated core AI models (YOLO v8, BLIP, OCR, CLIP)",
+            "Established cloud infrastructure (AWS S3, Kafka, PostgreSQL)",
+            "Designed microservices architecture (Python + Golang)",
+            "Implemented initial vector and graph database integration",
+            "Created LLM query interface prototype with GPT-4"
+        ],
+        "risks": [
+            {
+                "risk": "Rule-based engine complexity for orchestrating 5-7 models per frame",
+                "severity": "high",
+                "mitigation": "Dedicated data scientist (Ahmed Mohammed) focusing on intelligent model selection algorithm and performance optimization"
+            },
+            {
+                "risk": "Data retention and storage costs at 30 FPS processing scale",
+                "severity": "medium",
+                "mitigation": "Data engineer implementing tiered storage strategy and retention policies"
+            },
+            {
+                "risk": "Pricing model complexity for multi-tenant and on-prem deployments",
+                "severity": "medium",
+                "mitigation": "Business analysis for usage-based pricing with tenant management system"
+            },
+            {
+                "risk": "2-month timeline for production-grade backend",
+                "severity": "high",
+                "mitigation": "Full team of 10 members with incremental delivery approach and experienced team lead (Tirlok)"
+            }
+        ],
+        "blockers": [
+            "Pricing model finalization required for tenant management implementation",
+            "Data retention policy decisions needed for storage architecture",
+            "Production backend deployment pending full team allocation"
+        ]
+    },
+    "nextSteps": {
+        "planned": [
+            "Finalize rule-based engine for model orchestration (3 weeks)",
+            "Complete data retention and storage strategy (2 weeks)",
+            "Implement pricing model and tenant management (2 weeks)",
+            "Deploy production-grade backend with full team (4 weeks)",
+            "Deliver complete dashboard and documentation (ongoing)",
+            "Launch with 5-7 models (expandable to 15 models post-launch)"
+        ],
+        "boardAsks": [
+            "Approval for $80K budget ($40K/month for 2 months) with phase breakdown",
+            "Decision on pricing model: usage-based vs. subscription vs. hybrid",
+            "Strategic direction: cloud-first vs. on-premise deployment priority",
+            "Resource allocation approval for 10-member team (4 Golang, 2 Python, 1 Data Engineer, 1 Data Scientist, 1 DevOps, 1 PM)",
+            "Go-to-market strategy for first-to-market positioning",
+            "IP protection and patent strategy for rule-based orchestration engine"
+        ]
+    }
+}

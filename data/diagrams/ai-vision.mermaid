@@ -1,0 +1,42 @@
+flowchart TB
+    Camera["📹 Camera Feed<br/>30 FPS Stream"] --> Ingest["⚡ Ingestion Service<br/>Frame Processing"]
+    
+    Ingest --> Storage["☁️ S3 Storage<br/>Raw Frames"]
+    Ingest --> Queue["📬 Message Queue<br/>Kafka"]
+    
+    Queue --> Preprocess["🔧 Pre-processing<br/>Resize & Normalize"]
+    
+    Preprocess --> Detection["🎯 Object Detection<br/>YOLO v8"]
+    Preprocess --> Caption["💬 Image Captioning<br/>BLIP Model"]
+    Preprocess --> OCR["📝 OCR Service<br/>Text Recognition"]
+    Preprocess --> CLIP["🖼️ CLIP Embeddings<br/>Multi-modal"]
+    
+    Detection --> Aggregate["🔀 Aggregation<br/>Combine Results"]
+    Caption --> Aggregate
+    OCR --> Aggregate
+    CLIP --> Aggregate
+    
+    Aggregate --> Business["💼 Business Logic<br/>Rules Engine"]
+    Aggregate --> Vector["📊 Vectorization<br/>Embeddings"]
+    Aggregate --> Graph["🕸️ Graph Builder<br/>Relations"]
+    
+    Business --> DB["🗄️ PostgreSQL<br/>Data Storage"]
+    Business --> Alert["🚨 Alerts<br/>Notifications"]
+    
+    Vector --> VectorDB["🔍 Vector DB<br/>Milvus"]
+    Graph --> GraphDB["🕸️ Graph DB<br/>Neo4j"]
+    
+    DB --> UI["🖥️ Dashboard<br/>Monitoring"]
+    Alert --> UI
+    
+    UI --> Query["🤖 LLM Query<br/>Natural Language"]
+    Query --> VectorDB
+    Query --> GraphDB
+    Query --> LLM["🌟 GPT-4<br/>Responses"]
+    LLM --> UI
+    
+    style Camera fill:#EF444420,stroke:#EF4444,stroke-width:3px
+    style Detection fill:#EF444420,stroke:#EF4444,stroke-width:2px
+    style Aggregate fill:#EF444420,stroke:#EF4444,stroke-width:2px
+    style LLM fill:#EF444420,stroke:#EF4444,stroke-width:3px
+    style UI fill:#EF444420,stroke:#EF4444,stroke-width:2px

@@ -1,0 +1,110 @@
+flowchart TB
+    subgraph B2B["B2B - Business Partners"]
+        Merchant["🏪 Merchant/Venue<br/>Event Organizers"]
+        Admin["👨‍💼 Admin Portal<br/>Management Dashboard"]
+    end
+    
+    subgraph B2B2C["B2B2C - End Customers"]
+        Customer["👤 End Customer<br/>Ticket Buyers"]
+        Mobile["📱 Mobile App<br/>iOS & Android"]
+        Web["🌐 Web Platform<br/>Responsive Site"]
+    end
+    
+    subgraph Core["Core POS System"]
+        API["🔌 API Gateway<br/>REST & GraphQL"]
+        Auth["🔐 Authentication<br/>OAuth 2.0 / JWT"]
+        Inventory["📦 Inventory Management<br/>Real-time Availability"]
+        Pricing["💰 Dynamic Pricing<br/>Tier & Discount Engine"]
+        Order["📋 Order Processing<br/>Transaction Management"]
+    end
+    
+    subgraph Payment["Payment Processing"]
+        Gateway["💳 Payment Gateway<br/>Stripe / PayPal"]
+        Wallet["👛 Digital Wallet<br/>Stored Value"]
+        Refund["↩️ Refund Engine<br/>Automated Returns"]
+    end
+    
+    subgraph Fulfillment["Ticket Fulfillment"]
+        QR["📲 QR Code Generator<br/>Secure Tickets"]
+        Email["📧 Email Service<br/>Ticket Delivery"]
+        SMS["💬 SMS Notifications<br/>Confirmations"]
+        Print["🖨️ Print-at-Home<br/>PDF Generation"]
+    end
+    
+    subgraph Analytics["Analytics & Reporting"]
+        BI["📊 Business Intelligence<br/>Sales Analytics"]
+        Reports["📈 Custom Reports<br/>Revenue & Attendance"]
+        ML["🤖 ML Insights<br/>Demand Forecasting"]
+    end
+    
+    subgraph Operations["Operations"]
+        Scanner["📱 Scanner App<br/>Entry Validation"]
+        POS["🖥️ Box Office POS<br/>On-site Sales"]
+        Support["🎧 Customer Support<br/>Help Desk"]
+    end
+    
+    subgraph Data["Data Layer"]
+        DB["🗄️ PostgreSQL<br/>Transactional Data"]
+        Cache["⚡ Redis Cache<br/>Session & Inventory"]
+        Queue["📬 Message Queue<br/>RabbitMQ"]
+        Storage["☁️ Cloud Storage<br/>S3 / CDN"]
+    end
+    
+    %% B2B Flow
+    Merchant --> Admin
+    Admin --> API
+    Admin --> BI
+    Admin --> Reports
+    
+    %% B2B2C Flow
+    Customer --> Mobile
+    Customer --> Web
+    Mobile --> API
+    Web --> API
+    
+    %% Core Processing
+    API --> Auth
+    Auth --> Inventory
+    Auth --> Order
+    Inventory --> Pricing
+    Pricing --> Order
+    
+    %% Payment Flow
+    Order --> Gateway
+    Order --> Wallet
+    Gateway --> Refund
+    
+    %% Fulfillment Flow
+    Order --> QR
+    QR --> Email
+    QR --> SMS
+    QR --> Print
+    
+    %% Operations Flow
+    QR --> Scanner
+    Merchant --> POS
+    POS --> API
+    Scanner --> API
+    Customer --> Support
+    
+    %% Analytics Flow
+    Order --> BI
+    BI --> ML
+    ML --> Reports
+    Reports --> Admin
+    
+    %% Data Layer
+    API --> DB
+    API --> Cache
+    API --> Queue
+    QR --> Storage
+    Print --> Storage
+    
+    %% Styling
+    style Merchant fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:3px
+    style Customer fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:3px
+    style API fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
+    style Order fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
+    style Gateway fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
+    style QR fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
+    style BI fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px

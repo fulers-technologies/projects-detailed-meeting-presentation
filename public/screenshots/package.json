@@ -1,0 +1,15 @@
+{
+  "name": "screenshots",
+  "version": "1.0.0",
+  "description": "This folder contains HTML mockups for realistic screenshots of each project system.",
+  "main": "capture-screenshots.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.34.0"
+  }
+}

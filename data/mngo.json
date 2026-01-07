@@ -1,0 +1,370 @@
+{
+    "id": "mngo",
+    "name": "MNGO",
+    "fullName": "AI-Driven Venue Management & Ticketing Platform",
+    "description": "Next-generation ticketing and operations ecosystem for theme parks, museums, attractions, and entertainment venues with AI automation",
+    "brandColor": "#FF7A3D",
+    "status": "In Progress",
+    "progress": 40,
+    "priority": "high",
+    "timeline": {
+        "start": "2025-01",
+        "expectedDelivery": "2025-03",
+        "phases": [
+            {
+                "name": "UI/UX Design Phase",
+                "status": "completed",
+                "completion": 100,
+                "deliverables": [
+                    "Complete UI/UX design system",
+                    "POS interface designs",
+                    "B2C portal designs",
+                    "B2B portal designs",
+                    "Mobile app designs",
+                    "Access control interface designs",
+                    "Admin dashboard designs"
+                ]
+            },
+            {
+                "name": "Backend Development (Incremental)",
+                "status": "in-progress",
+                "completion": 40,
+                "deliverables": [
+                    "Microservices architecture setup",
+                    "Authentication & authorization services",
+                    "Ticketing & product engine APIs",
+                    "Event & performance management APIs",
+                    "Access control validation APIs",
+                    "Payment gateway integration",
+                    "B2B & B2C APIs",
+                    "Reporting & analytics APIs"
+                ]
+            },
+            {
+                "name": "Frontend Development (Incremental)",
+                "status": "in-progress",
+                "completion": 40,
+                "deliverables": [
+                    "POS system interface",
+                    "B2C online sales portal",
+                    "B2B reseller portal",
+                    "Admin dashboard",
+                    "Event management interface",
+                    "Reporting interface"
+                ]
+            },
+            {
+                "name": "Mobile App Development",
+                "status": "in-progress",
+                "completion": 30,
+                "deliverables": [
+                    "Flutter mobile app (iOS/Android)",
+                    "Digital ticket wallet",
+                    "QR code display",
+                    "Membership management",
+                    "Purchase history",
+                    "Push notifications"
+                ]
+            },
+            {
+                "name": "Testing & Deployment",
+                "status": "upcoming",
+                "completion": 0,
+                "deliverables": [
+                    "Integration testing",
+                    "User acceptance testing",
+                    "Performance testing",
+                    "Security testing",
+                    "Production deployment",
+                    "Pilot venue launch"
+                ]
+            }
+        ]
+    },
+    "overview": {
+        "problem": "Legacy ticketing systems (Vivaticket, Accesso, Semnox, Ticketmaster) lack modern architecture, AI automation, and unified operations. Venues struggle with complex configurations, manual processes, and disconnected systems for ticketing, access control, POS, and CRM",
+        "targetUsers": [
+            "Theme Parks & Waterparks",
+            "Museums & Cultural Attractions",
+            "Zoos & Aquariums",
+            "Events & Shows",
+            "Indoor Parks & FECs",
+            "Sports Venues & Arenas",
+            "Multi-attraction Complexes"
+        ],
+        "valueProposition": "Complete venue operating ecosystem with AI-driven configuration, Universal Virtual Ticket Identity (UVTI), microservices architecture, unified POS/B2C/B2B/Access Control, and natural language operations management",
+        "strategicImportance": "Positions Fuelers to disrupt the $15B+ global ticketing and venue management market with the world's most advanced AI-powered platform, replacing legacy systems across theme parks, museums, and entertainment venues globally"
+    },
+    "technicalStack": {
+        "architecture": "Microservices",
+        "backend": "Node.js, Python",
+        "frontend": "React.js, Next.js",
+        "mobile": "Flutter (iOS/Android)",
+        "databases": "PostgreSQL, MongoDB, Redis",
+        "infrastructure": "AWS Cloud (SaaS), On-premise capable",
+        "ai": "AI Configuration Engine, AI Dynamic Pricing, AI Reporting Assistant"
+    },
+    "features": [
+        {
+            "name": "AI Configuration Assistant",
+            "description": "Natural language event, ticket, and pricing setup",
+            "icon": "Bot"
+        },
+        {
+            "name": "Universal Virtual Ticket Identity (UVTI)",
+            "description": "Digital identity token with entitlements, wallet, and multi-media support",
+            "icon": "Ticket"
+        },
+        {
+            "name": "Unified POS System",
+            "description": "Single-screen cashier interface for tickets, memberships, and packages",
+            "icon": "CreditCard"
+        },
+        {
+            "name": "Access Control & Validation",
+            "description": "QR/RFID/NFC scanning with offline support and anti-passback",
+            "icon": "ShieldCheck"
+        },
+        {
+            "name": "Event & Performance Management",
+            "description": "Timeslots, capacity control, seat maps, and calendar management",
+            "icon": "Calendar"
+        },
+        {
+            "name": "B2C Online Sales",
+            "description": "Mobile-friendly web portal for ticket sales and bookings",
+            "icon": "Globe"
+        },
+        {
+            "name": "B2B Reseller Portal",
+            "description": "Partner accounts with credit wallets and incentive programs",
+            "icon": "Users"
+        },
+        {
+            "name": "Membership & Loyalty",
+            "description": "Tiered memberships, family linking, and loyalty points",
+            "icon": "Award"
+        },
+        {
+            "name": "AI Reporting Assistant",
+            "description": "Natural language queries for sales, attendance, and analytics",
+            "icon": "BarChart3"
+        },
+        {
+            "name": "Multi-Currency & Multi-Language",
+            "description": "Global-ready with multi-venue, multi-currency, multi-language support",
+            "icon": "Languages"
+        }
+    ],
+    "screenshots": [
+        {
+            "title": "Event & Performance Management",
+            "description": "POS interface for event selection, calendar management, and ticket type selection",
+            "url": "/screenshots/mngo-event-selection.jpg"
+        },
+        {
+            "title": "Payment Processing",
+            "description": "Multi-payment method support with cash, card, wallet, voucher, and split payment options",
+            "url": "/screenshots/mngo-payment.jpg"
+        },
+        {
+            "title": "Ticket Selection & Shopping Cart",
+            "description": "Visual ticket selection with real-time cart management and member suggestions",
+            "url": "/screenshots/mngo-ticket-selection.jpg"
+        }
+    ],
+    "diagram": {
+        "title": "MNGO Platform Architecture",
+        "description": "Microservices ecosystem for ticketing, POS, access control, and venue operations",
+        "path": "/data/diagrams/mngo.mermaid"
+    },
+    "resources": {
+        "team": [
+            {
+                "role": "Project Manager",
+                "count": 1,
+                "allocation": "full-time"
+            },
+            {
+                "role": "Backend Developers",
+                "count": 4,
+                "allocation": "full-time",
+                "note": "2-month incremental development"
+            },
+            {
+                "role": "Frontend Developers",
+                "count": 2,
+                "allocation": "full-time",
+                "note": "2-month incremental development"
+            },
+            {
+                "role": "Flutter Developer",
+                "count": 1,
+                "allocation": "full-time",
+                "note": "Mobile app development"
+            },
+            {
+                "role": "UI/UX Designers",
+                "count": 2,
+                "allocation": "7-10 days",
+                "note": "Design phase completed"
+            },
+            {
+                "role": "QA Engineer",
+                "count": 1,
+                "allocation": "full-time"
+            },
+            {
+                "role": "DevOps Engineer",
+                "count": 1,
+                "allocation": "part-time"
+            }
+        ],
+        "resourceLevel": "Heavy",
+        "costs": {
+            "personnel": {
+                "monthly": 44000,
+                "total": 88000,
+                "breakdown": [
+                    {
+                        "role": "Backend Developers (4)",
+                        "rate": 20000
+                    },
+                    {
+                        "role": "Frontend Developers (2)",
+                        "rate": 10000
+                    },
+                    {
+                        "role": "Flutter Developer",
+                        "rate": 5000
+                    },
+                    {
+                        "role": "UI/UX Designers (2)",
+                        "rate": 4000,
+                        "note": "7-10 days only"
+                    },
+                    {
+                        "role": "Project Manager",
+                        "rate": 3000
+                    },
+                    {
+                        "role": "QA Engineer",
+                        "rate": 3000
+                    },
+                    {
+                        "role": "DevOps Engineer (part-time)",
+                        "rate": 2000
+                    }
+                ]
+            },
+            "infrastructure": {
+                "monthly": 2000,
+                "total": 4000,
+                "breakdown": [
+                    {
+                        "item": "AWS Cloud Services",
+                        "cost": 1200
+                    },
+                    {
+                        "item": "Database Hosting",
+                        "cost": 500
+                    },
+                    {
+                        "item": "CDN & Storage",
+                        "cost": 200
+                    },
+                    {
+                        "item": "Monitoring & Logging",
+                        "cost": 100
+                    }
+                ]
+            },
+            "software": {
+                "monthly": 1000,
+                "total": 2000,
+                "breakdown": [
+                    {
+                        "item": "Development Tools & Licenses",
+                        "cost": 500
+                    },
+                    {
+                        "item": "Testing Tools",
+                        "cost": 300
+                    },
+                    {
+                        "item": "Third-party APIs",
+                        "cost": 200
+                    }
+                ]
+            },
+            "totalMonthly": 44000,
+            "totalProject": 88000,
+            "initialDeposit": 44000,
+            "currency": "AED",
+            "note": "2-month project timeline. Initial deposit of AED 44,000 required to start. UI/UX completed in 7-10 days. Backend and Frontend incremental delivery over 2 months. Equivalent to USD 12,000/month."
+        },
+        "dependencies": [
+            "Initial deposit payment to commence work",
+            "Payment gateway partnerships",
+            "Hardware vendor partnerships for POS terminals",
+            "Cloud infrastructure provisioning"
+        ],
+        "constraints": [
+            "2-month delivery timeline for backend and frontend",
+            "UI/UX design must be completed in 7-10 days",
+            "Incremental delivery approach required",
+            "Initial deposit required before project start"
+        ]
+    },
+    "currentStatus": {
+        "summary": "Project in active development with 40% backend and frontend completion. UI/UX design phase completed. Team of 9 members allocated (4 backend, 2 frontend, 1 Flutter, 2 UI/UX designers). Initial deposit of AED 44,000 required to commence work.",
+        "achievements": [
+            "Completed UI/UX design system (7-10 days)",
+            "Established microservices architecture",
+            "Developed core ticketing engine APIs (40%)",
+            "Built POS interface foundation (40%)",
+            "Implemented authentication & authorization",
+            "Created event management data models",
+            "Initiated Flutter mobile app development (30%)"
+        ],
+        "risks": [
+            {
+                "risk": "Tight 2-month timeline for backend and frontend completion",
+                "severity": "high",
+                "mitigation": "Incremental delivery approach with 4 backend and 2 frontend developers working full-time, prioritizing core modules first"
+            },
+            {
+                "risk": "Initial deposit required before project commencement",
+                "severity": "high",
+                "mitigation": "Clear payment terms: AED 44,000 initial deposit, then AED 44,000 at month 2"
+            },
+            {
+                "risk": "Integration complexity with multiple systems (POS, access control, payments)",
+                "severity": "medium",
+                "mitigation": "API-first design with dedicated integration testing phase"
+            }
+        ],
+        "blockers": [
+            "Initial deposit payment pending (AED 44,000 to start project)",
+            "Payment gateway partnership agreements in progress"
+        ]
+    },
+    "nextSteps": {
+        "planned": [
+            "Secure initial deposit payment (AED 44,000)",
+            "Complete backend APIs development (4 weeks remaining)",
+            "Complete frontend interfaces (4 weeks remaining)",
+            "Finalize Flutter mobile app (3 weeks)",
+            "Integration testing (2 weeks)",
+            "Pilot deployment with test venue (1 week)"
+        ],
+        "boardAsks": [
+            "Approval for initial deposit payment of AED 44,000 to commence project",
+            "Approval for total project budget of AED 88,000 (2 months at AED 44,000/month ≈ USD 12,000/month)",
+            "Payment structure: Initial deposit AED 44,000, then AED 44,000 at month 2",
+            "Pilot venue selection for testing and validation",
+            "Go-to-market strategy and pricing model approval",
+            "Strategic partnerships with payment gateways and hardware vendors"
+        ]
+    }
+}

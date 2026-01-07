@@ -1,0 +1,304 @@
+{
+  "id": "ims",
+  "name": "IMS",
+  "fullName": "Inspection Management System",
+  "description": "Modular monolithic inspection management system with headless architecture for field inspectors, supervisors, and management",
+  "brandColor": "#1D4DFF",
+  "icon": "Search",
+  "status": "In Progress",
+  "progress": 73,
+  "priority": "high",
+  "timeline": {
+    "start": "2025-01",
+    "expectedDelivery": "2026-02",
+    "phases": [
+      {
+        "name": "Planning & Requirements",
+        "status": "completed",
+        "completion": 100,
+        "deliverables": [
+          "Requirements documentation",
+          "System architecture design (Modular Monolithic)",
+          "Technical specifications (Laravel + ReactJS + Flutter)",
+          "User stories and acceptance criteria",
+          "Project roadmap and timeline"
+        ]
+      },
+      {
+        "name": "Core Development",
+        "status": "in-progress",
+        "completion": 75,
+        "deliverables": [
+          "Laravel Backend API (70-75% complete)",
+          "ReactJS Frontend Dashboard (70% complete)",
+          "Flutter Mobile App (85% complete)",
+          "Sync API integration (pending)",
+          "Incident capture & checklist system"
+        ]
+      },
+      {
+        "name": "Testing & Deployment",
+        "status": "in-progress",
+        "completion": 20,
+        "deliverables": [
+          "Backend completion (30% remaining)",
+          "Frontend completion (30% remaining)",
+          "Mobile app sync integration (10% remaining)",
+          "Deployment setup (2-3 days)",
+          "User acceptance testing"
+        ]
+      },
+      {
+        "name": "Go-Live & Support",
+        "status": "upcoming",
+        "completion": 0,
+        "deliverables": [
+          "Production deployment",
+          "User training materials",
+          "System monitoring setup",
+          "Go-live support plan",
+          "Documentation handover"
+        ]
+      }
+    ]
+  },
+  "overview": {
+    "problem": "Manual inspection processes lack structured workflows, real-time collaboration between inspectors and supervisors, and comprehensive reporting for management",
+    "targetUsers": [
+      "Field Inspectors",
+      "Supervisors",
+      "Project Managers",
+      "Administrators",
+      "Business Owners"
+    ],
+    "valueProposition": "Complete inspection workflow from field capture to management reporting with role-based approval system and offline mobile support",
+    "strategicImportance": "Establishes Fuelers in enterprise inspection management with scalable modular architecture and multi-platform support"
+  },
+  "technicalStack": {
+    "backend": "PHP Laravel (Modular Monolithic)",
+    "frontend": "ReactJS (Headless)",
+    "mobile": "Flutter",
+    "architecture": "Modular Monolithic with Headless Frontend"
+  },
+  "features": [
+    {
+      "name": "Visit Assignment",
+      "description": "Inspector receives and manages assigned visits",
+      "icon": "ClipboardList"
+    },
+    {
+      "name": "Incident Capture",
+      "description": "Capture incidents with photos and details on-site",
+      "icon": "Camera"
+    },
+    {
+      "name": "Dynamic Checklists",
+      "description": "Answer inspection checklists with validation",
+      "icon": "CheckSquare"
+    },
+    {
+      "name": "Supervisor Review",
+      "description": "Multi-level approval workflow system",
+      "icon": "UserCheck"
+    },
+    {
+      "name": "Project Manager Dashboard",
+      "description": "Comprehensive project oversight and approval",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "name": "Admin & Owner Reports",
+      "description": "Executive reporting and analytics",
+      "icon": "FileText"
+    },
+    {
+      "name": "Offline Sync",
+      "description": "Work offline and sync when connected",
+      "icon": "RefreshCw"
+    }
+  ],
+  "screenshots": [
+    {
+      "title": "Dashboard Overview",
+      "description": "Real-time inspection metrics and status",
+      "url": "/screenshots/ims-dashboard.jpg"
+    },
+    {
+      "title": "Mobile Inspection",
+      "description": "Field inspection interface",
+      "url": "/screenshots/ims-mobile.jpg"
+    },
+    {
+      "title": "Analytics View",
+      "description": "AI-powered insights and trends",
+      "url": "/screenshots/ims-analytics.jpg"
+    }
+  ],
+  "diagram": {
+    "title": "IMS System Architecture",
+    "description": "End-to-end inspection workflow and data flow",
+    "path": "/data/diagrams/ims.mermaid"
+  },
+  "resources": {
+    "team": [
+      {
+        "role": "Project Manager",
+        "allocation": "full-time",
+        "count": 1
+      },
+      {
+        "role": "Backend Engineers (Laravel)",
+        "count": 2,
+        "allocation": "full-time",
+        "note": "Mid-level experience needed for remaining 30%"
+      },
+      {
+        "role": "Frontend Engineer (ReactJS)",
+        "count": 1,
+        "allocation": "full-time",
+        "note": "Completing remaining 30%"
+      },
+      {
+        "role": "Mobile Developer (Flutter)",
+        "allocation": "full-time",
+        "count": 1,
+        "note": "Finalizing sync API integration (10% remaining)"
+      },
+      {
+        "role": "QA Engineer",
+        "allocation": "part-time"
+      },
+      {
+        "role": "DevOps",
+        "allocation": "part-time",
+        "note": "Deployment setup (2-3 days)"
+      }
+    ],
+    "resourceLevel": "Heavy",
+    "costs": {
+      "personnel": {
+        "monthly": 85000,
+        "total": 765000,
+        "breakdown": [
+          {
+            "role": "Project Manager",
+            "rate": 12000
+          },
+          {
+            "role": "Backend Engineers (2)",
+            "rate": 28000
+          },
+          {
+            "role": "Frontend Engineers (2)",
+            "rate": 26000
+          },
+          {
+            "role": "Mobile Developer",
+            "rate": 13000
+          },
+          {
+            "role": "QA Engineer",
+            "rate": 6000
+          }
+        ]
+      },
+      "infrastructure": {
+        "monthly": 3500,
+        "total": 31500,
+        "breakdown": [
+          {
+            "item": "AWS Cloud Services",
+            "cost": 2000
+          },
+          {
+            "item": "Database Hosting",
+            "cost": 800
+          },
+          {
+            "item": "CDN & Storage",
+            "cost": 400
+          },
+          {
+            "item": "Monitoring Tools",
+            "cost": 300
+          }
+        ]
+      },
+      "software": {
+        "monthly": 1200,
+        "total": 10800,
+        "breakdown": [
+          {
+            "item": "Development Tools",
+            "cost": 500
+          },
+          {
+            "item": "Third-party APIs",
+            "cost": 400
+          },
+          {
+            "item": "Testing Services",
+            "cost": 300
+          }
+        ]
+      },
+      "totalMonthly": 89700,
+      "totalProject": 807300,
+      "currency": "AED"
+    },
+    "dependencies": [
+      "Cloud infrastructure approval",
+      "Third-party API integrations"
+    ],
+    "constraints": [
+      "Mobile platform compatibility requirements",
+      "Compliance certification timeline"
+    ]
+  },
+  "currentStatus": {
+    "summary": "Backend Laravel API 70-75% complete. ReactJS frontend 70% complete. Flutter mobile app 85% complete with sync API integration pending. Deployment infrastructure ready for 2-3 day setup.",
+    "achievements": [
+      "Completed visit assignment workflow",
+      "Implemented incident capture with photo upload",
+      "Built dynamic checklist system with validation",
+      "Developed supervisor review and approval workflow",
+      "Created project manager dashboard",
+      "Implemented admin and owner reporting system",
+      "Flutter mobile app core features completed (85%)",
+      "Modular monolithic backend architecture established"
+    ],
+    "risks": [
+      {
+        "risk": "Sync API integration for mobile app needs completion",
+        "severity": "medium",
+        "mitigation": "Dedicated mobile developer focusing on final 10% sync integration"
+      },
+      {
+        "risk": "Backend completion requires 2 mid-level Laravel developers",
+        "severity": "medium",
+        "mitigation": "Resource allocation for remaining 30% backend work"
+      },
+      {
+        "risk": "Frontend ReactJS needs completion of remaining 30%",
+        "severity": "low",
+        "mitigation": "Single ReactJS developer allocated to complete remaining work"
+      }
+    ],
+    "blockers": [
+      "Deployment pending - estimated 2-3 days setup time"
+    ]
+  },
+  "nextSteps": {
+    "planned": [
+      "Complete mobile app MVP (4 weeks)",
+      "Conduct user acceptance testing with pilot customers (3 weeks)",
+      "Finalize reporting and analytics dashboard (2 weeks)",
+      "Prepare production deployment infrastructure"
+    ],
+    "boardAsks": [
+      "Approval for pilot program with 3 enterprise customers",
+      "Marketing budget allocation for launch campaign",
+      "Decision on pricing tier structure"
+    ]
+  }
+}
