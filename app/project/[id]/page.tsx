@@ -189,12 +189,20 @@ export default async function ProjectPage({
                   </div>
                   <div className="h-3 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full rounded-full transition-all duration-500"
+                      className="h-full rounded-full transition-all duration-500 relative"
                       style={{
                         width: `${project.progress}%`,
                         backgroundColor: brandColor,
+                        boxShadow: `0 0 20px ${brandColor}80, 0 0 40px ${brandColor}40`,
                       }}
-                    />
+                    >
+                      <div
+                        className="absolute inset-0 animate-pulse"
+                        style={{
+                          background: `linear-gradient(90deg, transparent, ${brandColor}40, transparent)`,
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -445,9 +453,19 @@ export default async function ProjectPage({
                           </div>
                           <div className="h-2 bg-muted rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-primary rounded-full transition-all"
-                              style={{ width: `${phase.completion}%` }}
-                            />
+                              className="h-full bg-primary rounded-full transition-all relative"
+                              style={{
+                                width: `${phase.completion}%`,
+                                boxShadow: `0 0 15px rgba(var(--primary), 0.5), 0 0 30px rgba(var(--primary), 0.3)`,
+                              }}
+                            >
+                              <div
+                                className="absolute inset-0 animate-pulse"
+                                style={{
+                                  background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)`,
+                                }}
+                              />
+                            </div>
                           </div>
                         </div>
                       ),
@@ -531,44 +549,104 @@ export default async function ProjectPage({
                   <CardContent>
                     <div className="space-y-6">
                       {/* Summary */}
-                      <div className="grid grid-cols-2 gap-4 p-4 bg-muted/50 rounded-lg">
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            {project.resources.costs.personnel.weekly
-                              ? "Weekly Cost"
-                              : "Monthly Cost"}
-                          </p>
-                          <p
-                            className="text-2xl font-bold"
-                            style={{ color: brandColor }}
-                          >
-                            AED{" "}
-                            {(
-                              project.resources.costs.personnel.weekly ||
-                              project.resources.costs.totalMonthly
-                            ).toLocaleString()}
-                            {project.resources.costs.personnel.weekly
-                              ? "/week"
-                              : ""}
-                          </p>
-                          {project.resources.costs.personnel.weekly
-                            ? project.resources.costs.personnel.usdEquivalent
-                                ?.weekly && (
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  ≈ $
-                                  {project.resources.costs.personnel.usdEquivalent.weekly.toLocaleString()}
-                                  /week USD
-                                </p>
-                              )
-                            : project.resources.costs.usdEquivalent
-                                ?.monthly && (
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  ≈ $
-                                  {project.resources.costs.usdEquivalent.monthly.toLocaleString()}
-                                  /mo USD
-                                </p>
-                              )}
-                        </div>
+                      <div
+                        className={`grid ${project.resources.costs.personnel.weekly && project.resources.costs.totalMonthly ? "grid-cols-3" : "grid-cols-2"} gap-4 p-4 bg-muted/50 rounded-lg`}
+                      >
+                        {project.resources.costs.personnel.weekly && (
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              Weekly Cost
+                            </p>
+                            <p
+                              className="text-2xl font-bold"
+                              style={{ color: brandColor }}
+                            >
+                              AED{" "}
+                              {project.resources.costs.personnel.weekly.toLocaleString()}
+                              /week
+                            </p>
+                            {project.resources.costs.personnel.usdEquivalent
+                              ?.weekly && (
+                              <p className="text-xs text-muted-foreground mt-1">
+                                ≈ $
+                                {project.resources.costs.personnel.usdEquivalent.weekly.toLocaleString()}
+                                /week USD
+                              </p>
+                            )}
+                          </div>
+                        )}
+
+                        {project.resources.costs.personnel.weekly &&
+                        project.resources.costs.totalMonthly ? (
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              Monthly Cost
+                            </p>
+                            <p
+                              className="text-2xl font-bold"
+                              style={{ color: brandColor }}
+                            >
+                              AED{" "}
+                              {project.resources.costs.totalMonthly.toLocaleString()}
+                              /mo
+                            </p>
+                            {project.resources.costs.usdEquivalent?.monthly && (
+                              <p className="text-xs text-muted-foreground mt-1">
+                                ≈ $
+                                {project.resources.costs.usdEquivalent.monthly.toLocaleString()}
+                                /mo USD
+                              </p>
+                            )}
+                          </div>
+                        ) : !project.resources.costs.personnel.weekly &&
+                          project.resources.costs.personnel.monthly ? (
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              Monthly Cost
+                            </p>
+                            <p
+                              className="text-2xl font-bold"
+                              style={{ color: brandColor }}
+                            >
+                              AED{" "}
+                              {project.resources.costs.personnel.monthly.toLocaleString()}
+                              /mo
+                            </p>
+                            {project.resources.costs.personnel.usdEquivalent
+                              ?.monthly && (
+                              <p className="text-xs text-muted-foreground mt-1">
+                                ≈ $
+                                {project.resources.costs.personnel.usdEquivalent.monthly.toLocaleString()}
+                                /mo USD
+                              </p>
+                            )}
+                          </div>
+                        ) : !project.resources.costs.personnel.weekly &&
+                          project.resources.costs.personnel.total ? (
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              Cost
+                            </p>
+                            <p
+                              className="text-2xl font-bold"
+                              style={{ color: brandColor }}
+                            >
+                              AED{" "}
+                              {project.resources.costs.personnel.total.toLocaleString()}
+                              {project.resources.costs.personnel.period &&
+                                ` (${project.resources.costs.personnel.period})`}
+                            </p>
+                            {project.resources.costs.personnel.usdEquivalent
+                              ?.total && (
+                              <p className="text-xs text-muted-foreground mt-1">
+                                ≈ $
+                                {project.resources.costs.personnel.usdEquivalent.total.toLocaleString()}
+                                {" USD"}
+                              </p>
+                            )}
+                          </div>
+                        ) : null}
+
                         <div>
                           <p className="text-sm text-muted-foreground">
                             Total Project Cost
@@ -600,7 +678,7 @@ export default async function ProjectPage({
                       <div>
                         <h4 className="font-semibold mb-3">Personnel</h4>
                         <div className="space-y-2">
-                          {project.resources.costs.personnel.breakdown.map(
+                          {project.resources.costs.personnel.breakdown?.map(
                             (item: any, idx: number) => (
                               <div
                                 key={idx}
@@ -622,7 +700,18 @@ export default async function ProjectPage({
                                         </span>
                                       )}
                                     </>
-                                  ) : (
+                                  ) : item.monthlyRate ? (
+                                    <>
+                                      AED {item.monthlyRate.toLocaleString()}/mo
+                                      {item.usdMonthlyRate && (
+                                        <span className="text-xs text-muted-foreground block mt-1">
+                                          ($
+                                          {item.usdMonthlyRate.toLocaleString()}
+                                          /mo USD)
+                                        </span>
+                                      )}
+                                    </>
+                                  ) : item.rate ? (
                                     <>
                                       AED {item.rate.toLocaleString()}/mo
                                       {item.usdRate && (
@@ -632,7 +721,16 @@ export default async function ProjectPage({
                                         </span>
                                       )}
                                     </>
-                                  )}
+                                  ) : item.cost ? (
+                                    <>
+                                      AED {item.cost.toLocaleString()}
+                                      {item.note && (
+                                        <span className="text-xs text-muted-foreground block mt-1">
+                                          {item.note}
+                                        </span>
+                                      )}
+                                    </>
+                                  ) : null}
                                 </span>
                               </div>
                             ),
@@ -656,7 +754,7 @@ export default async function ProjectPage({
                                     </div>
                                   )}
                                 </>
-                              ) : (
+                              ) : project.resources.costs.personnel.monthly ? (
                                 <>
                                   <div>
                                     AED{" "}
@@ -672,14 +770,31 @@ export default async function ProjectPage({
                                     </div>
                                   )}
                                 </>
-                              )}
+                              ) : project.resources.costs.personnel.total ? (
+                                <>
+                                  <div>
+                                    AED{" "}
+                                    {project.resources.costs.personnel.total.toLocaleString()}
+                                    {project.resources.costs.personnel.period &&
+                                      ` (${project.resources.costs.personnel.period})`}
+                                  </div>
+                                  {project.resources.costs.personnel
+                                    .usdEquivalent?.total && (
+                                    <div className="text-xs font-normal text-muted-foreground">
+                                      ≈ $
+                                      {project.resources.costs.personnel.usdEquivalent.total.toLocaleString()}
+                                      {" USD"}
+                                    </div>
+                                  )}
+                                </>
+                              ) : null}
                             </div>
                           </div>
                         </div>
                       </div>
 
                       {/* Fuelers Personnel Costs (if exists) */}
-                      {project.resources.costs.fuelersPersonnel && (
+                      {project.resources.costs.fuelersPersonnel?.breakdown && (
                         <div>
                           <h4 className="font-semibold mb-3">
                             Fuelers Personnel
@@ -731,97 +846,104 @@ export default async function ProjectPage({
                       )}
 
                       {/* Infrastructure Costs */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Infrastructure</h4>
-                        <div className="space-y-2">
-                          {project.resources.costs.infrastructure.breakdown.map(
-                            (item: any, idx: number) => (
-                              <div
-                                key={idx}
-                                className="flex justify-between items-center text-sm"
-                              >
-                                <span className="text-muted-foreground">
-                                  {item.item}
-                                </span>
-                                <span className="font-medium">
-                                  AED {item.cost.toLocaleString()}/mo
-                                </span>
-                              </div>
-                            ),
-                          )}
-                          <div className="flex justify-between items-center pt-2 border-t font-semibold">
-                            <span>Subtotal</span>
-                            <div className="text-right">
-                              <div>
-                                AED{" "}
-                                {project.resources.costs.infrastructure.monthly.toLocaleString()}
-                                /mo
-                              </div>
-                              {(project.resources.costs.infrastructure
-                                .usdEquivalent?.monthly ||
-                                project.resources.costs.infrastructure
-                                  .usdMonthly) && (
-                                <div className="text-xs font-normal text-muted-foreground">
-                                  ≈ $
-                                  {(
-                                    project.resources.costs.infrastructure
-                                      .usdEquivalent?.monthly ||
-                                    project.resources.costs.infrastructure
-                                      .usdMonthly
-                                  ).toLocaleString()}{" "}
-                                  USD
+                      {project.resources.costs.infrastructure?.breakdown && (
+                        <div>
+                          <h4 className="font-semibold mb-3">Infrastructure</h4>
+                          <div className="space-y-2">
+                            {project.resources.costs.infrastructure.breakdown.map(
+                              (item: any, idx: number) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between items-center text-sm"
+                                >
+                                  <span className="text-muted-foreground">
+                                    {item.item}
+                                  </span>
+                                  <span className="font-medium">
+                                    AED {item.cost.toLocaleString()}/mo
+                                  </span>
                                 </div>
-                              )}
+                              ),
+                            )}
+                            <div className="flex justify-between items-center pt-2 border-t font-semibold">
+                              <span>Subtotal</span>
+                              <div className="text-right">
+                                <div>
+                                  AED{" "}
+                                  {project.resources.costs.infrastructure.monthly?.toLocaleString()}
+                                  /mo
+                                </div>
+                                {(project.resources.costs.infrastructure
+                                  .usdEquivalent?.monthly ||
+                                  project.resources.costs.infrastructure
+                                    .usdMonthly) && (
+                                  <div className="text-xs font-normal text-muted-foreground">
+                                    ≈ $
+                                    {(
+                                      project.resources.costs.infrastructure
+                                        .usdEquivalent?.monthly ||
+                                      project.resources.costs.infrastructure
+                                        .usdMonthly
+                                    ).toLocaleString()}{" "}
+                                    USD
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      )}
 
                       {/* Software Costs */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Software & Tools</h4>
-                        <div className="space-y-2">
-                          {project.resources.costs.software.breakdown.map(
-                            (item: any, idx: number) => (
-                              <div
-                                key={idx}
-                                className="flex justify-between items-center text-sm"
-                              >
-                                <span className="text-muted-foreground">
-                                  {item.item}
-                                </span>
-                                <span className="font-medium">
-                                  AED {item.cost.toLocaleString()}/mo
-                                </span>
-                              </div>
-                            ),
-                          )}
-                          <div className="flex justify-between items-center pt-2 border-t font-semibold">
-                            <span>Subtotal</span>
-                            <div className="text-right">
-                              <div>
-                                AED{" "}
-                                {project.resources.costs.software.monthly.toLocaleString()}
-                                /mo
-                              </div>
-                              {(project.resources.costs.software.usdEquivalent
-                                ?.monthly ||
-                                project.resources.costs.software
-                                  .usdMonthly) && (
-                                <div className="text-xs font-normal text-muted-foreground">
-                                  ≈ $
-                                  {(
-                                    project.resources.costs.software
-                                      .usdEquivalent?.monthly ||
-                                    project.resources.costs.software.usdMonthly
-                                  ).toLocaleString()}{" "}
-                                  USD
+                      {project.resources.costs.software?.breakdown && (
+                        <div>
+                          <h4 className="font-semibold mb-3">
+                            Software & Tools
+                          </h4>
+                          <div className="space-y-2">
+                            {project.resources.costs.software.breakdown.map(
+                              (item: any, idx: number) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between items-center text-sm"
+                                >
+                                  <span className="text-muted-foreground">
+                                    {item.item}
+                                  </span>
+                                  <span className="font-medium">
+                                    AED {item.cost.toLocaleString()}/mo
+                                  </span>
                                 </div>
-                              )}
+                              ),
+                            )}
+                            <div className="flex justify-between items-center pt-2 border-t font-semibold">
+                              <span>Subtotal</span>
+                              <div className="text-right">
+                                <div>
+                                  AED{" "}
+                                  {project.resources.costs.software.monthly?.toLocaleString()}
+                                  /mo
+                                </div>
+                                {(project.resources.costs.software.usdEquivalent
+                                  ?.monthly ||
+                                  project.resources.costs.software
+                                    .usdMonthly) && (
+                                  <div className="text-xs font-normal text-muted-foreground">
+                                    ≈ $
+                                    {(
+                                      project.resources.costs.software
+                                        .usdEquivalent?.monthly ||
+                                      project.resources.costs.software
+                                        .usdMonthly
+                                    ).toLocaleString()}{" "}
+                                    USD
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

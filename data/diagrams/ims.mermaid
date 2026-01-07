@@ -1,105 +1,62 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#1D4DFF'
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#1D4DFF'
+    lineColor: '#666'
+    secondaryColor: '#1a1a1a'
+    tertiaryColor: '#2a2a2a'
+    background: '#0a0a0a'
+    mainBkg: '#1a1a1a'
+    secondBkg: '#2a2a2a'
+    nodeTextColor: '#fff'
+    textColor: '#fff'
+    edgeLabelBackground: '#1a1a1a'
+  layout: elk
+---
+
 flowchart TB
-    subgraph Inspector["👷 Inspector Workflow"]
-        Assign["📋 Visit Assignment<br/>Receive inspection task"]
-        Start["▶️ Start Visit<br/>Begin inspection"]
-        Capture["📸 Capture Incidents<br/>Photos & Details"]
-        Checklist["✅ Answer Checklist<br/>Complete questions"]
-        Submit["📤 Submit Report<br/>Send for review"]
-    end
-    
-    subgraph Supervisor["👨‍💼 Supervisor Review"]
-        Review["🔍 Review Submission<br/>Check details & incidents"]
-        Validate["✓ Validate Data<br/>Verify completeness"]
-        Approve1["✅ Approve<br/>Forward to PM"]
-        Reject1["❌ Reject<br/>Return to Inspector"]
-    end
-    
-    subgraph ProjectManager["👔 Project Manager"]
-        PMReview["📊 Review Report<br/>Project oversight"]
-        PMApprove["✅ Final Approval<br/>Authorize completion"]
-        PMReject["❌ Reject<br/>Return to Supervisor"]
-    end
-    
-    subgraph Management["🏢 Admin & Owners"]
-        Reports["📈 View Reports<br/>Analytics & Insights"]
-        Status["📊 Project Status<br/>Real-time Dashboard"]
-        Analytics["💡 Business Intelligence<br/>Trends & Metrics"]
-    end
-    
-    subgraph Backend["🔧 Backend System (Laravel)"]
-        API["🔌 REST API<br/>Modular Monolithic"]
-        DB["🗄️ Database<br/>PostgreSQL"]
-        Auth["🔐 Authentication<br/>Role-based Access"]
-        Sync["🔄 Sync Service<br/>Offline Support"]
-    end
-    
-    subgraph Frontend["💻 Frontend (ReactJS)"]
-        Dashboard["📊 Dashboard<br/>Headless UI"]
-        WebApp["🌐 Web Application<br/>Responsive"]
-    end
-    
-    subgraph Mobile["📱 Mobile App (Flutter)"]
-        FlutterApp["📲 Inspector App<br/>85% Complete"]
-        Offline["💾 Offline Mode<br/>Local Storage"]
-        SyncAPI["🔄 Sync API<br/>10% Remaining"]
-    end
-    
-    %% Inspector Flow
-    Assign --> Start
-    Start --> Capture
-    Capture --> Checklist
-    Checklist --> Submit
-    
-    %% Supervisor Flow
-    Submit --> Review
-    Review --> Validate
-    Validate --> Approve1
-    Validate --> Reject1
-    Reject1 -.->|Return| Start
-    
-    %% Project Manager Flow
-    Approve1 --> PMReview
-    PMReview --> PMApprove
-    PMReview --> PMReject
-    PMReject -.->|Return| Review
-    
-    %% Management Access
-    PMApprove --> Reports
-    PMApprove --> Status
-    Reports --> Analytics
-    
-    %% Backend Integration
-    Submit --> API
-    Review --> API
-    PMReview --> API
-    Reports --> API
-    
-    API --> DB
-    API --> Auth
-    API --> Sync
-    
-    %% Frontend Integration
-    Dashboard --> API
-    WebApp --> API
-    Status --> Dashboard
-    Analytics --> Dashboard
-    
-    %% Mobile Integration
-    FlutterApp --> Offline
-    FlutterApp --> SyncAPI
-    SyncAPI --> API
-    Offline --> SyncAPI
-    
-    Start --> FlutterApp
-    Capture --> FlutterApp
-    Checklist --> FlutterApp
-    
-    %% Styling
-    style Assign fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:3px
-    style Submit fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
-    style Approve1 fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
-    style PMApprove fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
-    style Reports fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
-    style API fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:3px
-    style FlutterApp fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
-    style Dashboard fill:#1D4DFF20,stroke:#1D4DFF,stroke-width:2px
+
+Admin["👤 Admin Portal<br/>System Configuration"] --> Backend["⚙️ Laravel Backend API<br/>Modular Monolithic Architecture"]
+PM["👔 Project Manager Portal<br/>Project Oversight"] --> Backend
+Supervisor["👨‍💼 Supervisor Portal<br/>Review & Approval"] --> Backend
+
+Backend --> Database["🗄️ PostgreSQL Database<br/>Structured Data Storage"]
+Backend --> Storage["☁️ S3 Storage<br/>Photos & Documents"]
+
+Inspector["📱 Inspector Mobile App<br/>Flutter (iOS/Android)"] --> SyncAPI["🔄 Sync API<br/>Offline Support"]
+
+SyncAPI --> Backend
+
+Backend --> VisitAssignment["📋 Visit Assignment Module<br/>Schedule & Dispatch"]
+Backend --> IncidentCapture["📸 Incident Capture Module<br/>Photo & Details"]
+Backend --> Checklist["✅ Dynamic Checklist Module<br/>Validation & Scoring"]
+Backend --> Approval["✔️ Approval Workflow Module<br/>Multi-level Review"]
+Backend --> Reporting["📊 Reporting Module<br/>Analytics & Insights"]
+
+VisitAssignment --> Inspector
+IncidentCapture --> Inspector
+Checklist --> Inspector
+
+Inspector --> IncidentCapture
+Inspector --> Checklist
+
+Approval --> Supervisor
+Approval --> PM
+
+Reporting --> PM
+Reporting --> Admin
+
+Database --> Reporting
+
+classDef primary fill:#1D4DFF,stroke:#1D4DFF,stroke-width:2px,color:#fff
+classDef secondary fill:#2a2a2a,stroke:#1D4DFF,stroke-width:2px,color:#fff
+classDef storage fill:#1a1a1a,stroke:#666,stroke-width:2px,color:#fff
+classDef mobile fill:#3a3a3a,stroke:#1D4DFF,stroke-width:2px,color:#fff
+
+class Backend,VisitAssignment,IncidentCapture,Checklist,Approval,Reporting,SyncAPI primary
+class Admin,PM,Supervisor secondary
+class Database,Storage storage
+class Inspector mobile

@@ -1,76 +1,81 @@
 {
     "id": "ai-vision",
-    "name": "VideoRAG Core",
-    "fullName": "VideoRAG Core Implementation - AI Vision Analytics Platform",
-    "description": "Production-grade RAG-based video analysis platform with real-time multi-model processing, semantic querying, and containerized microservices architecture",
+    "name": "VisionIQ",
+    "fullName": "VisionIQ - Intelligent Video Analytics & RAG Platform",
+    "description": "Production-grade AI-powered video analysis platform with real-time multi-model processing, semantic querying, and containerized microservices architecture",
     "brandColor": "#EF4444",
     "status": "In Progress",
-    "progress": 15,
+    "progress": 50,
     "priority": "high",
     "timeline": {
         "start": "2025-01",
         "expectedDelivery": "2025-03",
         "phases": [
             {
-                "name": "Phase 1: Onboarding & POC Knowledge Transfer",
+                "name": "Phase 1: POC & AI Microservices Development",
+                "status": "completed",
+                "completion": 100,
+                "duration": "Completed",
+                "deliverables": [
+                    "POC video ingestion from IP cameras (RTSP/Files)",
+                    "Multi-model detection logic (YOLO, BLIP, OCR)",
+                    "Result aggregation methodology",
+                    "Proof of concept validation",
+                    "AI microservices architecture established",
+                    "Initial model integration completed"
+                ]
+            },
+            {
+                "name": "Phase 2: Production-Grade Architecture & Containerization",
                 "status": "in-progress",
-                "completion": 80,
-                "duration": "Week 1",
-                "deliverables": [
-                    "Complete team onboarding (12-person Geeksman team)",
-                    "Comprehensive deep-dive into existing POC codebase",
-                    "Architectural findings documentation review",
-                    "Knowledge transfer from Fuelers technical team",
-                    "Development environment setup"
-                ]
-            },
-            {
-                "name": "Phase 2: Stream & Ingestion Layer",
-                "status": "upcoming",
                 "completion": 0,
-                "duration": "Weeks 2-3",
+                "duration": "Weeks 1-3",
                 "deliverables": [
-                    "Stream Service deployment (RTSP/File frame capture)",
-                    "Ingestion Service deployment on Amazon ECS",
-                    "Kafka topics establishment (ingestion and analyze)",
-                    "Normalized frame routing implementation",
-                    "Initial infrastructure on AWS ECS"
+                    "Transition POC to production-ready architecture",
+                    "Containerized microservices on AWS ECS",
+                    "Stream & Ingestion Service deployment",
+                    "Kafka message queue infrastructure",
+                    "Pre-processing service implementation",
+                    "Production-grade code rewrite"
                 ]
             },
             {
-                "name": "Phase 3: Analyzer Integration",
+                "name": "Phase 3: Multi-Model Integration & Processing",
                 "status": "upcoming",
                 "completion": 0,
                 "duration": "Weeks 4-5",
                 "deliverables": [
-                    "YOLO Detections service integration",
-                    "BLIP Captioner service integration",
-                    "EasyOCR service integration",
-                    "Model weights and inference endpoints setup",
+                    "YOLO Detection service (production-grade)",
+                    "BLIP Captioning service (production-grade)",
+                    "EasyOCR service (production-grade)",
+                    "CLIP embedding service integration",
+                    "Model weights and inference optimization",
                     "Multi-model orchestration pipeline"
                 ]
             },
             {
-                "name": "Phase 4: Segmenting & Vector Indexing",
+                "name": "Phase 4: Segmentation, Vector DB & Graph Database",
                 "status": "upcoming",
                 "completion": 0,
                 "duration": "Weeks 6-7",
                 "deliverables": [
-                    "Segment Service implementation (time-based grouping)",
-                    "Video + metadata + summary aggregation",
+                    "Frame Merger Service (video segment reconstruction)",
                     "Qdrant vector database cluster setup",
-                    "Metadata flow into vector index",
-                    "Semantic search capability"
+                    "Neo4j graph database integration",
+                    "Semantic search capability",
+                    "Entity & relationship extraction",
+                    "Metadata flow into vector index"
                 ]
             },
             {
-                "name": "Phase 5: Chatbot Query & Final Handover",
+                "name": "Phase 5: RAG Query System & Final Handover",
                 "status": "upcoming",
                 "completion": 0,
                 "duration": "Week 8",
                 "deliverables": [
-                    "Chatbot API completion",
-                    "Indexr Service for RAG-based Q&A",
+                    "LLM Query Service with RAG",
+                    "Natural language video querying",
+                    "Qwen 2.5 VL video analysis integration",
                     "End-to-end retrieval pipeline testing",
                     "Final technical documentation",
                     "Production deployment and handover"
@@ -207,7 +212,7 @@
             },
             {
                 "role": "AI/ML/Data Scientist",
-                "count": 1,
+                "count": 2,
                 "allocation": "full-time",
                 "provider": "Fuelers",
                 "note": "Model support and optimization (provided by Fuelers)"
@@ -270,12 +275,12 @@
                 ]
             },
             "fuelersPersonnel": {
-                "monthly": 25690,
-                "total": 51380,
+                "monthly": 36700,
+                "total": 73400,
                 "currency": "AED",
                 "usdEquivalent": {
-                    "monthly": 7000,
-                    "total": 14000
+                    "monthly": 10000,
+                    "total": 20000
                 },
                 "note": "Fuelers-provided resources (2 months)",
                 "breakdown": [
@@ -286,10 +291,10 @@
                         "usdMonthlyRate": 4000
                     },
                     {
-                        "role": "AI/ML/Data Scientist",
-                        "monthlyRate": 11010,
+                        "role": "AI/ML/Data Scientists (2)",
+                        "monthlyRate": 22020,
                         "totalMonths": 2,
-                        "usdMonthlyRate": 3000
+                        "usdMonthlyRate": 6000
                     }
                 ]
             },
@@ -347,12 +352,12 @@
                     }
                 ]
             },
-            "totalMonthly": 36700,
-            "totalProject": 183500,
+            "totalMonthly": 47710,
+            "totalProject": 205500,
             "currency": "AED",
             "usdEquivalent": {
-                "monthly": 10000,
-                "total": 50000
+                "monthly": 13000,
+                "total": 56000
             },
             "paymentTerms": {
                 "advancePayment": {
@@ -368,7 +373,7 @@
                     "frequency": "Weekly over 8 weeks"
                 }
             },
-            "note": "Total includes Geeksman team (AED 110,100 ≈ $30,000 USD) + Fuelers resources (AED 51,380 ≈ $14,000 USD) + Infrastructure & Software (AED 22,020 ≈ $6,000 USD). 8-week project timeline (target) with realistic 12-15 week delivery cycle."
+            "note": "Total includes Geeksman team (AED 110,100 ≈ $30,000 USD) + Fuelers resources (AED 73,400 ≈ $20,000 USD) + Infrastructure & Software (AED 22,020 ≈ $6,000 USD). 8-week project timeline (target) with realistic 12-15 week delivery cycle."
         },
         "dependencies": [
             "Complete POC documentation and source code access (Week 1)",
@@ -387,60 +392,66 @@
         ]
     },
     "currentStatus": {
-        "summary": "Phase 1 in progress: Team onboarding and POC knowledge transfer underway. Geeksman Softwares team of 12 specialists working with Fuelers to transition POC to production-grade containerized architecture on AWS ECS. Target: 8 weeks delivery with realistic 12-15 week timeline for technical complexity.",
+        "summary": "Project at 50% completion. POC successfully validated with working video ingestion, multi-model AI processing, and result aggregation. Remaining 50% focuses on production-grade rewrite: containerization on AWS ECS, scalable microservices architecture, Kafka messaging, vector/graph databases, and RAG-based querying. Geeksman team of 12 specialists working with 2 Fuelers React developers and 2 Data Scientists.",
         "achievements": [
-            "Successful POC validation completed by Fuelers",
-            "Proven video ingestion from real IP cameras (RTSP/Files)",
-            "Established multi-model detection logic (YOLO, BLIP, OCR)",
-            "Result aggregation methodology defined",
-            "Contract signed with Geeksman Softwares",
-            "12-person specialized team assembled",
-            "Initial advance payment received ($10,000 USD)"
+            "✅ POC completed and validated (50% milestone)",
+            "✅ Video ingestion from real IP cameras (RTSP/Files) working",
+            "✅ Multi-model detection logic established (YOLO, BLIP, OCR)",
+            "✅ Result aggregation methodology proven",
+            "✅ AI microservices architecture defined",
+            "✅ Contract signed with Geeksman Softwares",
+            "✅ 12-person specialized team assembled",
+            "✅ Initial advance payment received ($10,000 USD)",
+            "✅ POC knowledge transfer completed"
         ],
         "risks": [
             {
-                "risk": "8-week timeline aggressive for technical complexity - realistic delivery 12-15 weeks",
+                "risk": "Production-grade rewrite requires significant architectural changes from POC",
                 "severity": "high",
-                "mitigation": "Geeksman will accelerate development with full team effort, dependent on client's full cooperation on POC knowledge transfer and continuous AI/ML support. Weekly sign-offs and 24-hour resolution windows enforced."
+                "mitigation": "Dedicated 12-person Geeksman team with microservices expertise. POC provides proven foundation. Clear architecture roadmap with containerization, Kafka, and cloud-native patterns."
             },
             {
-                "risk": "POC knowledge transfer delays could impact timeline",
+                "risk": "8-week timeline aggressive for production rewrite - realistic delivery 12-15 weeks",
                 "severity": "high",
-                "mitigation": "Week 1 dedicated entirely to comprehensive knowledge transfer. Full cooperation required from Fuelers technical team with complete POC documentation and source code access."
+                "mitigation": "Geeksman accelerating with full team effort. Weekly sign-offs and 24-hour resolution windows enforced. Incremental delivery approach."
+            },
+            {
+                "risk": "Transition from POC to production-grade code requires careful refactoring",
+                "severity": "medium",
+                "mitigation": "POC knowledge transfer completed. Architecture review sessions. Code quality standards enforced. Continuous integration and testing."
             },
             {
                 "risk": "AI model and API dependencies on Fuelers",
                 "severity": "medium",
-                "mitigation": "Fuelers responsible for 100% uptime and technical support for all AI models and LLM APIs. Clear dependency documentation and SLA expectations."
+                "mitigation": "Fuelers responsible for 100% uptime and technical support for all AI models and LLM APIs. 2 Data Scientists allocated for model optimization."
             },
             {
                 "risk": "Infrastructure costs and cloud resource availability",
                 "severity": "medium",
                 "mitigation": "All AWS costs (ECS, S3, Kafka, Qdrant) borne directly by Fuelers. Infrastructure provisioning must be completed before respective phases."
-            },
-            {
-                "risk": "Scope creep with Phase 2 features (Multi-tenancy, RBAC, Rule Engine)",
-                "severity": "medium",
-                "mitigation": "Clear exclusion of Phase 2 features from current contract. Phase 2 requires separate mutual written agreement post Phase 1 completion."
             }
         ],
         "blockers": []
     },
     "nextSteps": {
         "planned": [
-            "Complete Week 1: POC knowledge transfer and team onboarding",
-            "Weeks 2-3: Deploy Stream and Ingestion services on AWS ECS",
-            "Weeks 4-5: Integrate YOLO, BLIP, and EasyOCR analyzer services",
-            "Weeks 6-7: Implement Segment Service and Qdrant vector indexing",
-            "Week 8: Complete Chatbot API, Indexr Service, and final handover",
-            "Weekly sign-offs and progress reviews with Fuelers",
-            "Maintain 24-hour resolution window for all technical queries"
+            "Begin production-grade architecture rewrite (Weeks 1-3)",
+            "Deploy containerized microservices on AWS ECS",
+            "Implement Kafka message queue infrastructure",
+            "Build production-grade YOLO, BLIP, OCR services (Weeks 4-5)",
+            "Integrate CLIP embedding service",
+            "Implement Frame Merger and video segmentation (Weeks 6-7)",
+            "Setup Qdrant vector database and Neo4j graph database",
+            "Build LLM Query Service with RAG (Week 8)",
+            "Integrate Qwen 2.5 VL for video analysis",
+            "End-to-end testing and production deployment",
+            "Weekly sign-offs and progress reviews with Fuelers"
         ],
         "boardAsks": [
-            "Approval for AED 183,500 total project cost (≈ $50,000 USD)",
+            "Approval for AED 205,500 total project cost (≈ $56,000 USD)",
             "Geeksman Softwares: AED 110,100 (≈ $30,000 USD) - Advance payment of AED 36,700 ($10,000 USD) upon signing",
             "Geeksman Softwares: Weekly installments of AED 9,175 ($2,500 USD) over 8 weeks",
-            "Fuelers Resources: AED 51,380 (≈ $14,000 USD) - 2 React developers + 1 Data Scientist for 2 months",
+            "Fuelers Resources: AED 73,400 (≈ $20,000 USD) - 2 React developers + 2 Data Scientists for 2 months",
             "Infrastructure & Software: AED 22,020 (≈ $6,000 USD) - AWS, Kafka, Qdrant, AI APIs for 2 months",
             "Commitment to 24-hour resolution window for technical queries",
             "Weekly written sign-offs on deliverables and progress",
@@ -467,7 +478,7 @@
         "client": "Fuelers",
         "projectManager": "Trilok Kaushik (Director)",
         "duration": "8 weeks (target) / 12-15 weeks (realistic)",
-        "totalValue": "$50,000 USD (≈ AED 183,500)",
+        "totalValue": "$56,000 USD (≈ AED 205,500)",
         "governance": {
             "resolutionWindow": "24 hours for all technical queries",
             "weeklySignOff": "Required at end of each work week",

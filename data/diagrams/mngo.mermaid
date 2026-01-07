@@ -1,110 +1,135 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#FF7A3D'
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#FF7A3D'
+    lineColor: '#666'
+    secondaryColor: '#1a1a1a'
+    tertiaryColor: '#2a2a2a'
+    background: '#0a0a0a'
+    mainBkg: '#1a1a1a'
+    secondBkg: '#2a2a2a'
+    nodeTextColor: '#fff'
+    textColor: '#fff'
+    edgeLabelBackground: '#1a1a1a'
+  layout: elk
+---
+
 flowchart TB
-    subgraph B2B["B2B - Business Partners"]
-        Merchant["🏪 Merchant/Venue<br/>Event Organizers"]
-        Admin["👨‍💼 Admin Portal<br/>Management Dashboard"]
-    end
+
+subgraph Channels["Sales Channels"]
+    POS["💳 POS System<br/>On-site Sales & Cashier"]
+    B2C["🌐 B2C Web Portal<br/>Online Ticket Sales"]
+    B2B["🤝 B2B Reseller Portal<br/>Partner Sales"]
+    Mobile["📱 Mobile App<br/>Digital Wallet & Tickets"]
+end
+
+subgraph Core["Core Services"]
+    Gateway["🚪 API Gateway<br/>Microservices Router"]
+    Auth["🔐 Authentication Service<br/>Users & Sessions"]
     
-    subgraph B2B2C["B2B2C - End Customers"]
-        Customer["👤 End Customer<br/>Ticket Buyers"]
-        Mobile["📱 Mobile App<br/>iOS & Android"]
-        Web["🌐 Web Platform<br/>Responsive Site"]
-    end
+    Ticketing["🎫 Ticketing Engine<br/>Products, Packages & Entitlements"]
+    Events["📅 Event Management<br/>Calendar, Timeslots & Capacity"]
+    Pricing["💰 Pricing & Discount Engine<br/>Promotions & Fees"]
     
-    subgraph Core["Core POS System"]
-        API["🔌 API Gateway<br/>REST & GraphQL"]
-        Auth["🔐 Authentication<br/>OAuth 2.0 / JWT"]
-        Inventory["📦 Inventory Management<br/>Real-time Availability"]
-        Pricing["💰 Dynamic Pricing<br/>Tier & Discount Engine"]
-        Order["📋 Order Processing<br/>Transaction Management"]
-    end
+    Membership["⭐ Membership & Loyalty<br/>Tiers, Family & Points"]
+    Wallet["💼 Wallet Service<br/>Guest, Member & B2B Credit"]
+    Payment["💳 Payment Service<br/>Multi-gateway Integration"]
     
-    subgraph Payment["Payment Processing"]
-        Gateway["💳 Payment Gateway<br/>Stripe / PayPal"]
-        Wallet["👛 Digital Wallet<br/>Stored Value"]
-        Refund["↩️ Refund Engine<br/>Automated Returns"]
-    end
-    
-    subgraph Fulfillment["Ticket Fulfillment"]
-        QR["📲 QR Code Generator<br/>Secure Tickets"]
-        Email["📧 Email Service<br/>Ticket Delivery"]
-        SMS["💬 SMS Notifications<br/>Confirmations"]
-        Print["🖨️ Print-at-Home<br/>PDF Generation"]
-    end
-    
-    subgraph Analytics["Analytics & Reporting"]
-        BI["📊 Business Intelligence<br/>Sales Analytics"]
-        Reports["📈 Custom Reports<br/>Revenue & Attendance"]
-        ML["🤖 ML Insights<br/>Demand Forecasting"]
-    end
-    
-    subgraph Operations["Operations"]
-        Scanner["📱 Scanner App<br/>Entry Validation"]
-        POS["🖥️ Box Office POS<br/>On-site Sales"]
-        Support["🎧 Customer Support<br/>Help Desk"]
-    end
-    
-    subgraph Data["Data Layer"]
-        DB["🗄️ PostgreSQL<br/>Transactional Data"]
-        Cache["⚡ Redis Cache<br/>Session & Inventory"]
-        Queue["📬 Message Queue<br/>RabbitMQ"]
-        Storage["☁️ Cloud Storage<br/>S3 / CDN"]
-    end
-    
-    %% B2B Flow
-    Merchant --> Admin
-    Admin --> API
-    Admin --> BI
-    Admin --> Reports
-    
-    %% B2B2C Flow
-    Customer --> Mobile
-    Customer --> Web
-    Mobile --> API
-    Web --> API
-    
-    %% Core Processing
-    API --> Auth
-    Auth --> Inventory
-    Auth --> Order
-    Inventory --> Pricing
-    Pricing --> Order
-    
-    %% Payment Flow
-    Order --> Gateway
-    Order --> Wallet
-    Gateway --> Refund
-    
-    %% Fulfillment Flow
-    Order --> QR
-    QR --> Email
-    QR --> SMS
-    QR --> Print
-    
-    %% Operations Flow
-    QR --> Scanner
-    Merchant --> POS
-    POS --> API
-    Scanner --> API
-    Customer --> Support
-    
-    %% Analytics Flow
-    Order --> BI
-    BI --> ML
-    ML --> Reports
-    Reports --> Admin
-    
-    %% Data Layer
-    API --> DB
-    API --> Cache
-    API --> Queue
-    QR --> Storage
-    Print --> Storage
-    
-    %% Styling
-    style Merchant fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:3px
-    style Customer fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:3px
-    style API fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
-    style Order fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
-    style Gateway fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
-    style QR fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
-    style BI fill:#FF7A3D20,stroke:#FF7A3D,stroke-width:2px
+    Access["🚧 Access Control<br/>QR/RFID Validation"]
+    Approval["✔️ Approval Workflow<br/>Price, Product & Promo"]
+end
+
+subgraph AI["AI Services"]
+    AIConfig["🤖 AI Configuration Assistant<br/>Natural Language Setup"]
+    AIReport["📊 AI Reporting Assistant<br/>Natural Language Queries"]
+end
+
+subgraph Data["Data Layer"]
+    PostgreSQL["🗄️ PostgreSQL<br/>Transactional Data"]
+    MongoDB["🗄️ MongoDB<br/>Documents & Logs"]
+    Redis["⚡ Redis Cache<br/>Session & Performance"]
+end
+
+subgraph External["External Systems"]
+    PaymentGW["💳 Payment Gateways<br/>Stripe, PayPal, Local"]
+    AccessHW["🔓 Access Hardware<br/>Scanners & Turnstiles"]
+    OTA["🌍 OTA Partners<br/>Third-party Distributors"]
+end
+
+subgraph Management["Management & Reporting"]
+    Admin["🖥️ Admin Dashboard<br/>Operations Management"]
+    Reports["📊 Reporting & Analytics<br/>Sales, Attendance & BI"]
+    Audit["📝 Audit Logs<br/>Full Action Trail"]
+end
+
+POS --> Gateway
+B2C --> Gateway
+B2B --> Gateway
+Mobile --> Gateway
+
+Gateway --> Auth
+Gateway --> Ticketing
+Gateway --> Events
+Gateway --> Pricing
+Gateway --> Membership
+Gateway --> Wallet
+Gateway --> Payment
+Gateway --> Access
+
+Ticketing --> Events
+Ticketing --> Pricing
+Pricing --> Membership
+Membership --> Wallet
+Wallet --> Payment
+
+Payment --> PaymentGW
+Access --> AccessHW
+
+Auth --> PostgreSQL
+Ticketing --> PostgreSQL
+Events --> PostgreSQL
+Pricing --> PostgreSQL
+Membership --> PostgreSQL
+Wallet --> PostgreSQL
+Payment --> PostgreSQL
+Access --> MongoDB
+
+Ticketing --> Redis
+Events --> Redis
+Pricing --> Redis
+
+PostgreSQL --> Reports
+MongoDB --> Reports
+Reports --> AIReport
+
+AIConfig --> Admin
+AIReport --> Admin
+Approval --> Admin
+
+Admin --> Ticketing
+Admin --> Events
+Admin --> Pricing
+Admin --> Membership
+
+Ticketing --> Approval
+Pricing --> Approval
+
+PostgreSQL --> Audit
+MongoDB --> Audit
+
+Gateway --> OTA
+
+classDef primary fill:#FF7A3D,stroke:#FF7A3D,stroke-width:2px,color:#fff
+classDef secondary fill:#2a2a2a,stroke:#FF7A3D,stroke-width:2px,color:#fff
+classDef storage fill:#1a1a1a,stroke:#666,stroke-width:2px,color:#fff
+classDef external fill:#3a3a3a,stroke:#FF7A3D,stroke-width:2px,color:#fff
+classDef ai fill:#4a4a4a,stroke:#FF7A3D,stroke-width:3px,color:#fff
+
+class Gateway,Auth,Ticketing,Events,Pricing,Membership,Wallet,Payment,Access,Approval primary
+class POS,B2C,B2B,Mobile,Admin,Reports,Audit secondary
+class PostgreSQL,MongoDB,Redis storage
+class PaymentGW,AccessHW,OTA external
+class AIConfig,AIReport ai

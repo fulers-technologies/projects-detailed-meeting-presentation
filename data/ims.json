@@ -177,95 +177,84 @@
     "resourceLevel": "Heavy",
     "costs": {
       "personnel": {
-        "monthly": 85000,
-        "total": 765000,
+        "weekly": 3530,
+        "monthly": 14120,
+        "total": 14120,
         "currency": "AED",
+        "period": "2 weeks",
         "usdEquivalent": {
-          "monthly": 23160,
-          "total": 208440
+          "weekly": 962,
+          "monthly": 3850,
+          "total": 3850
         },
+        "note": "Remaining 2 weeks to complete the project",
         "breakdown": [
           {
-            "role": "Project Manager",
-            "rate": 12000,
-            "usdRate": 3270
+            "role": "Backend Developers (2)",
+            "cost": 6423,
+            "note": "Each: $1,750/month × 2 developers × 0.5 month = AED 6,423"
           },
           {
-            "role": "Backend Engineers (2)",
-            "rate": 28000,
-            "usdRate": 7630
+            "role": "Flutter Developer",
+            "cost": 4037,
+            "note": "$2,200/month × 0.5 month = AED 4,037"
           },
           {
-            "role": "Frontend Engineers (2)",
-            "rate": 26000,
-            "usdRate": 7085
-          },
-          {
-            "role": "Mobile Developer",
-            "rate": 13000,
-            "usdRate": 3542
-          },
-          {
-            "role": "QA Engineer",
-            "rate": 6000,
-            "usdRate": 1635
+            "role": "Frontend Developer",
+            "cost": 3670,
+            "note": "$2,000/month × 0.5 month = AED 3,670"
           }
         ]
       },
       "infrastructure": {
-        "monthly": 3500,
-        "total": 31500,
+        "total": 1750,
         "currency": "AED",
-        "usdEquivalent": {
-          "monthly": 954
-        },
+        "period": "2 weeks",
         "breakdown": [
           {
             "item": "AWS Cloud Services",
-            "cost": 2000
+            "cost": 1000
           },
           {
             "item": "Database Hosting",
-            "cost": 800
-          },
-          {
-            "item": "CDN & Storage",
             "cost": 400
           },
           {
+            "item": "CDN & Storage",
+            "cost": 200
+          },
+          {
             "item": "Monitoring Tools",
-            "cost": 300
+            "cost": 150
           }
         ]
       },
       "software": {
-        "monthly": 1200,
-        "total": 10800,
+        "total": 600,
         "currency": "AED",
-        "usdEquivalent": {
-          "monthly": 327
-        },
+        "period": "2 weeks",
         "breakdown": [
           {
             "item": "Development Tools",
-            "cost": 500
+            "cost": 250
           },
           {
             "item": "Third-party APIs",
-            "cost": 400
+            "cost": 200
           },
           {
             "item": "Testing Services",
-            "cost": 300
+            "cost": 150
           }
         ]
       },
-      "totalMonthly": 89700,
-      "totalProject": 807300,
+      "totalMonthly": 14120,
+      "totalProject": 22750,
       "currency": "AED",
       "usdEquivalent": {
-        "monthly": 24441,
-        "total": 219969
+        "weekly": 962,
+        "monthly": 3850,
+        "total": 6200
       }
     },
     "dependencies": [
