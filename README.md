@@ -1,6 +1,6 @@
-# Fuelers Technologies - Board Presentation Dashboard
+# Fulers Technologies - Board Presentation Dashboard
 
-Professional Next.js board presentation dashboard for Fuelers Technologies LLC featuring interactive project portfolio visualization with charts, analytics, and comprehensive project tracking.
+Professional Next.js board presentation dashboard for Fulers Technologies LLC featuring interactive project portfolio visualization with charts, analytics, and comprehensive project tracking.
 
 ## ✨ Features
 
@@ -11,7 +11,7 @@ Professional Next.js board presentation dashboard for Fuelers Technologies LLC f
   - Portfolio progress pie chart
   - Phase timeline bar charts
   - Resource allocation visualizations
-- **Fuelers Branding**:
+- **Fulers Branding**:
   - Brand colors (#1D4DFF primary blue)
   - Plus Jakarta Sans font family
   - Geometric patterns and brand assets
@@ -21,7 +21,7 @@ Professional Next.js board presentation dashboard for Fuelers Technologies LLC f
 
 ## 🎨 Brand Assets
 
-All Fuelers branding assets are integrated:
+All Fulers branding assets are integrated:
 
 - **Logos**: Located in `/public/assets/`
   - `logo-blue-dark-en.svg` - Main logo (dark blue)
@@ -42,9 +42,9 @@ All Fuelers branding assets are integrated:
 │   ├── project/[id]/page.tsx       # Dynamic project detail pages
 │   ├── reports/page.tsx            # Executive summary report
 │   ├── layout.tsx                  # Root layout with theme provider
-│   └── globals.css                 # Global styles with Fuelers brand colors
+│   └── globals.css                 # Global styles with Fulers brand colors
 ├── components/
-│   ├── header.tsx                  # Header with Fuelers logo and navigation
+│   ├── header.tsx                  # Header with Fulers logo and navigation
 │   ├── project-card.tsx            # Project card component
 │   ├── portfolio-overview-chart.tsx # Pie chart for portfolio progress
 │   ├── project-timeline-chart.tsx  # Bar chart for phase progress
@@ -127,7 +127,7 @@ Edit `/data/projects.json` to update:
 ```json
 {
   "company": {
-    "name": "Fuelers Technologies LLC",
+    "name": "Fulers Technologies LLC",
     "tagline": "Advanced Technology Solutions",
     "focus": ["AI", "Computer Vision", "SaaS Platforms", "Enterprise Systems"]
   },
@@ -250,7 +250,7 @@ Fonts are loaded from `/assets/fonts/plus-jakarta-sans/` in `/lib/fonts.ts`
 - Images and assets are optimized with Next.js Image component
 - Responsive design works on mobile, tablet, and desktop
 - Dark mode support included (toggle in theme provider)
-- All brand assets maintain Fuelers visual identity
+- All brand assets maintain Fulers visual identity
 
 ## 🔒 Security
 
@@ -258,5 +258,5 @@ This is a confidential board presentation. Ensure proper access controls are in 
 
 ---
 
-**© 2026 Fuelers Technologies LLC. All rights reserved.**  
+**© 2026 Fulers Technologies LLC. All rights reserved.**  
 **Confidential Board Presentation**

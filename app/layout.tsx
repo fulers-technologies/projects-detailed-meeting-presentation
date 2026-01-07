@@ -4,9 +4,9 @@ import { plusJakarta } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Fuelers Technologies - Board Presentation",
+  title: "Fulers Technologies - Board Presentation",
   description:
-    "Executive dashboard for Fuelers Technologies LLC project portfolio",
+    "Executive dashboard for Fulers Technologies LLC project portfolio",
   icons: {
     icon: "/assets/logo-sign-background-blue-512px.svg",
   },

@@ -210,7 +210,7 @@
         "messageQueue": "Apache Kafka",
         "vectorDatabase": "Qdrant",
         "storage": "AWS S3 / Object Storage",
-        "llm": "OpenAI/Anthropic APIs (provided by Fuelers)",
+        "llm": "OpenAI/Anthropic APIs (provided by Fulers)",
         "architecture": "Containerized microservices on AWS ECS"
     },
     "features": [
@@ -315,15 +315,15 @@
                 "role": "React Developer",
                 "count": 2,
                 "allocation": "full-time",
-                "provider": "Fuelers",
-                "note": "Frontend integration (provided by Fuelers)"
+                "provider": "Fulers",
+                "note": "Frontend integration (provided by Fulers)"
             },
             {
                 "role": "AI/ML/Data Scientist",
                 "count": 2,
                 "allocation": "full-time",
-                "provider": "Fuelers",
-                "note": "Model support and optimization (provided by Fuelers)"
+                "provider": "Fulers",
+                "note": "Model support and optimization (provided by Fulers)"
             }
         ],
         "resourceLevel": "Heavy",
@@ -382,7 +382,7 @@
                     }
                 ]
             },
-            "fuelersPersonnel": {
+            "fulersPersonnel": {
                 "monthly": 36700,
                 "total": 73400,
                 "currency": "AED",
@@ -390,7 +390,7 @@
                     "monthly": 10000,
                     "total": 20000
                 },
-                "note": "Fuelers-provided resources (2 months)",
+                "note": "Fulers-provided resources (2 months)",
                 "breakdown": [
                     {
                         "role": "React Developers (2)",
@@ -413,7 +413,7 @@
                 "usdEquivalent": {
                     "monthly": 2000
                 },
-                "note": "Borne directly by Fuelers",
+                "note": "Borne directly by Fulers",
                 "breakdown": [
                     {
                         "item": "AWS ECS (Container Orchestration)",
@@ -444,7 +444,7 @@
                 "usdEquivalent": {
                     "monthly": 1000
                 },
-                "note": "AI models and APIs provided by Fuelers",
+                "note": "AI models and APIs provided by Fulers",
                 "breakdown": [
                     {
                         "item": "OpenAI/Anthropic API Credits",
@@ -481,11 +481,11 @@
                     "frequency": "Weekly over 8 weeks"
                 }
             },
-            "note": "Total includes Geeksman team (AED 110,100 ≈ $30,000 USD) + Fuelers resources (AED 73,400 ≈ $20,000 USD) + Infrastructure & Software (AED 22,020 ≈ $6,000 USD). 8-week project timeline (target) with realistic 12-15 week delivery cycle."
+            "note": "Total includes Geeksman team (AED 110,100 ≈ $30,000 USD) + Fulers resources (AED 73,400 ≈ $20,000 USD) + Infrastructure & Software (AED 22,020 ≈ $6,000 USD). 8-week project timeline (target) with realistic 12-15 week delivery cycle."
         },
         "dependencies": [
             "Complete POC documentation and source code access (Week 1)",
-            "AI model weights and inference endpoints from Fuelers",
+            "AI model weights and inference endpoints from Fulers",
             "OpenAI/Anthropic API keys and 100% uptime support",
             "AWS infrastructure provisioning (ECS, S3, Kafka, Qdrant)",
             "24-hour resolution window for technical queries",
@@ -494,13 +494,13 @@
         "constraints": [
             "8-week target timeline (realistic: 12-15 weeks)",
             "Dependent on full cooperation for POC knowledge transfer",
-            "Requires continuous AI/ML support from Fuelers",
+            "Requires continuous AI/ML support from Fulers",
             "Multi-tenancy and RBAC excluded from Phase 1 (Phase 2 scope)",
             "Building Map, Rule Engine, Notifications excluded from Phase 1"
         ]
     },
     "currentStatus": {
-        "summary": "Project at 35% completion. POC successfully validated with working video ingestion, multi-model AI processing, and result aggregation. Currently implementing Stream & Ingestion Services (Phase 2). Remaining work focuses on production-grade microservices: Kafka infrastructure, analyzer services (YOLO/BLIP/OCR), aggregation, segmentation, Qdrant vector DB, RAG query system, and Kubernetes deployment. Geeksman team of 12 specialists working with 2 Fuelers React developers and 2 Data Scientists.",
+        "summary": "Project at 35% completion. POC successfully validated with working video ingestion, multi-model AI processing, and result aggregation. Currently implementing Stream & Ingestion Services (Phase 2). Remaining work focuses on production-grade microservices: Kafka infrastructure, analyzer services (YOLO/BLIP/OCR), aggregation, segmentation, Qdrant vector DB, RAG query system, and Kubernetes deployment. Geeksman team of 12 specialists working with 2 Fulers React developers and 2 Data Scientists.",
         "achievements": [
             "✅ POC completed and validated (Phase 1: 100%)",
             "✅ Video ingestion from real IP cameras (RTSP/Files) working",
@@ -530,14 +530,14 @@
                 "mitigation": "POC knowledge transfer completed. Architecture review sessions. Code quality standards enforced. Continuous integration and testing."
             },
             {
-                "risk": "AI model and API dependencies on Fuelers",
+                "risk": "AI model and API dependencies on Fulers",
                 "severity": "medium",
-                "mitigation": "Fuelers responsible for 100% uptime and technical support for all AI models and LLM APIs. 2 Data Scientists allocated for model optimization."
+                "mitigation": "Fulers responsible for 100% uptime and technical support for all AI models and LLM APIs. 2 Data Scientists allocated for model optimization."
             },
             {
                 "risk": "Infrastructure costs and cloud resource availability",
                 "severity": "medium",
-                "mitigation": "All AWS costs (ECS, S3, Kafka, Qdrant) borne directly by Fuelers. Infrastructure provisioning must be completed before respective phases."
+                "mitigation": "All AWS costs (ECS, S3, Kafka, Qdrant) borne directly by Fulers. Infrastructure provisioning must be completed before respective phases."
             }
         ],
         "blockers": []
@@ -555,13 +555,13 @@
             "Optimize storage architecture for 1000 FPS target (Phase 10: Week 7)",
             "Setup observability with Prometheus, Grafana, k9s (Phase 11: Week 7-8)",
             "End-to-end testing and production deployment (Week 8-9)",
-            "Weekly sign-offs and progress reviews with Fuelers"
+            "Weekly sign-offs and progress reviews with Fulers"
         ],
         "boardAsks": [
             "Approval for AED 205,500 total project cost (≈ $56,000 USD)",
             "Geeksman Softwares: AED 110,100 (≈ $30,000 USD) - Advance payment of AED 36,700 ($10,000 USD) upon signing",
             "Geeksman Softwares: Weekly installments of AED 9,175 ($2,500 USD) over 8 weeks",
-            "Fuelers Resources: AED 73,400 (≈ $20,000 USD) - 2 React developers + 2 Data Scientists for 2 months",
+            "Fulers Resources: AED 73,400 (≈ $20,000 USD) - 2 React developers + 2 Data Scientists for 2 months",
             "Infrastructure & Software: AED 22,020 (≈ $6,000 USD) - AWS, Kafka, Qdrant, AI APIs for 2 months",
             "Commitment to 24-hour resolution window for technical queries",
             "Weekly written sign-offs on deliverables and progress",
@@ -585,16 +585,16 @@
     },
     "contractTerms": {
         "provider": "Geeksman Softwares OPC Private Limited",
-        "client": "Fuelers",
+        "client": "Fulers",
         "projectManager": "Trilok Kaushik (Director)",
         "duration": "8 weeks (target) / 12-15 weeks (realistic)",
         "totalValue": "$56,000 USD (≈ AED 205,500)",
         "governance": {
             "resolutionWindow": "24 hours for all technical queries",
             "weeklySignOff": "Required at end of each work week",
-            "aiSupport": "100% uptime and technical support from Fuelers"
+            "aiSupport": "100% uptime and technical support from Fulers"
         },
-        "intellectualProperty": "Full code rights transfer to Fuelers upon final payment",
+        "intellectualProperty": "Full code rights transfer to Fulers upon final payment",
         "nonSolicitation": "12 months post-project completion",
         "termination": "7 days written notice, compensation for work performed"
     }

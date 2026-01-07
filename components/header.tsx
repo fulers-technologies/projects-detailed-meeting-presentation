@@ -36,7 +36,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src={logoSrc}
-              alt="Fuelers Technologies"
+              alt="Fulers Technologies"
               width={180}
               height={40}
               className="h-10 w-auto"

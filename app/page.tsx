@@ -57,7 +57,7 @@ export default function Home() {
       <main className="relative">
         {/* Hero Section with Gradient */}
         <GradientHero
-          title="Fuelers Technologies LLC"
+          title="Fulers Technologies LLC"
           subtitle="Advanced Technology Solutions"
           badge="Board Presentation"
         >
@@ -232,7 +232,7 @@ export default function Home() {
       <footer className="border-t mt-20 py-8">
         <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Fuelers Technologies LLC. All rights
+            © {new Date().getFullYear()} Fulers Technologies LLC. All rights
             reserved.
           </p>
           <p className="mt-2">Confidential Board Presentation</p>

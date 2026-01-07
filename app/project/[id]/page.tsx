@@ -69,7 +69,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.name} - ${project.fullName} | Fuelers Technologies`,
+    title: `${project.name} - ${project.fullName} | Fulers Technologies`,
     description: project.description,
     robots: {
       index: false,
@@ -783,14 +783,14 @@ export default async function ProjectPage({
                         </div>
                       </div>
 
-                      {/* Fuelers Personnel Costs (if exists) */}
-                      {project.resources.costs.fuelersPersonnel?.breakdown && (
+                      {/* Fulers Personnel Costs (if exists) */}
+                      {project.resources.costs.fulersPersonnel?.breakdown && (
                         <div>
                           <h4 className="font-semibold mb-3">
-                            Fuelers Personnel
+                            Fulers Personnel
                           </h4>
                           <div className="space-y-2">
-                            {project.resources.costs.fuelersPersonnel.breakdown.map(
+                            {project.resources.costs.fulersPersonnel.breakdown.map(
                               (item: any, idx: number) => (
                                 <div
                                   key={idx}
@@ -818,14 +818,14 @@ export default async function ProjectPage({
                               <div className="text-right">
                                 <div>
                                   AED{" "}
-                                  {project.resources.costs.fuelersPersonnel.monthly.toLocaleString()}
+                                  {project.resources.costs.fulersPersonnel.monthly.toLocaleString()}
                                   /mo
                                 </div>
-                                {project.resources.costs.fuelersPersonnel
+                                {project.resources.costs.fulersPersonnel
                                   .usdEquivalent?.monthly && (
                                   <div className="text-xs font-normal text-muted-foreground">
                                     ≈ $
-                                    {project.resources.costs.fuelersPersonnel.usdEquivalent.monthly.toLocaleString()}
+                                    {project.resources.costs.fulersPersonnel.usdEquivalent.monthly.toLocaleString()}
                                     /mo USD
                                   </div>
                                 )}
