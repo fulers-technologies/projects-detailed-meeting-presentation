@@ -187,7 +187,11 @@ export default function ReportsPage() {
                           {project.progress}%
                         </span>
                       </div>
-                      <Progress value={project.progress} className="h-2" />
+                      <Progress
+                        value={project.progress}
+                        className="h-2"
+                        brandColor={brandColor}
+                      />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -270,7 +274,10 @@ export default function ReportsPage() {
                     {/* Key Achievements */}
                     <div>
                       <h4 className="font-semibold mb-2 flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                        <CheckCircle2
+                          className="w-4 h-4"
+                          style={{ color: brandColor }}
+                        />
                         Key Achievements (
                         {project.currentStatus.achievements.length})
                       </h4>
@@ -282,7 +289,12 @@ export default function ReportsPage() {
                               key={index}
                               className="text-sm text-muted-foreground flex items-start gap-2"
                             >
-                              <span className="text-primary mt-1">•</span>
+                              <span
+                                style={{ color: brandColor }}
+                                className="mt-1"
+                              >
+                                •
+                              </span>
                               {achievement}
                             </li>
                           ))}
@@ -299,14 +311,18 @@ export default function ReportsPage() {
                     {project.currentStatus.risks.length > 0 && (
                       <div>
                         <h4 className="font-semibold mb-2 flex items-center gap-2">
-                          <AlertTriangle className="w-4 h-4 text-primary" />
+                          <AlertTriangle
+                            className="w-4 h-4"
+                            style={{ color: brandColor }}
+                          />
                           Active Risks ({project.currentStatus.risks.length})
                         </h4>
                         <div className="space-y-2">
                           {project.currentStatus.risks.map((risk, index) => (
                             <div
                               key={index}
-                              className="text-sm border-l-2 border-primary pl-3"
+                              className="text-sm border-l-2 pl-3"
+                              style={{ borderColor: brandColor }}
                             >
                               <div className="flex items-center gap-2">
                                 <span className="font-medium">{risk.risk}</span>
