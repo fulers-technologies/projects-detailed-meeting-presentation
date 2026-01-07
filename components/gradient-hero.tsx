@@ -18,13 +18,13 @@ export function GradientHero({
       <div className="absolute bottom-0 left-1/4 w-125 h-125 bg-primary/10 rounded-full blur-[120px] opacity-30" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 py-20">
+      <div className="relative container mx-auto px-6 py-12">
         {badge && (
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-4">
             {badge}
           </div>
         )}
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-foreground">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-foreground">
           {title}
         </h1>
         {subtitle && (
@@ -32,7 +32,7 @@ export function GradientHero({
             {subtitle}
           </p>
         )}
-        {children && <div className="mt-10">{children}</div>}
+        {children && <div className="mt-6">{children}</div>}
       </div>
     </div>
   );

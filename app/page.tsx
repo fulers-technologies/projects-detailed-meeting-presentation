@@ -61,7 +61,7 @@ export default function Home() {
           subtitle="Advanced Technology Solutions"
           badge="Board Presentation"
         >
-          <div className="mb-6">
+          <div className="mb-4">
             <p className="text-lg text-muted-foreground italic">
               &ldquo;{company.description}&rdquo;
             </p>
@@ -79,9 +79,9 @@ export default function Home() {
           </div>
         </GradientHero>
 
-        <div className="container mx-auto px-6 py-12">
+        <div className="container mx-auto px-6 py-8">
           {/* Stats Overview with Enhanced Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <StatCard
               title="Total Projects"
               value={stats.totalProjects}
@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t mt-20 py-8">
+      <footer className="border-t mt-12 py-6">
         <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
           <p>
             © {new Date().getFullYear()} Fulers Technologies LLC. All rights
