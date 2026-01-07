@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </GradientHero>
 
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto px-6 py-8 -mt-8">
           {/* Stats Overview with Enhanced Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <StatCard
