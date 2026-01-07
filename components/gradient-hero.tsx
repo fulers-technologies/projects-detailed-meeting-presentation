@@ -20,7 +20,7 @@ export function GradientHero({
       {/* Content */}
       <div className="relative container mx-auto px-6 py-12">
         {badge && (
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
             {badge}
           </div>
         )}
