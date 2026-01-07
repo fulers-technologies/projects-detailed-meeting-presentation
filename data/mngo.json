@@ -225,41 +225,57 @@
             "personnel": {
                 "monthly": 44000,
                 "total": 88000,
+                "currency": "AED",
+                "usdEquivalent": {
+                    "monthly": 11990,
+                    "total": 23980
+                },
                 "breakdown": [
                     {
                         "role": "Backend Developers (4)",
-                        "rate": 20000
+                        "rate": 20000,
+                        "usdRate": 5450
                     },
                     {
                         "role": "Frontend Developers (2)",
-                        "rate": 10000
+                        "rate": 10000,
+                        "usdRate": 2725
                     },
                     {
                         "role": "Flutter Developer",
-                        "rate": 5000
+                        "rate": 5000,
+                        "usdRate": 1362
                     },
                     {
                         "role": "UI/UX Designers (2)",
                         "rate": 4000,
+                        "usdRate": 1090,
                         "note": "7-10 days only"
                     },
                     {
                         "role": "Project Manager",
-                        "rate": 3000
+                        "rate": 3000,
+                        "usdRate": 817
                     },
                     {
                         "role": "QA Engineer",
-                        "rate": 3000
+                        "rate": 3000,
+                        "usdRate": 817
                     },
                     {
                         "role": "DevOps Engineer (part-time)",
-                        "rate": 2000
+                        "rate": 2000,
+                        "usdRate": 545
                     }
                 ]
             },
             "infrastructure": {
                 "monthly": 2000,
                 "total": 4000,
+                "currency": "AED",
+                "usdEquivalent": {
+                    "monthly": 545
+                },
                 "breakdown": [
                     {
                         "item": "AWS Cloud Services",
@@ -282,6 +298,10 @@
             "software": {
                 "monthly": 1000,
                 "total": 2000,
+                "currency": "AED",
+                "usdEquivalent": {
+                    "monthly": 272
+                },
                 "breakdown": [
                     {
                         "item": "Development Tools & Licenses",
@@ -297,11 +317,16 @@
                     }
                 ]
             },
-            "totalMonthly": 44000,
-            "totalProject": 88000,
-            "initialDeposit": 44000,
+            "totalMonthly": 47000,
+            "totalProject": 94000,
+            "initialDeposit": 47000,
             "currency": "AED",
-            "note": "2-month project timeline. Initial deposit of AED 44,000 required to start. UI/UX completed in 7-10 days. Backend and Frontend incremental delivery over 2 months. Equivalent to USD 12,000/month."
+            "usdEquivalent": {
+                "monthly": 12807,
+                "total": 25614,
+                "initialDeposit": 12807
+            },
+            "note": "2-month project timeline. Initial deposit of AED 47,000 (≈ $12,807 USD) required to start. UI/UX completed in 7-10 days. Backend and Frontend incremental delivery over 2 months."
         },
         "dependencies": [
             "Initial deposit payment to commence work",
@@ -317,7 +342,7 @@
         ]
     },
     "currentStatus": {
-        "summary": "Project in active development with 40% backend and frontend completion. UI/UX design phase completed. Team of 9 members allocated (4 backend, 2 frontend, 1 Flutter, 2 UI/UX designers). Initial deposit of AED 44,000 required to commence work.",
+        "summary": "Project in active development with 40% backend and frontend completion. UI/UX design phase completed. Team of 9 members allocated (4 backend, 2 frontend, 1 Flutter, 2 UI/UX designers). Initial deposit of AED 47,000 (≈ $12,807 USD) required to commence work.",
         "achievements": [
             "Completed UI/UX design system (7-10 days)",
             "Established microservices architecture",
@@ -336,7 +361,7 @@
             {
                 "risk": "Initial deposit required before project commencement",
                 "severity": "high",
-                "mitigation": "Clear payment terms: AED 44,000 initial deposit, then AED 44,000 at month 2"
+                "mitigation": "Clear payment terms: AED 47,000 (≈ $12,807 USD) initial deposit, then AED 47,000 at month 2"
             },
             {
                 "risk": "Integration complexity with multiple systems (POS, access control, payments)",
@@ -345,13 +370,13 @@
             }
         ],
         "blockers": [
-            "Initial deposit payment pending (AED 44,000 to start project)",
+            "Initial deposit payment pending (AED 47,000 ≈ $12,807 USD to start project)",
             "Payment gateway partnership agreements in progress"
         ]
     },
     "nextSteps": {
         "planned": [
-            "Secure initial deposit payment (AED 44,000)",
+            "Secure initial deposit payment (AED 47,000 ≈ $12,807 USD)",
             "Complete backend APIs development (4 weeks remaining)",
             "Complete frontend interfaces (4 weeks remaining)",
             "Finalize Flutter mobile app (3 weeks)",
@@ -359,9 +384,9 @@
             "Pilot deployment with test venue (1 week)"
         ],
         "boardAsks": [
-            "Approval for initial deposit payment of AED 44,000 to commence project",
-            "Approval for total project budget of AED 88,000 (2 months at AED 44,000/month ≈ USD 12,000/month)",
-            "Payment structure: Initial deposit AED 44,000, then AED 44,000 at month 2",
+            "Approval for initial deposit payment of AED 47,000 (≈ $12,807 USD) to commence project",
+            "Approval for total project budget of AED 94,000 (≈ $25,614 USD) over 2 months",
+            "Payment structure: Initial deposit AED 47,000, then AED 47,000 at month 2",
             "Pilot venue selection for testing and validation",
             "Go-to-market strategy and pricing model approval",
             "Strategic partnerships with payment gateways and hardware vendors"

@@ -179,32 +179,46 @@
       "personnel": {
         "monthly": 85000,
         "total": 765000,
+        "currency": "AED",
+        "usdEquivalent": {
+          "monthly": 23160,
+          "total": 208440
+        },
         "breakdown": [
           {
             "role": "Project Manager",
-            "rate": 12000
+            "rate": 12000,
+            "usdRate": 3270
           },
           {
             "role": "Backend Engineers (2)",
-            "rate": 28000
+            "rate": 28000,
+            "usdRate": 7630
           },
           {
             "role": "Frontend Engineers (2)",
-            "rate": 26000
+            "rate": 26000,
+            "usdRate": 7085
           },
           {
             "role": "Mobile Developer",
-            "rate": 13000
+            "rate": 13000,
+            "usdRate": 3542
           },
           {
             "role": "QA Engineer",
-            "rate": 6000
+            "rate": 6000,
+            "usdRate": 1635
           }
         ]
       },
       "infrastructure": {
         "monthly": 3500,
         "total": 31500,
+        "currency": "AED",
+        "usdEquivalent": {
+          "monthly": 954
+        },
         "breakdown": [
           {
             "item": "AWS Cloud Services",
@@ -227,6 +241,10 @@
       "software": {
         "monthly": 1200,
         "total": 10800,
+        "currency": "AED",
+        "usdEquivalent": {
+          "monthly": 327
+        },
         "breakdown": [
           {
             "item": "Development Tools",
@@ -244,7 +262,11 @@
       },
       "totalMonthly": 89700,
       "totalProject": 807300,
-      "currency": "AED"
+      "currency": "AED",
+      "usdEquivalent": {
+        "monthly": 24441,
+        "total": 219969
+      }
     },
     "dependencies": [
       "Cloud infrastructure approval",
