@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Fulers Technologies",
     images: [
       {
-        url: "/assets/transparent/63.png",
+        url: "/assets/logo-sign-background-blue-512px.svg",
         width: 1200,
         height: 630,
         alt: "Fulers Technologies Logo",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Fulers Technologies - Board Presentation",
     description:
       "Executive dashboard for Fulers Technologies LLC project portfolio",
-    images: ["/assets/transparent/63.png"],
+    images: ["/assets/logo-sign-background-blue-512px.svg"],
   },
   robots: {
     index: false,
