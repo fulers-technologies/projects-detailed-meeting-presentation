@@ -678,6 +678,58 @@ export default async function ProjectPage({
                         </div>
                       </div>
 
+                      {/* Fuelers Personnel Costs (if exists) */}
+                      {project.resources.costs.fuelersPersonnel && (
+                        <div>
+                          <h4 className="font-semibold mb-3">
+                            Fuelers Personnel
+                          </h4>
+                          <div className="space-y-2">
+                            {project.resources.costs.fuelersPersonnel.breakdown.map(
+                              (item: any, idx: number) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between items-center text-sm"
+                                >
+                                  <span className="text-muted-foreground">
+                                    {item.role}
+                                  </span>
+                                  <span className="font-medium">
+                                    AED {item.monthlyRate.toLocaleString()}/mo ×{" "}
+                                    {item.totalMonths} months
+                                    {item.usdMonthlyRate && (
+                                      <span className="text-xs text-muted-foreground block mt-1">
+                                        ($
+                                        {item.usdMonthlyRate.toLocaleString()}
+                                        /mo USD)
+                                      </span>
+                                    )}
+                                  </span>
+                                </div>
+                              ),
+                            )}
+                            <div className="flex justify-between items-center pt-2 border-t font-semibold">
+                              <span>Subtotal</span>
+                              <div className="text-right">
+                                <div>
+                                  AED{" "}
+                                  {project.resources.costs.fuelersPersonnel.monthly.toLocaleString()}
+                                  /mo
+                                </div>
+                                {project.resources.costs.fuelersPersonnel
+                                  .usdEquivalent?.monthly && (
+                                  <div className="text-xs font-normal text-muted-foreground">
+                                    ≈ $
+                                    {project.resources.costs.fuelersPersonnel.usdEquivalent.monthly.toLocaleString()}
+                                    /mo USD
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
                       {/* Infrastructure Costs */}
                       <div>
                         <h4 className="font-semibold mb-3">Infrastructure</h4>
