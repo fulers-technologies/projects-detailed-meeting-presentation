@@ -5,127 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMS Analytics Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <div class="min-h-screen p-6">
+    <div class="min-h-screen p-8">
         <!-- Header -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-3xl font-bold text-gray-900">Analytics & Insights</h1>
                     <p class="text-gray-600 mt-1">Performance metrics and trends</p>
                 </div>
                 <div class="flex gap-3">
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg">
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm font-medium">
                         <option>Last 30 Days</option>
                         <option>Last 90 Days</option>
                         <option>Last Year</option>
                     </select>
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Download Report</button>
+                    <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium shadow-sm">Download Report</button>
                 </div>
             </div>
         </div>
 
         <!-- KPI Cards -->
         <div class="grid grid-cols-4 gap-6 mb-6">
-            <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-sm p-6 text-white">
-                <p class="text-blue-100 text-sm">Completion Rate</p>
-                <p class="text-4xl font-bold mt-2">95.3%</p>
-                <p class="text-blue-100 text-sm mt-2">↑ 3.2% vs last month</p>
+            <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+                <p class="text-blue-100 text-sm font-medium">Completion Rate</p>
+                <p class="text-5xl font-bold mt-3">95.3%</p>
+                <p class="text-blue-100 text-sm mt-3 flex items-center gap-1">
+                    <span class="text-lg">↑</span> 3.2% vs last month
+                </p>
             </div>
-            <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm p-6 text-white">
-                <p class="text-green-100 text-sm">Avg Response Time</p>
-                <p class="text-4xl font-bold mt-2">2.4h</p>
-                <p class="text-green-100 text-sm mt-2">↓ 0.8h improvement</p>
+            <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+                <p class="text-green-100 text-sm font-medium">Avg Response Time</p>
+                <p class="text-5xl font-bold mt-3">2.4h</p>
+                <p class="text-green-100 text-sm mt-3 flex items-center gap-1">
+                    <span class="text-lg">↓</span> 0.8h improvement
+                </p>
             </div>
-            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg shadow-sm p-6 text-white">
-                <p class="text-orange-100 text-sm">Critical Incidents</p>
-                <p class="text-4xl font-bold mt-2">12</p>
-                <p class="text-orange-100 text-sm mt-2">Requires immediate action</p>
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+                <p class="text-orange-100 text-sm font-medium">Critical Incidents</p>
+                <p class="text-5xl font-bold mt-3">12</p>
+                <p class="text-orange-100 text-sm mt-3">Requires immediate action</p>
             </div>
-            <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-sm p-6 text-white">
-                <p class="text-purple-100 text-sm">Inspector Efficiency</p>
-                <p class="text-4xl font-bold mt-2">87%</p>
-                <p class="text-purple-100 text-sm mt-2">↑ 5% improvement</p>
+            <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+                <p class="text-purple-100 text-sm font-medium">Inspector Efficiency</p>
+                <p class="text-5xl font-bold mt-3">87%</p>
+                <p class="text-purple-100 text-sm mt-3 flex items-center gap-1">
+                    <span class="text-lg">↑</span> 5% improvement
+                </p>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-6 mb-6">
             <!-- Inspection Trends Chart -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-bold text-gray-900 mb-4">Inspection Trends</h2>
-                <canvas id="trendsChart" height="200"></canvas>
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-6">Inspection Trends</h2>
+                <div style="height: 280px;">
+                    <canvas id="trendsChart"></canvas>
+                </div>
             </div>
 
             <!-- Incident Categories -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-bold text-gray-900 mb-4">Incident Categories</h2>
-                <canvas id="categoriesChart" height="200"></canvas>
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-6">Incident Categories</h2>
+                <div style="height: 280px;">
+                    <canvas id="categoriesChart"></canvas>
+                </div>
             </div>
         </div>
 
         <!-- Inspector Performance -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-4">Inspector Performance</h2>
-            <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Inspector Performance</h2>
+            <div class="space-y-5">
                 <div class="flex items-center gap-4">
-                    <div class="w-32 text-sm font-medium text-gray-700">John Smith</div>
+                    <div class="w-36 text-sm font-semibold text-gray-800">John Smith</div>
                     <div class="flex-1">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-sm text-gray-600">156 inspections</span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600 font-medium">156 inspections</span>
                             <span class="text-sm font-bold text-blue-600">98%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 98%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full shadow-sm" style="width: 98%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div class="w-32 text-sm font-medium text-gray-700">Sarah Johnson</div>
+                    <div class="w-36 text-sm font-semibold text-gray-800">Sarah Johnson</div>
                     <div class="flex-1">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-sm text-gray-600">142 inspections</span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600 font-medium">142 inspections</span>
                             <span class="text-sm font-bold text-blue-600">96%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 96%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full shadow-sm" style="width: 96%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div class="w-32 text-sm font-medium text-gray-700">Mike Davis</div>
+                    <div class="w-36 text-sm font-semibold text-gray-800">Mike Davis</div>
                     <div class="flex-1">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-sm text-gray-600">138 inspections</span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600 font-medium">138 inspections</span>
                             <span class="text-sm font-bold text-blue-600">94%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 94%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full shadow-sm" style="width: 94%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div class="w-32 text-sm font-medium text-gray-700">Emily Chen</div>
+                    <div class="w-36 text-sm font-semibold text-gray-800">Emily Chen</div>
                     <div class="flex-1">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-sm text-gray-600">129 inspections</span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600 font-medium">129 inspections</span>
                             <span class="text-sm font-bold text-blue-600">92%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 92%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full shadow-sm" style="width: 92%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div class="w-32 text-sm font-medium text-gray-700">Robert Wilson</div>
+                    <div class="w-36 text-sm font-semibold text-gray-800">Robert Wilson</div>
                     <div class="flex-1">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-sm text-gray-600">121 inspections</span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600 font-medium">121 inspections</span>
                             <span class="text-sm font-bold text-blue-600">89%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 89%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full shadow-sm" style="width: 89%"></div>
                         </div>
                     </div>
                 </div>
@@ -133,109 +148,224 @@
         </div>
 
         <!-- Site Performance -->
-        <div class="bg-white rounded-lg shadow-sm p-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-4">Top Sites by Incident Count</h2>
-            <table class="w-full">
-                <thead>
-                    <tr class="border-b border-gray-200">
-                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Site Location</th>
-                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Total Incidents</th>
-                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Critical</th>
-                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Resolved</th>
-                        <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Trend</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b border-gray-100">
-                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">Building A</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">47</td>
-                        <td class="py-3 px-4 text-sm text-red-600 font-medium">8</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">39 (83%)</td>
-                        <td class="py-3 px-4 text-sm text-red-600">↑ 12%</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">Warehouse B</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">34</td>
-                        <td class="py-3 px-4 text-sm text-red-600 font-medium">3</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">31 (91%)</td>
-                        <td class="py-3 px-4 text-sm text-green-600">↓ 5%</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">Site C</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">28</td>
-                        <td class="py-3 px-4 text-sm text-red-600 font-medium">1</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">27 (96%)</td>
-                        <td class="py-3 px-4 text-sm text-gray-600">→ 0%</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="py-3 px-4 text-sm text-gray-900 font-medium">Building D</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">19</td>
-                        <td class="py-3 px-4 text-sm text-red-600 font-medium">0</td>
-                        <td class="py-3 px-4 text-sm text-gray-700">19 (100%)</td>
-                        <td class="py-3 px-4 text-sm text-green-600">↓ 8%</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Top Sites by Incident Count</h2>
+            <div class="overflow-hidden rounded-lg border border-gray-200">
+                <table class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="text-left py-4 px-6 text-sm font-semibold text-gray-700">Site Location</th>
+                            <th class="text-left py-4 px-6 text-sm font-semibold text-gray-700">Total Incidents</th>
+                            <th class="text-left py-4 px-6 text-sm font-semibold text-gray-700">Critical</th>
+                            <th class="text-left py-4 px-6 text-sm font-semibold text-gray-700">Resolved</th>
+                            <th class="text-left py-4 px-6 text-sm font-semibold text-gray-700">Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="py-4 px-6 text-sm text-gray-900 font-semibold">Building A</td>
+                            <td class="py-4 px-6 text-sm text-gray-700 font-medium">47</td>
+                            <td class="py-4 px-6">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                    8 Critical
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm text-gray-700">39 <span class="text-gray-500">(83%)</span></td>
+                            <td class="py-4 px-6 text-sm font-semibold text-red-600">↑ 12%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="py-4 px-6 text-sm text-gray-900 font-semibold">Warehouse B</td>
+                            <td class="py-4 px-6 text-sm text-gray-700 font-medium">34</td>
+                            <td class="py-4 px-6">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                    3 Critical
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm text-gray-700">31 <span class="text-gray-500">(91%)</span></td>
+                            <td class="py-4 px-6 text-sm font-semibold text-green-600">↓ 5%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="py-4 px-6 text-sm text-gray-900 font-semibold">Site C</td>
+                            <td class="py-4 px-6 text-sm text-gray-700 font-medium">28</td>
+                            <td class="py-4 px-6">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                    1 Critical
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm text-gray-700">27 <span class="text-gray-500">(96%)</span></td>
+                            <td class="py-4 px-6 text-sm font-semibold text-gray-600">→ 0%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="py-4 px-6 text-sm text-gray-900 font-semibold">Building D</td>
+                            <td class="py-4 px-6 text-sm text-gray-700 font-medium">19</td>
+                            <td class="py-4 px-6">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    0 Critical
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 text-sm text-gray-700">19 <span class="text-gray-500">(100%)</span></td>
+                            <td class="py-4 px-6 text-sm font-semibold text-green-600">↓ 8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
-        // Inspection Trends Chart
-        const trendsCtx = document.getElementById('trendsChart').getContext('2d');
-        new Chart(trendsCtx, {
-            type: 'line',
-            data: {
-                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                datasets: [{
-                    label: 'Completed',
-                    data: [285, 312, 298, 294],
-                    borderColor: 'rgb(59, 130, 246)',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    tension: 0.4
-                }, {
-                    label: 'Pending',
-                    data: [42, 38, 45, 34],
-                    borderColor: 'rgb(249, 115, 22)',
-                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
+        // Wait for DOM to be fully loaded
+        window.addEventListener('load', function() {
+            // Inspection Trends Chart
+            const trendsCtx = document.getElementById('trendsChart');
+            if (trendsCtx) {
+                new Chart(trendsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{
+                            label: 'Completed',
+                            data: [285, 312, 298, 327],
+                            borderColor: 'rgb(59, 130, 246)',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: 'rgb(59, 130, 246)',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2
+                        }, {
+                            label: 'Pending',
+                            data: [42, 38, 45, 34],
+                            borderColor: 'rgb(249, 115, 22)',
+                            backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: 'rgb(249, 115, 22)',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    font: {
+                                        size: 13,
+                                        weight: '500'
+                                    },
+                                    usePointStyle: true,
+                                    pointStyle: 'circle'
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                cornerRadius: 8
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            }
+                        }
                     }
-                }
+                });
             }
-        });
 
-        // Incident Categories Chart
-        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
-        new Chart(categoriesCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Structural', 'Electrical', 'Safety', 'HVAC', 'Other'],
-                datasets: [{
-                    data: [35, 25, 20, 12, 8],
-                    backgroundColor: [
-                        'rgb(239, 68, 68)',
-                        'rgb(249, 115, 22)',
-                        'rgb(234, 179, 8)',
-                        'rgb(59, 130, 246)',
-                        'rgb(156, 163, 175)'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
+            // Incident Categories Chart
+            const categoriesCtx = document.getElementById('categoriesChart');
+            if (categoriesCtx) {
+                new Chart(categoriesCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Structural', 'Electrical', 'Safety', 'HVAC', 'Other'],
+                        datasets: [{
+                            data: [35, 25, 20, 12, 8],
+                            backgroundColor: [
+                                'rgb(239, 68, 68)',
+                                'rgb(249, 115, 22)',
+                                'rgb(234, 179, 8)',
+                                'rgb(59, 130, 246)',
+                                'rgb(156, 163, 175)'
+                            ],
+                            borderWidth: 0,
+                            hoverOffset: 10
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    font: {
+                                        size: 13,
+                                        weight: '500'
+                                    },
+                                    usePointStyle: true,
+                                    pointStyle: 'circle'
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                cornerRadius: 8,
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.parsed || 0;
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = ((value / total) * 100).toFixed(1);
+                                        return label + ': ' + value + ' (' + percentage + '%)';
+                                    }
+                                }
+                            }
+                        }
                     }
-                }
+                });
             }
         });
     </script>
